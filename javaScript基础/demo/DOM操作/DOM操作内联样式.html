@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM操作内联样式</title>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="btn">操作box的样式</button>
+</body>
+</html>
+<script>
+    const box =document.getElementsByClassName('box')[0]
+    const btn = document.getElementById('btn')
+    btn.onclick = function(){
+      box.style.width = '300px'  
+      box.style.backgroundColor = 'blue'
+    }
+    
+</script>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>

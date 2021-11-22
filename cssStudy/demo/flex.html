@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item big">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+        display: flex;
+        margin: 200px auto;
+        height: 400px;
+        width: 800px;
+        background-color: cornflowerblue;
+        /* flex-direction: column-reverse; */
+        /* justify-content: space-around; */
+        align-items: stretch;
+}
+.item{
+
+    /* width: 300px; */
+    flex: 1;
+    background-color: red;
+    border: 1px solid black;
+}
+.big{
+    height: 100px;
+    /* flex-basis: 400px; */
+}
+</style>

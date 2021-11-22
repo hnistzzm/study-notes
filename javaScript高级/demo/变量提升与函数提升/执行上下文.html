@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function fn(a1){
+    console.log(a1)//1
+    console.log(a2)//undefined
+    a3()// a3()
+    console.log(this)//window
+    console.log(arguments)// [1,3]类数组
+    var a2 = 3
+    function a3(){
+        console.log('a3()')
+    }
+   
+}
+var obj={
+        name:fn
+    }
+    obj.name(5)
+
+    
+</script>

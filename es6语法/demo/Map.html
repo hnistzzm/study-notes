@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let m = new Map()
+    console.log(typeof m);
+    m.set('name','小张')//添加字符串
+    m.set('change',function(){//添加方法
+        console.log("我是小张!!")
+    })
+    let key = {
+        school:'朝阳小学'
+    }
+    m.set(key,['北京','上海','深圳'])//添加对象作为key，数组作为value
+    console.log(m.has(key));
+    for(let v of m){
+        console.log(v);
+    }
+</script>

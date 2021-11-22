@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM删除添加练习</title>
+</head>
+<body>
+    <table class="emoloyeeTable" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@qq.com</td>
+            <td>5000</td>
+            <td><a href="javaScript:;">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Jerry</td>
+            <td>Jerry@qq.com</td>
+            <td>6000</td>
+            <td><a href="javaScript:;">Delete</a></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <hr>
+        <table>
+            <tr>
+                <td class="word"> name:</td>
+                <td class="inp">
+                    <input type="text" name="empName" id="empName" value="dog">
+                </td>
+            </tr>
+            <tr>
+                <td class="word">email:</td>
+                <td class="inp">
+                    <input type="text" name="email" id="email" value="12121">
+                </td>
+            </tr>
+            <tr>
+                <td class="word">salary:</td>
+                <td class="inp">
+                    <input type="text" name="salary" id="salary" value="6000">
+                </td>
+            </tr>
+        </table>
+       
+        <button id="addEmployee" type="submit">添加一个员工</button>
+        A<input type="text" name="A" id="A">
+        B<input type="text" name="B" id="B">
+        sum<input type="text" name="sum" id="sum">
+    
+    
+</body>
+</html>
+<script>
+    const tag = document.getElementsByTagName('a')
+    for (let i = 0; i < tag.length; i++) {
+        tag[i].onclick = function(){
+            const Node = this.parentNode.parentNode
+            const employeeName = Node.firstElementChild
+            if(confirm(`确认删除${employeeName.innerHTML}吗?`)){
+                Node.parentNode.removeChild(Node)
+            }
+            
+        }
+        
+    }
+    const addBtn = document.getElementById("addEmployee")
+    addBtn.onclick = function(){
+        const empName = document.getElementById('empName').value
+        const email = document.getElementById('email').value
+        const salary = document.getElementById('salary').value
+        const node = document.getElementsByClassName('emoloyeeTable')[0]
+
+        const info = document.createElement('tr')
+        info.innerHTML = `<td>${empName}</td>
+                            <td>${email}</td>
+                            <td>${salary}</td>
+                            <td><a href="javaScript:;">Delete</a></td>`
+       
+        const a = info.getElementsByTagName('a')[0]
+        a.onclick = function(){
+            const Node = this.parentNode.parentNode
+            const employeeName = Node.firstElementChild
+            if(confirm(`确认删除${employeeName.innerHTML}吗?`)){
+                Node.parentNode.removeChild(Node)
+            }
+        }
+        node.appendChild(info)
+    }
+    const inputA = document.getElementById("A")
+    const inputB = document.getElementById("B")
+    const sum = document.getElementById("sum")
+    inputA.oninput  = function(){
+        console.log(inputA.value);
+        sum.value =parseInt(inputA.value) + (parseInt(inputB.value)||0)
+        
+    }
+    inputB.oninput  = function(){
+        console.log(inputB.value);
+        sum.value =(parseInt(inputA.value)||0) + parseInt(inputB.value)
+    }
+</script>
+<style>
+.emoloyeeTable{
+    border: 1px;
+}
+</style>

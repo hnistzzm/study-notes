@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <span>一级菜单1</span>
+            <ul class="second-menu">
+                <li>二级菜单1</li>
+                <li >二级菜单2</li>
+                <li >二级菜单3</li>
+            </ul>
+        </li>
+        <li>
+            <span>一级菜单2</span>
+            <ul class="second-menu">
+                <li>二级菜单1</li>
+                <li>二级菜单2</li>
+                <li>二级菜单3</li>
+            </ul>
+        </li>
+        <li >
+            <span>一级菜单3</span>
+            <ul class="second-menu">    
+                <li>二级菜单1</li>
+                <li>二级菜单2</li>
+                <li>二级菜单3</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $('.menu>li').mouseenter(function(){
+        console.log("进来了");
+        console.log(this);
+        $(this).children('ul').children('li').stop(true,false).slideDown(200)
+
+    })
+    $('.menu>li').mouseleave(function(){
+        console.log("出去了");
+        $(this).children('ul').children('li').stop(true,false).slideUp(200)
+
+    })
+
+
+</script>
+<style>
+
+body,html{
+    width: 100%;
+    height: 100%;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.menu{
+    display:flex;
+}
+
+.menu>li{
+    height: 40px;
+    background-color: aqua; 
+    line-height: 40px;
+    list-style: none;
+    margin-right: 15px;
+} 
+.second-menu{
+    
+    border: 1px solid red;
+}
+.second-menu>li{
+    height: 40px;
+    list-style: none;
+    display: none;
+}
+</style>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <ul class="img-lists">
+            <li><img src="../image/image1.png" alt="" height="225px" width="250px"></li>
+            <li><img src="../image/image2.png" alt="" height="225px" width="250px"></li>
+            <li><img src="../image/image3.png" alt="" height="225px" width="250px"></li>
+            <li><img src="../image/image4.png" alt="" height="225px" width="250px"></li>
+            <li><img src="../image/image5.png" alt="" height="225px" width="250px"></li>
+            <li><img src="../image/image6.png" alt="" height="225px" width="250px"></li>
+        </ul>
+
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $('li').mouseenter(function(){
+        $(this).children('img').css({opacity:0.4})
+    })
+    $('li').mouseleave(function(){
+        $(this).children('img').css({opacity:1})
+    })
+
+
+</script>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.img-lists{
+   width:800px;
+   height: 500px; 
+   list-style: none;
+   position: absolute;
+   border: 1px solid #FFFFFF;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%); 
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+}
+.img-lists>li{
+    width: 250px;
+    height: 225px;
+    margin-left: 10px;
+}
+
+    
+</style>

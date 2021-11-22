@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    // var isLiForget = true
+    // var isBuyShoes = false
+    // var getCloth = new Promise(function(resolve,reject){
+    //     if(!isLiForget){
+    //         resolve('我要买衣服!')
+    //     }else{
+    //         const err = new Error('我买不了衣服了..')
+    //         reject(err)
+    //     }
+    // })
+    // var buyShoes = function(clothStatus){
+    //     console.log("clothStatus",clothStatus);
+    //     if(!isBuyShoes){
+    //         console.log("我要买鞋子!");
+
+    //     }else{
+    //         console.log("我买不了鞋子了...");
+    //     }
+    // }
+    // var testFn = function(){
+    //     getCloth.then(function(clothStatus){
+    //         console.log(clothStatus);
+    //         return Promise.resolve(clothStatus);
+    //     }).then(buyShoes)
+    //     .catch(function(rejected){
+    //         console.log("reject",rejected.message);
+    //     })
+    // }
+    // testFn()
+    // var getName = new Promise(function(resolve,reject){
+    //     console.log('我是小明');
+    //     resolve('小明')
+    // })
+    // var getAge = new Promise(function(resolve,reject){
+    //     console.log("我的年龄是18");
+    //     resolve(18)
+    // })
+    // getName.then(getAge)
+    var p = new Promise(function(resolve,reject){
+        resolve(1)
+    })
+    p.then(function(value){
+        console.log("第一个then",value);//1
+        return value*2
+    }).then(function(value){
+        console.log("第二个then",value);//2
+    }).then(function(value){
+        console.log("第三个then",value);//undefined 上一个then没有返回promise对象,得不到形参
+        return Promise.resolve('resolve')
+    }).then(function(value){
+        console.log("第四个then",value);//上一个then传递了promise对象,可以接收到参数
+        return Promise.reject('reject')
+    }).then(function(value){
+        console.log("resolve",value);//上一个then返回的是reject的promise对象,故第五个then中的函数不执行
+    }).catch(function(reject){
+        console.log("reject",reject);//捕获reject错误
+    })
+
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function add(a){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(a+10)
+            },1000) 
+        })
+    }
+
+    async function fun(){
+        const a = await add(10)
+        console.log(a);
+        const b = await add(a)
+        console.log(b);
+        const c = await add(b)
+        console.log(c);
+    }   
+    fun()
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="module">
+    //引入 m1.js模块内容
+    //1. 通用的导入方式
+    // import * as m1 from './js/m1.js'
+    // console.log(m1);
+    // import * as m2 from './js/m2.js'
+    // m2.getSchool()
+    // import * as m3 from './js/m3.js'
+    // console.log(m3);
+    // console.log(m3.default.school);
+
+    //2.解构赋值的形式
+    // import {a,fun} from './js/m1.js'
+    // console.log(a);
+    // import {school,getSchool} from './js/m2.js'
+    // console.log(school);
+    // import {default as m3} from './js/m3.js'
+    // m3.change()
+
+    //3.简便形式 针对默认暴露
+    import m3 from './js/m3.js'
+    console.log(m3);
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <span>来呀</span>
+    </div>
+</body>
+</html>
+<script>
+const span = document.getElementsByTagName('span')[0]
+const box = document.getElementsByClassName('box')[0]
+box.onclick = function(e){
+    alert("hellobox")
+    
+}
+span.onclick = function(e){
+    alert("hellospan")
+    e.cancelBubble = true
+}
+</script>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+    span{
+        width: 50px;
+        height: 30px;
+        background-color: green;
+        color: white;
+    }
+</style>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Person(name,age){
+        this.name = name
+        this.age = age
+        // this.setName = function(name){
+        //     this.name = name
+        // }
+
+    }
+    Person.prototype.setName = function(name){
+        this.name = name
+    }
+    var p1 = new Person('Bob',15)
+    var p2 = new Person('alice',18)
+    function Dog(name,age){
+        this.name = name
+        this.age = age
+        this.setName = function(name){
+            this.name = name
+        }
+
+    }
+    var d1 = new Dog("tom",12)
+    p1.setName('shabi')
+    console.log(p1);
+    console.log(d1);
+    console.log(p1.__proto__ === p2.__proto__);
+
+    // console.log(p1 instanceof Person);
+    // console.log(p1 instanceof Object);
+</script>

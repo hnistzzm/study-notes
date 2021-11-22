@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Person(color){
+        console.log(this);
+        this.color = color
+        this.getColor = function(){
+            console.log(this);
+            return this.color
+        }
+        this.setColor = function(color){
+            console.log(this);
+            this.color = color
+        }
+    }
+    Person('red')// this是window
+    const p = new Person("yellow")//this是p
+    p.getColor() //this是p
+    const obj = {}
+    p.setColor.call(obj,'black')//this是obj
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //父类型
+    function Supper(){
+        this.supProp = 'Supper property'
+    }
+    Supper.prototype.showSupperProp = function(){
+        console.log(this.supProp);
+    }
+
+    //子类型
+    function Sub(){
+        this.subProp = 'Sub property'
+    }
+    
+    var supper = new Supper()
+    
+    Sub.prototype = new Supper()
+    Sub.prototype.constructor = Sub
+    Sub.prototype.showSubProp = function(){
+        console.log(this.subProp);
+    }
+    var sub = new Sub()
+    sub.showSupperProp()
+    sub.showSubProp()
+    console.log(sub);
+
+
+
+
+    
+</script>

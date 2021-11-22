@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1//在全局作用域定义a
+        fun()
+        function fun(){
+            // var a = 2//在函数中定义a
+            console.log("在函数中输出a",a);
+        }
+        console.log("在全局作用域输出a",a);
+    </script>
+</body>
+</html>

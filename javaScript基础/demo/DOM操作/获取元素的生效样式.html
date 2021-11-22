@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="btn">获取box的当前生效样式</button>
+</body>
+</html>
+<script>
+    const btn = document.getElementById("btn")
+    const box = document.getElementsByClassName('box')[0]
+    btn.onclick = function(){
+      console.log(getComputedStyle(box).width||box.getCurrentStyle.width);  
+      console.log(getComputedStyle(box).backgroundColor);  
+    }
+    
+</script>
+<style>
+.box{
+    width: 200px;
+    height: 300px;
+    background-color: red;
+}
+</style>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">btn1</button>
+    <button id="btn2">btn2</button>
+</body>
+</html>
+<script>
+    const btn1 = document.getElementById('btn1')
+    const btn2 = document.getElementById('btn2')
+    btn1.onclick = function(){
+        alert(1)
+    }
+    btn2.onclick = function(){
+        alert(2)
+    }
+    btn1.setCapture()
+</script>

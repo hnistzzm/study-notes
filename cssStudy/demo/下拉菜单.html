@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单案例</title>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            书籍
+            <ul class="sub-menu">
+                <li>js书籍</li>
+                <li>js书籍</li>
+                <li>js书籍</li>
+            </ul>
+        </li>
+        <li>
+            书籍
+            <ul class="sub-menu">
+                <li>js书籍</li>
+                <li>js书籍</li>
+                <li>js书籍</li>
+            </ul>
+        </li>
+        <li>
+            书籍
+            <ul class="sub-menu">
+                <li>js书籍</li>
+                <li>js书籍</li>
+                <li>js书籍</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.menu>li{
+    float: left;
+    border: 1px solid red;
+    height: 30px;
+    background-color: blue;
+    color: #fff;
+    line-height: 30px;
+}
+.menu>li:hover >.sub-menu>li{
+    height: 30px;
+}
+.sub-menu>li{
+    height: 0;
+    overflow: hidden;
+    background-color: red;
+    transition: height 3s;
+}
+</style>

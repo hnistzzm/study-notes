@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div id="plane"></div>
+    </div>
+</body>
+</html>
+<script>
+    const box = document.getElementById('box')
+    const plane = document.getElementById('plane')
+    const random = document.getElementById('random-obstacle')
+    let speed = 0
+    let dir 
+    
+    console.log(window.innerHeight);
+    //生成随机数
+    function randomNum(minNum,maxNum){ 
+        switch(arguments.length){ 
+            case 1: 
+                return parseInt(Math.random()*minNum+1,10); 
+            break; 
+            case 2: 
+                return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+            break; 
+                default: 
+                    return 0; 
+                break; 
+        } 
+    } 
+
+    //随机生成障碍
+    const mainInterval = setInterval(() => {
+        const obstance = document.createElement('div')
+        obstance.style.width=randomNum(50,300)+'px'
+        obstance.style.height=randomNum(50,100)+'px'
+        obstance.style.backgroundColor='green'
+        obstance.style.top=0
+        obstance.style.left=randomNum(0,1500)+'px'
+        obstance.style.position='absolute'
+        box.appendChild(obstance)
+        shift(obstance)
+    }, 3000);
+
+    function shift (obstance){
+        const interval =  setInterval(() => {
+            obstance.style.top=  obstance.offsetTop +50 + 'px'
+            if(window.innerHeight -  obstance.offsetTop-parseInt(obstance.style.height.replace(/px/i,''))   <=0){
+                box.removeChild(obstance)
+                clearInterval(interval)
+            }
+        }, 1000);
+    }
+
+    //控制飞机的移动
+    setInterval(() =>{
+        const obstance = box.children
+        for (let i = 1; i < obstance.length; i++) {
+            const obstanceHeight = parseInt(obstance[i].style.height.replace(/px/i,''))
+            const obstanceWidth= parseInt(obstance[i].style.left.replace(/px/i,''))
+            const obstanceTop = obstance[i].offsetTop + obstanceHeight
+            const obstanceLeft = obstance[i].offsetLeft + obstanceWidth
+            const planeTop = plane.offsetTop
+            const planeLeft = plane.offsetLeft
+            console.log(`obstanceHeight:${obstanceHeight} obstanceWidth:${obstanceWidth}`);
+            console.log(`obstanceTop:${obstanceTop} planeTop:${planeTop}`);
+            console.log(`obstanceLeft:${obstanceLeft} planeLeft:${planeLeft}`);
+            console.log("obstanceTop-planeTop",obstanceTop-planeTop);
+            console.log("obstanceLeft-planeLeft",obstanceLeft-planeLeft);
+            if( (obstanceTop-planeTop>=0&&obstanceTop-planeTop<=obstanceHeight)&&(obstanceLeft-planeLeft>=0&&obstanceLeft-planeLeft<=obstanceWidth)){
+                    alert('你输了!')
+                    location.reload();
+                }
+        }
+        switch(dir){
+            //37 左 38上 39右 40下
+            case 37:
+            plane.style.left = plane.offsetLeft - speed+"px"
+            break;
+            case 38:
+            plane.style.top = plane.offsetTop - speed+"px"
+            break;
+            case 39:
+            plane.style.left = plane.offsetLeft + speed+"px"
+            break;
+            case 40:
+            plane.style.top = plane.offsetTop + speed+"px"
+            break;
+        }
+    }, 5);
+    document.onkeydown = function(event){
+        speed =5
+        dir = event.keyCode
+    }
+    document.onkeyup = function(event){
+        speed =0
+    }
+</script>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#box{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+}
+#plane{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+}
+#random-obstacle{
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+}
+</style>

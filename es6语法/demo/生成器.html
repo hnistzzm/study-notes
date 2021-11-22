@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function * gen(arg){
+        yield 111
+        yield 222
+        yield 333
+    }
+    let iterator = gen()
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+</script>

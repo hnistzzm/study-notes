@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="arr">
+        <button id="btn">计算</button>
+    </div>
+</body>
+</html>
+<script>
+    const btn = document.getElementById('btn')
+    btn.onclick = function(){
+        //创建一个worker对象
+        var worker = new Worker('worker.js')
+        worker.onmessage =function(event){
+            console.log("主线程接收分线程返回的数据",event.data);
+        }
+        //向分线程发送数据
+        worker.postMessage(arr)
+        
+    }
+</script>

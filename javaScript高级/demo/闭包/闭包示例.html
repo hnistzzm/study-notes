@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+//     function fn(){
+//     let num = 3
+//     return function(){
+//         var n = 0
+//         console.log(++n)
+//         console.log(++num)
+//     }
+// }
+// var fn1=fn()
+// fn1()// 1 4
+// fn1()// 1 5
+for (var i = 0; i <5; i++) {
+    (function(i){
+        setTimeout(function(){
+            console.log(i);
+        },100)
+    })(i)
+}
+</script>

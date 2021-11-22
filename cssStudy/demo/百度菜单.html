@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <p class="show">首页</p>
+            <p class="click">电影</p>
+        </li>
+        <li>
+            <p class="show">首页</p>
+            <p class="click">电影</p>
+        </li>
+        <li>
+            <p class="show">首页</p>
+            <p class="click">电影</p>
+        </li>
+    </ul>
+</body>
+</html>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    position: fixed;
+    top: 50%;
+    right: 10%;
+}
+.menu>li{
+    list-style: none;
+    border: 1px solid red;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    position: relative;
+    
+}
+.show{
+    background-color: brown;
+}
+.click{
+    background-color: chartreuse;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    transform-origin: -30px 30px;
+    transition:transform 2s;
+}
+.menu>li:hover>.click{
+    transform: rotate(0);
+    
+}
+</style>

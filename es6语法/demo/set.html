@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let s = new Set(['a','b','c','d','a'])
+console.log(typeof s);
+// let arrObj = [
+//     {a:1,b:2,c:3},
+//     {a:1,b:2,c:3},
+//     {a:1,b:2,c:4},
+// ] 
+// let s1 = new Set(arrObj)
+// console.log(s1);
+let arr = [1,2,3,4,5,4,3,2,1]
+let arr2 = [4,5,6,5,6]
+//求交集
+let result = [...new Set(arr)].filter((item)=>{
+    return new Set(arr2).has(item)
+})
+console.log(result);
+//求并集
+let result1 = new Set([...arr,...arr2])
+console.log(result1);
+//求差集
+let result2 = [...result1].filter((item)=>{
+    return new Set(result).has(item)?false:true
+})
+console.log(result2);
+</script>

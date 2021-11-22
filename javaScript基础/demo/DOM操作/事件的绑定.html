@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">触发事件</button>
+</body>
+</html>
+<script>
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click',()=>{
+        alert('1')
+    })
+    btn.addEventListener('click',()=>{
+        alert('2')
+    })
+    btn.addEventListener('click',()=>{
+        alert('3')
+    })
+</script>

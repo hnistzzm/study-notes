@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function createIterator(items){
+        let index= 0;
+        return{
+            next:function(){
+                if(index<items.length){
+                    const result = {value:items[index],done:false}
+                    index++
+                    return result
+                }else{
+                    return {value:items[index],done:'done'}
+                }
+            }
+        }
+    }
+    var iterator = createIterator([1, 2, 3]);
+    console.log(iterator.next()); //{value: 1, done: false}
+    console.log(iterator.next()); //{value: 2, done: false}
+    console.log(iterator.next()); //{value: 3, done: false}
+    console.log(iterator.next()); //{value: undefined, done: done}
+</script>

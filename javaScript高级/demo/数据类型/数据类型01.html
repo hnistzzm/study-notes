@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 定义基本类型和对象类型
+    const a  = new Number(2)
+    const b = new String(3)
+    const c = new Boolean('assa')
+    const d = undefined
+    const e = null
+    console.log(a); //2
+    console.log(b); //'3'
+    console.log(c); //true 当值为0或false时打印false,其余有效值均为true
+    console.log(d); //undefined
+    console.log(e); //null
+
+    const obj = new Object()
+    const fun = new Function()
+    const array = new Array()
+    console.log(obj); //{}
+    console.log(fun); // ƒ anonymous(){}
+    console.log(array);//[]
+
+    //判断基本类型和对象类型
+    console.log(typeof a);//'number'
+    console.log(typeof b);//'string'
+    console.log(typeof c);//'boolean'
+    console.log(typeof d);//'undefined'
+    console.log(typeof e);//'object'
+    console.log(typeof obj);//'object'
+    console.log(typeof fun);//'function'
+    console.log(typeof array);//'object'
+
+    console.log(obj instanceof Object);//true
+    console.log(fun instanceof Function);//true
+    console.log(array instanceof Array);//true
+
+    console.log(d === undefined);//true
+    console.log(e === null);//true
+
+    const obj1 ={
+        b1:[1,'abc',console.log],
+        b2:{name:'zzm',age:'19'},
+        b3:function(){
+            return '我是一个函数'
+        },
+        b4:function(){
+            return function(){
+                return '我是b4函数中的函数'
+            }
+        }
+    }
+    console.log(window.console.log === obj1.b1[2]);//true
+    obj1.b1[2]('输出xxx')//与console.log('输出xxx')是一样的
+    console.log(obj1.b2.name);//'zzm'
+    console.log(obj1.b3());//'我是一个函数'
+    console.log(obj1.b4()());//使用函数需要在 函数名+'()' ,b4函数的返回值仍是一个函数，所以要使用obj1.b4()+'()'来调用这个嵌套的函数
+</script>

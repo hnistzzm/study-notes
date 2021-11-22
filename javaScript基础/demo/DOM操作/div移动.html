@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div移动</title>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+<script>
+    const box = document.getElementById('box')
+    let speed = 0
+    let dir = 0
+
+    setInterval(() =>{
+        switch(dir){
+            //37 左 38上 39右 40下
+            case 37:
+            box.style.left = box.offsetLeft - speed+"px"
+            break;
+            case 38:
+            box.style.top = box.offsetTop - speed+"px"
+            break;
+            case 39:
+            box.style.left = box.offsetLeft + speed+"px"
+            break;
+            case 40:
+            box.style.top = box.offsetTop + speed+"px"
+            break;
+        }
+    }, 30);
+
+
+    document.onkeydown = function(event){
+       speed = 20
+       dir = event.keyCode
+    }
+    document.onkeyup = function(event){
+        speed = 0
+    }
+</script>
+<style>
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+}
+</style>

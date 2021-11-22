@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    //es5 实现原型链继承
+
+
+    function phone(brand,price){
+        this.brand = brand
+        this.price = price
+        this.call = function(){
+            console.log("我可以打电话");
+        }
+    }
+    
+    function smartPhone(brand,price,color,size){
+        phone.call(this,brand,price)
+        this.color = color
+        this.size = size
+
+    }
+    smartPhone.prototype = new phone()
+    smartPhone.prototype.constructor = smartPhone
+
+    smartPhone.prototype.playGame =function(){
+        console.log("我可以玩游戏");
+    }
+
+    const oppo = new smartPhone("oppo",1999,'blue',1.7)
+    console.log(oppo);
+    oppo.call()
+    //es6 使用class实现类继承
+    // class phone{
+    //     constructor(brand,price){
+    //         this.brand = brand
+    //         this.price = price
+    //     }
+    //     call(){
+    //         console.log("我可以打电话");
+    //     }
+    // }
+    // class smartPhone extends phone{
+    //     constructor(brand,price,color,size){
+    //         super(brand,price)
+    //         this.color = color
+    //         this.sieze = size
+    //     }
+    //     playGame(){
+    //         console.log("我可以玩游戏");
+    //     }
+    // }
+    // const xiaomi = new smartPhone('小米',1999,'red','1.5')
+    // console.log(xiaomi);
+
+</script>

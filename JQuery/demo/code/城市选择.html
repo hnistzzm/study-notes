@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城市选择</title>
+</head>
+<body>
+    <div class="bbox">
+         <h1>城市选择</h1>
+        <div class="box1">
+            <p>北京</p>
+            <p>上海</p>
+            <p>广州</p>
+            <p>深圳</p>
+        </div>
+        <div class="btn-grounp">
+            <button id="transferAll">>></button>
+            <button id="backAll"> << </button>
+            <button id="transfer">></button>
+            <button id="back"> < </button>
+        </div>
+        <div class="box2"></div> 
+    </div>
+  
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $('#transferAll').click(function() {
+        $('.box1>p').appendTo($('.box2'))
+    })
+    $('#backAll').click(function() {
+        $('.box2>p').appendTo($('.box1'))
+    })
+    $('#transfer').click(function() {
+        $('.box1>p:last').appendTo($('.box2'))
+    })
+    $('#back').click(function() {
+        $('.box2>p:last').appendTo($('.box1'))
+    })
+</script>
+<style>
+.bbox{
+    width: 800px;
+    height: 500px;
+    display: flex;
+}
+.box1{
+    width: 200px;
+    height: 400px;
+    background-color: pink;
+    margin-right: 100px;
+}
+.box2{
+    width: 200px;
+    height: 400px;
+    background-color: pink;
+}
+</style>

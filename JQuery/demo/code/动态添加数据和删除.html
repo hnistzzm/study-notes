@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="add">添加数据</button>
+    <table>
+        <thead>
+            <tr>
+                <th>课程名称</th>
+                <th>所属学院</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+    </table>
+
+
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $(function(){
+        $('#add').click(function(){
+            $.confirm({
+                title:'对话框'
+            })
+        })
+    })
+</script>
+<style>
+
+</style>

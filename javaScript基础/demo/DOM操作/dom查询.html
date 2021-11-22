@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom查询</title>
+</head>
+<body>
+    <input class="ipt" type="text" value="张三">
+    <input class="ipt" type="text" value="李四">
+    <button id="btn">按钮</button>
+</body>
+</html>
+<script>
+
+    let btn = document.getElementById('btn')
+    let inputs = document.getElementsByTagName('input')
+    btn.onclick = function(){
+        for (let i = 0; i < inputs.length; i++) {
+            console.log(inputs[i].className);
+        }
+    }
+</script>

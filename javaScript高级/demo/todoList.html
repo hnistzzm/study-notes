@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <input type="text" id="todoInput" >
+        <div class="todoList">
+            <ul class="todo-item">
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+const todoList = []
+const todoInfo = document.getElementById("todoInput")
+const todoItem = document.getElementsByClassName("todo-item")[0]
+
+
+todoInfo.oninput = function(e){
+    console.log(todoInfo.value);
+    const todolist = document.getElementsByTagName('li')
+    if(todoInfo.value){
+       
+        console.log(todolist[0].firstChild.textContent);
+        for(let i=0;i<todolist.length;i++){
+            if((todolist[i].firstChild.textContent).indexOf(todoInfo.value)==-1){
+                todolist[i].style.display = 'none'
+            }else{
+                todolist[i].style.display = ''
+            }
+        } 
+    }
+    if(!todoInfo.value){
+        for(let i=0;i<todolist.length;i++){
+ 
+                todolist[i].style.display = ''
+            
+        } 
+    }
+  
+}
+todoInfo.onkeyup = function(e){
+    const todolist = document.getElementsByTagName('li')
+  
+    if(e.keyCode == 13){
+        for(let i=0;i<todolist.length;i++){
+            todolist[i].style.display = ''
+        } 
+        //li节点
+        const li =document.createElement('li')
+        //删除按钮
+        const del = document.createElement('button')
+        //todo信息
+        const todo = document.createTextNode(todoInfo.value)
+        //按钮文字
+        const delInfo = document.createTextNode('删除')
+        li.appendChild(todo)
+        del.appendChild(delInfo)
+        li.appendChild(del)
+        todoItem.appendChild(li)
+        todoInfo.value = ''
+
+        const btn = document.getElementsByTagName("button")[document.getElementsByTagName("button").length-1]
+        btn.onclick = function(){
+            btn.parentNode.parentNode.removeChild(li)
+        }
+    }
+
+}
+
+</script>
+<style>
+.todo-item{
+    list-style: none;
+}
+</style>

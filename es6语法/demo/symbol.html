@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // let name = Symbol()
+    // let obj = {
+    //     name:'abc',
+    //     [name]:"123",
+    // }
+    // for (const iterator in obj) {
+    //     console.log(iterator);
+    // }
+    // console.log(Object.getOwnPropertySymbols(obj));
+    // console.log(Reflect.ownKeys(obj));
+
+
+    let name =Symbol.for('abc')
+    let name1 = Symbol.for('abc') 
+    console.log(name === name1);
+</script>

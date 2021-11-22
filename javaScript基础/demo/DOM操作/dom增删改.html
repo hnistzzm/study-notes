@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom增删改</title>
+</head>
+<body>
+    <div class="box">
+        <ul class="city">
+            <li id="beijing">北京</li>
+            <li>香港</li>
+            <li>上海</li>
+        </ul>
+        <button id="addCitya">使用appendChild方法增加一个城市节点</button>
+        <button id="addCityb">使用innerHTML方法增加一个城市节点</button>
+        <button id="addCityInsert">增加一个城市节点并插入到北京节点之前</button>
+        <button id="replaceCity">增加新的城市节点并替换北京节点</button><br>
+        <button id="removeCity">删除北京节点</button>
+        
+    </div>
+</body>
+</html>
+<script>
+    //构造函数
+    function myClick(idStr,fun){
+        const btn = document.getElementById(idStr)
+        btn.onclick = fun
+    }
+    //增加一个城市节点
+    myClick("addCitya",function(){
+        const li =  document.createElement('li')
+        const cityText = document.createTextNode('广州')
+        li.appendChild(cityText)
+        const city = document.getElementsByClassName('city')
+        city[0].appendChild(li)//节点+appendChild(要插入的新子节点) ,会插入到所有子节点的末尾
+    })
+    myClick('addCityb',function(){
+        const city = document.getElementsByClassName('city')
+        city[0].innerHTML += "<li>广州</li>"
+    })
+    //增加一个城市节点并插入到北京节点之前
+    myClick("addCityInsert",function(){
+        const newli =  document.createElement('li')
+        const cityText = document.createTextNode('广州')
+        newli.appendChild(cityText)
+        const bjli = document.getElementById('beijing')
+        const city = document.getElementsByClassName('city')
+        city[0].insertBefore(newli,bjli)//节点名.insertBefore(要插入的新子节点,插入的目标旧子节点)
+    })
+    //增加新的城市节点并替换北京节点
+    myClick("replaceCity",function(){
+        const newli =  document.createElement('li')
+        const cityText = document.createTextNode('广州')
+        newli.appendChild(cityText)
+        const bjli = document.getElementById('beijing')
+        const city = document.getElementsByClassName('city')
+        city[0].replaceChild(newli,bjli)
+    })
+    //删除北京节点
+    myClick('removeCity',function(){
+        const bjli = document.getElementById('beijing')
+        const city = document.getElementsByClassName('city')
+        city[0].removeChild(bjli)
+    })
+
+</script>
+
+<style>
+    .city{
+        display: flex;
+        list-style: none;
+        text-align: center;
+    }
+    li{
+        width: 50px;
+        height: 30px;
+        background-color: aqua;
+        margin-left: 5px;
+
+    }
+</style>

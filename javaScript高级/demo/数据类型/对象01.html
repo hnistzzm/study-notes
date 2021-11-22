@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const obj = {
+        name:'tom',
+        age:15,
+        setName:function(name){
+            this.name = name
+        },
+        setAge:function(age){
+            this.age = age+1
+            console.log("函数中定义的age",age);
+        }
+    }
+    // console.log(obj.name,obj['age']);//'tom' 15
+
+    const arr = ['name','age']
+    arr.forEach(attribute => {
+        // console.log(obj.attribute);
+        console.log(obj[attribute]);
+    });
+</script>

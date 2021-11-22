@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换图片</title>
+</head>
+<body>
+    <img src="../static/image/boy.jpg" id="photo">
+    <button id="btnStart">开始</button>
+    <button id="btnEnd">结束</button>
+</body>
+</html>
+<script>
+    const photo = document.getElementById('photo')
+    const btnStart = document.getElementById('btnStart')
+    const btnEnd = document.getElementById('btnEnd')
+    const photoList = ['../static/image/boy.jpg','../static/image/handsomeboy.jpg',
+                        '../static/image/user-female.png','../static/image/user-male.png']
+                   
+    let index = 0
+    let interval
+    btnStart.onclick = function(){
+            clearInterval(interval)
+            interval =  setInterval(() => {
+            photo.src = photoList[index%photoList.length]
+            index++
+        }, 1000);
+    }
+    btnEnd.onclick = function(){
+        clearInterval(interval)
+    }
+   
+
+
+</script>

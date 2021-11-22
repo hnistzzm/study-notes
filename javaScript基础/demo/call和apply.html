@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(a,b){
+            console.log(this);
+            console.log(a,b);
+        } 
+        let obj = {
+            name:'张振明',
+            fun:fun
+        }
+        let obj2 = {
+            name:'shh'
+        }
+        fun(1,2)
+        obj.fun(1,2)
+        fun.call()
+        fun.call(obj,1,2)
+        obj.fun.call(obj2,1,2)
+        fun.apply(obj,[1,2])
+    </script>
+</body>
+</html>

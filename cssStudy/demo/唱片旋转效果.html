@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <img src="boy.jpg" alt="" width="300px" height="300px">
+    </div>
+</body>
+</html>
+<style>
+    @keyframes anim{
+         0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .box{
+        width: 300px;
+        height: 300px;
+        margin: 200px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: anim 3s linear infinite;
+    }
+</style>

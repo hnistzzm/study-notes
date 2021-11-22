@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="triangle"></div>
+        <div class="ktriangle"></div>
+    
+    
+</body>
+</html>
+<script>
+
+</script>
+<style>
+.triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid red;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid transparent;
+}
+.ktriangle{
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    transform: translate(100px,100px) rotate(45deg) 
+}
+
+</style>

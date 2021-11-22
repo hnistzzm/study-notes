@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    //1.数组的解构
+    // const F4 = ['赵本山','小沈阳','刘能','宋小宝']
+    // let [zhao,xiao,liu,song] = F4
+    // console.log(zhao);//赵本山
+    // console.log(xiao);//小沈阳
+    // console.log(liu);//刘能
+    // console.log(song);//宋小宝
+    //2.对象的解构
+    const zhao = {
+        name:'赵本山',
+        age:'不详',
+        xiaoping:function(){
+            console.log("我可以演小品");
+        }
+    }
+    let {name,age,xiaoping} = zhao
+    console.log(name);//赵本山
+    console.log(age);//不详
+    xiaoping()//我可以演小品
+</script>

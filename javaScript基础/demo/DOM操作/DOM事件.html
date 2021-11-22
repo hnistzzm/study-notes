@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
+<script>
+    const box1 = document.getElementsByClassName('box1')[0]
+    const box2 = document.getElementsByClassName('box2')[0]
+    document.onmousemove = function(e){
+        let x = e.pageX
+        let y = e.pageY
+        let X = box1.offsetLeft
+        let Y = box1.offsetTop
+        box1.style.left = x+"px"
+        box1.style.top = y+"px"
+        console.log(X,Y);
+    }
+</script>
+
+<style>
+    body{
+        height: 2000px;
+        border: 1px solid red;
+    }
+    .box1{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+    }
+</style>

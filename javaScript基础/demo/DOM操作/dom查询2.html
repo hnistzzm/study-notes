@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lists">
+        <li class="lis">A</li>
+        <li class="lis"><span>B<span>b</span></span></li>
+        <li id="C">C</li>
+        <li class="lis">D</li>
+        <li class="lis">E</li>
+    </ul>
+    <button id="btn">按钮</button>
+</body>
+</html>
+<script>
+    let btn = document.getElementById('btn')
+    btn.onclick = function(){
+        let lists = document.getElementById('lists')
+        let C = document.getElementById('C')
+        console.log(C.parentNode.innerHTML);
+        console.log(C.previousElementSibling.innerHTML);// <span>B<span>b</span></span>
+        console.log(C.previousElementSibling.innerText);//Bb
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+</head>
+<body>
+    <div class="time">
+        <p>当前的计时:</p>
+        <h1 id="nowtime">0</h1>
+        <h1 id="anowtime">0</h1>
+    </div>
+</body>
+</html>
+<script>
+    const nowtime = document.getElementById('nowtime')
+    const anowtime = document.getElementById('anowtime')
+    let s = 0
+    setInterval(()=>{
+        s++
+        nowtime.innerHTML = s
+    },1000)
+    setTimeout(()=>{
+        s++
+        anowtime.innerHTML = s
+    },1000)
+</script>
+<style>
+
+</style>

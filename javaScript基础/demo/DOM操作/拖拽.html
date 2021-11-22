@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>
+<script>
+    const box = document.getElementsByClassName('box')[0]
+    box.addEventListener('mousedown',()=>{
+        document.addEventListener('mousemove',function(){
+        const x = event.pageX
+        const y = event.pageY
+        box.style.left = x+"px"
+        box.style.top = y+"px"
+    })
+    })
+    box.addEventListener('mouseup',function(){
+        document.onmousemove = false
+        console.log(document);
+    })
+    // box.onmousedown = function(){
+    //     document.onmousemove = function(){
+    //         const x = event.pageX
+    //         const y = event.pageY
+    //         box.style.left = x+"px"
+    //         box.style.top = y+"px"
+    //     }
+    // }
+    // box.onmouseup = function(){
+    //     document.onmousemove = null
+    // }
+ 
+
+
+</script>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+    }
+</style>

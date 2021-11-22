@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">动画效果</button>
+    <div class="box">
+
+    </div>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<!-- jquery动画颜色库插件,使用animate动画修改颜色时需要此插件 -->
+<script src="./jquery.color.js"></script>
+<script>
+    $(function(){
+        $('#btn').click(function(){
+            $('.box').animate(
+                {height:'250px',opacity:'0.5',backgroundColor:'yellow'}
+            )
+
+        })
+
+    })
+</script>
+<style>
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+</style>

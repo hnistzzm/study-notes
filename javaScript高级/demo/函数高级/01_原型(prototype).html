@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Fun(){
+        
+    }
+    Fun.prototype.test = function(){
+        console.log("我是Fun函数原型中的test函数");
+    }
+
+    const fun  = new Fun()
+    fun.__proto__.test1 = function(){
+        console.log("我是实例对象中的test1函数");
+    }
+    
+    fun.test()
+    Fun.prototype.test()
+    Fun.prototype.test1()
+    console.log(fun.__proto__);
+    console.log(Fun.prototype);
+
+
+</script>

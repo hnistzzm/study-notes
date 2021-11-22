@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手风琴</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <span>标题一</span>
+            <div>我是弹出来的div</div>
+        </li>
+        <li>
+            <span>标题一</span>
+            <div>我是弹出来的div</div>
+        </li>
+        <li>
+            <span>标题一</span>
+            <div>我是弹出来的div</div>
+        </li>
+        <li>
+            <span>标题一</span>
+            <div>我是弹出来的div</div>
+        </li>
+        <li>
+            <span>标题一</span>
+            <div>我是弹出来的div</div>
+        </li>
+    </ul>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $('li').click(function(){
+        console.log($(this).children('div').parent().siblings('li'));
+        $(this).children('div').show().parent().siblings('li').children('div').hide()
+    })
+</script>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+}
+ul>li{
+    list-style: none;
+    width: 80px;
+    /* height: 25px; */
+    border: 1px solid black;
+}
+li>div{
+    height: 50px;
+    width: 80px;
+    display: none;
+}
+</style>

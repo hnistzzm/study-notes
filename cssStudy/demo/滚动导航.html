@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动导航</title>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <p class="show">首页</p>
+            <p class="click">电影</p>
+        </li>
+        <li>
+            <p class="show">首页</p>
+            <p class="click">电影</p>
+        </li>
+        <li>
+            <p class="show">首页</p>
+            <p class="click">电影</p>
+        </li>
+    </ul>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .menu{
+        width: 300px;
+        margin: 100px auto;
+    }
+    .menu>li{
+        float: left;
+        list-style: none;
+        border: 1px solid red;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+    }
+    .menu>li:hover >.show{
+        /* height: 60px; */
+        margin-top: -30px;
+        transition: 3s;
+    }
+    .show{
+        background-color: red;
+    }
+    .click{
+        background-color: yellow;
+    }
+</style>

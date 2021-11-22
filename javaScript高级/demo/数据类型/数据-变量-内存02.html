@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // const obj1 = {name:'Tom'}
+    // const obj2 = obj1
+    // obj2.age = 14
+    // obj2.name ='Bob'
+    // console.log(obj1);//{name: 'Bob', age: 14}
+    // function fun(obj){
+    //     obj.name = 'Alice'
+    // }
+    // fun(obj1)
+    // console.log(obj1);//{name: 'Alice', age: 14}
+
+    let obj1 = {name:'Tom'}
+    let obj2 = obj1
+    function fun(obj){
+        obj={name:'Alice'}
+    }
+    obj2 = {name:'Bob'}
+    fun(obj1)
+    console.log(obj1);//{name: 'Tom'}
+
+</script>

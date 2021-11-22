@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+</body>
+</html>
+<script>
+    var btn = document.getElementsByTagName('button')
+    
+    // for(var i=0;i<btn.length;i++){
+    //     btn[i].onclick = function(){
+    //         alert(`第${i}个按钮`)
+    //     }
+    // }
+
+    // for(var i=0;i<btn.length;i++){
+    //    (function(i){
+    //        btn[i].onclick = function(){
+    //         alert(`第${i+1}个按钮`)
+    //        }
+    //    })(i)
+    // }
+    function fn(){}
+    var fn1 = function(){}
+    console.log(fn1.prototype);
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">添加数据</button>
+    <table>
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123</td>
+                <td>123</td>
+                <td><a href="#" class="delete">delete</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $(function(){
+        $('#btn').click(function(){
+            $('tbody').append(`<tr> <td>123</td>  <td>123</td> <td><a href='#' class='delete'>delete</a></td> </tr>`)
+            bindListener()
+
+        })
+        $('.delete').click(function(){
+            console.log( $(this).parent());
+            $(this).parent().parent('tr').remove()
+        })
+        function bindListener(){
+            $("a").unbind().click(function(){
+                $(this).parent().parent('tr').remove()
+            })
+        }
+    })
+
+</script>
+<style>
+
+</style>

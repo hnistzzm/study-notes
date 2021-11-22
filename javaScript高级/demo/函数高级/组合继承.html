@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Person(name,age){
+        this.name = name
+        this.age = age
+    }
+    Person.prototype.setName =function(name){
+        this.name = name
+    }
+    function Student(name,age,price){
+        Person.call(this,name,age)
+        this.price = price
+    }
+    Student.prototype = new Person()
+    Student.prototype.constructor = Student
+    var s = new Student('tom',15,14000)
+    s.setName('bob')
+    console.log(s.name);
+</script>

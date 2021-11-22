@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <button id="addClass">添加class</button>
+    <button id="removeClass">移除class</button>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $(function(){
+        $('#addClass').click(function(){
+            $(".box").toggleClass('fontSize20')
+        })
+        // $('#removeClass').click(function(){
+        //     $(".box").removeClass('fontSize20')
+        // })
+        
+
+
+    })
+</script>
+<style>
+.box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
+.fontSize20{
+    background-color: red;
+}
+</style>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="odd">奇数行变色</button>
+    <button id="even">偶数行变色</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+    $('#odd').click(function(){
+       $('div:odd').css({backgroundColor:'red'}) 
+    })
+    $('#even').click(function(){
+       $('div:even').css({backgroundColor:'blue'}) 
+    })
+    
+</script>
+<style>
+    div{
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+</style>
