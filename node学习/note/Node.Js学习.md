@@ -425,3 +425,282 @@ console.log(myURL.href);
   
 
 ## 7.模块系统
+
+### 1.模块的导入与导出
+
+**导入**:`require(xxx.js)`
+
+**导出:**
+
+- `exports`
+
+  ```javascript
+  exports.a = 1
+  exports.b = 2
+  ```
+
+  
+
+- `module.exports`
+
+  ```javascript
+  module.exports.a = 1
+  module.exports = {a:1,b:2}
+  ```
+
+区别:module.exports可以直接复制,例如`module.exports=1`,而exports不能直接赋值
+
+```javascript
+module.exports = 1//right
+exports = 1//err
+```
+
+### 2.exports与module.exports的区别
+
+在模块导入导出的过程中,node底层为每个js文件都创建了一个名为**module**的**对象**，module对象中有一个含有一个名为exports的成员变量
+
+```javascript
+module:{
+    exports:{},
+    ....
+}
+```
+
+并且在每个js文件末尾,node都为我们添加了以下代码
+
+```javascript
+return module.exports
+```
+
+每当我们通过require导入模块时,上面的语句就会执行,**所以我们导入的模块是其实就是module.exports对象**
+
+`exports`与`module.exports`**都指向同一个地址值**
+
+```javascript
+console.log(exports === module.exports)//true
+```
+
+export是对module.exports的引用,即
+
+```javascript
+var exports = module.exports
+```
+
+所以，exports和module.exports是等价的,为了减少代码的冗余,**我们可以使用exports代替module.exports**
+
+并且两者可以同时使用，例如
+
+```javascript
+module.exports.a = 1
+exports.b = 2
+```
+
+当我们引入上述模块时,会获得`{a:1,b:2}`
+
+错误导出示例:
+
+```javascript
+module.exports.a=1
+exports.b=2
+exports={}
+exports.c=3
+```
+
+当我们引入上述模块时,我们拿到的对象为`{a:1,b:2}`
+
+**原因:**程序执行`exports={}`这段代码时,exports的指向已经发生了改变,此时exports与module.exports已经不再指向同一个对象,所以之后对exports的任何操作都无法改变module.exports所指向的值
+
+完整示例:
+
+foo.js
+
+```javascript
+var test = require("./main.js")
+console.log(test.add(1,2))//3
+console.log(test.obj.a)//1
+```
+
+main.js
+
+```javascript
+function add(x,y)
+{
+    return x+y
+}
+let obj = {
+    a:1,
+    b:2
+}
+/*方式一*/
+exports.add = add//将add函数赋值给exports.add
+exports.obj = obj
+/*方式二*/
+module.exports = {add,obj}
+```
+
+![image-20211122181326774](Node.Js学习.assets/image-20211122181326774.png)
+
+### 3.require方法加载规则
+
+当我们使用require方法导入模块时,node会优先从缓存中加载模块,举例
+
+a.js
+
+```javascript
+require('./b.js')
+require('./c.js')
+```
+
+b.js
+
+```javascript
+require('./c.js')
+console.log("b模块被加载了")
+```
+
+c.js
+
+```javascript
+console.log("c模块被加载了")
+```
+
+当我们执行a.js时，控制台的输出情况是
+
+```javascript
+b模块被加载了
+c模块被加载了
+```
+
+`原因`:当我们执行b.js时,引入了c.js模块,此时c模块已经被存入缓存中,当我们在a.js中再次引入c.js时,node直接从缓存中读取c.js，故而不会读取c.js中的代码
+
+### 4.es6中的模块导入方法与node中的区别
+
+node中的导入导出方式是:
+
+导入:**require**
+
+`require('./xxx')`
+
+```javascript
+var add = require('./main')
+console.log(add.add(1,2));
+console.log(add.obj.a);
+```
+
+
+
+导出:**exports**  **module.exports**
+
+- `export.a=1`
+
+- `module.exports.a=1`
+
+  ```javascript
+  
+  function add(x,y){
+      return x+y
+  }
+  let obj = {
+      a:1,
+      b:2
+  }
+  /*方式一*/
+  exports.add = add//将add函数赋值给exports.add
+  exports.obj = obj
+  /*方式二*/
+  module.exports = {add,obj}
+  ```
+
+  
+
+es6中的导入导出方式是
+
+导入:
+
+- 通用导入方式
+
+  ` import * as xx(修改引用名) from ‘xxx’(要引入的模块的地址)`
+
+  ```javascript
+  import * as m1 from './js/m1.js'
+  console.log(m1.a)
+  m1.fun()
+  import * as m3 from './js/m3.js'
+  console.log(m3);
+  console.log(m3.default.school);
+  ```
+
+  
+
+- 解构赋值导入方式
+
+  `import {a,b}(es6中解构赋值的形式获取模块暴露的变量) from ’xxx‘(要引入的模块的地址) `
+
+  ```javascript
+  	import {a,fun} from './js/m1.js'
+      console.log(a);
+      import {school,getSchool} from './js/m2.js'
+      console.log(school);
+      import {default as m3} from './js/m3.js'//将默认暴露的default对象用变量m3来接收
+      m3.change()
+  ```
+
+  
+
+- 针对默认暴露的导入方式
+
+  `针对默认暴露 不需要像通用导入和解构赋值一样使用default.属性来调用`
+
+  ```javascript
+     import m3 from './js/m3.js'
+      console.log(m3);
+      console.log(m3.school)
+      m3.change()
+  ```
+
+  
+
+导出:
+
+- 分别暴露
+
+  ```javascript
+  export const a = 1
+  export function fun(){
+      console.log("我是分别暴露的函数");
+  }
+  ```
+
+  
+
+- 统一暴露
+
+  ```javascript
+  let school = '朝阳小学'
+  function getSchool(){
+      console.log(school);
+  }
+  export {school,getSchool}
+  ```
+
+- 默认暴露
+
+  ```javascript
+  export default {
+      school:'大哥大',
+      change:function(){
+          console.log("我们可以改变世界!");
+      }
+  }
+  ```
+
+  
+
+**区别**：
+
+对于node中的模块系统，在模块导入导出的过程中,node底层为每个js文件都创建了一个名为**module**的**对象**，module对象中有一个含有一个名为exports的成员变量
+
+在导出模块时,需要往exports对象中添加需要导出的属性和方法
+
+对于es6中的模块方法,我们可以通过import来导入模块,通过export和export default来导出模块,并可以使用解构赋值等新特性来使得导入导出更加便捷
+

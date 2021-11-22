@@ -2,5 +2,10 @@
 function add(x,y){
     return x+y
 }
-// export.add = add
-module.exports = add
+let obj = {
+    a:1,
+    b:2
+}
+// exports.add = add
+// exports.obj = obj
+module.exports = {add,obj}
