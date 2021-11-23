@@ -1,0 +1,1 @@
+console.log("a模块的index被加载了");
