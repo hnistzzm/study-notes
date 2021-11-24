@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 圆锥渐变 -->
+    <div class="box color1"></div>
+    <!-- 线性渐变 -->
+    <div class="line color2"></div>
+    <!-- 径向渐变 -->
+    <div class="line color3"></div>
+</body>
+</html>
+<style>
+    .line{
+        width: 200px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    .color1{
+        background: conic-gradient(red,orange,yellow,green,teal,blue,purple,red);
+    }
+    .color2{
+        background:linear-gradient(red,orange,yellow,green,teal,blue,purple,red) ;
+    }
+    .color3{
+        background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+    }
+</style>

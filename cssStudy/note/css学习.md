@@ -1629,12 +1629,219 @@ html标签的font-size改变
 
 ![image-20210920154704252](./css学习.assets/image-20210920154704252.png)
 
-first-child :选取属于其父元素的首个子元素的指定选择器
+**first-child** :选取属于其父元素的首个子元素的指定选择器
 
-:last-child :选取属于其父元素的最后一个子元素的指定选择器
+**:last-child** :选取属于其父元素的最后一个子元素的指定选择器
 
-:nth-child(n) ： 匹配属于其父元素的第 N 个子元素，不论元素的类型
+**:nth-child(n)** ： 匹配属于其父元素的第 N 个子元素，不论元素的类型
 
-:nth-last-child(n) ：选择器匹配属于其元素的第 N 个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数。 n 可以是数字、关键词或公式
-------------------------------------------------
+**:nth-last-child(n)** ：选择器匹配属于其元素的第 N 个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数。 n 可以是数字、关键词或公式
+
+## 12.css3渐变
+
+### 1.线性渐变
+
+为了创建一个线性渐变，你必须至少定义两种颜色节点。颜色节点即你想要呈现平稳过渡的颜色。同时，你也可以设置一个起点和一个方向（或一个角度）。
+
+**语法**:`background-image: linear-gradient(direction, color-stop1, color-stop2, ...);`
+
+direction:起点或方向
+
+**默认情况下**,线性渐变的方向时**从上到下**的
+
+```
+background-image: background:linear-gradient(red,orange,yellow,green,teal,blue,purple,red) ;
+```
+
+![image-20211124092621158](css学习.assets/image-20211124092621158.png)
+
+我们可以自定义方向,方式可以是css给定的属性，也可以是角度值deg
+
+**从左到右**
+
+```
+background-image: linear-gradient(to right, red , yellow);
+```
+
+**对角**
+
+```
+background-image: linear-gradient(to bottom right, red, yellow);
+```
+
+**使用角度值deg**
+
+角度是指水平线和渐变线之间的角度，逆时针方向计算。换句话说，0deg 将创建一个从下到上的渐变，90deg 将创建一个从左到右的渐变。
+
+```
+background-image: linear-gradient(angle, color-stop1, color-stop2);
+```
+
+**使用透明度**
+
+CSS3 渐变也支持透明度（transparent），可用于创建减弱变淡的效果。
+
+下面的实例演示了从左边开始的线性渐变。起点是完全透明，慢慢过渡到完全不透明的红色：
+
+```
+background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+```
+
+**重复的线性渐变**
+
+repeating-linear-gradient() 函数用于重复线性渐变：
+
+例子
+
+```
+background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+```
+
+### 2.径向渐变
+
+**径向渐变由它的中心定义。**
+
+为了创建一个径向渐变，你也必须至少定义两种颜色节点。颜色节点即你想要呈现平稳过渡的颜色。同时，你也可以指定渐变的中心、形状（圆形或椭圆形）、大小。默认情况下，渐变的中心是 center（表示在中心点），渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）。
+
+```
+background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+```
+
+**默认情况**下,径向渐变的颜色节点是**均匀分布**的
+
+```
+background-image:radial-gradient(red,yellow,green)
+```
+
+![image-20211124093259256](css学习.assets/image-20211124093259256.png)
+
+也可以**自定义**径向渐变的颜色分布
+
+```
+background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+```
+
+![image-20211124093437051](css学习.assets/image-20211124093437051.png)
+
+我们可以给渐变设置形状
+
+shape 参数定义了形状。它可以是值 **circle** 或 **ellipse**。其中，circle 表示**圆形**，ellipse 表示**椭圆形**。**默认值是ellipse**
+
+```
+background-image: radial-gradient(circle, red, yellow, green);
+```
+
+**不同尺寸大小关键字的使用**
+
+size 参数定义了渐变的大小。它可以是以下四个值：
+
+- **closest-side**
+- **farthest-side**
+- **closest-corner**
+- **farthest-corner**
+
+```
+background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+```
+
+**重复的径向渐变**
+
+repeating-radial-gradient() 函数用于重复径向渐变：
+
+```
+background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+```
+
+### 3.圆锥渐变
+
+**圆锥渐变的起始点是图形中心，渐变方向以顺时针方向绕中心旋转实现渐变效果**
+
+**语法**:`background-image: conic-gradient(from angle at position, start-color, ..., last-color )`
+
+**第一个参数**
+
+`第一个参数可以为空,默认的角度为0deg,锥心为形状的中心点`
+
+**from angle** ：起始的角度，可选，默认为从上到下
+
+**position** ：圆锥锥点的位置
+
+**第二个参数**
+
+**from angle** ：起始的角度，可选，默认为从上到下
+
+**position** ：圆锥锥点的位置
+
+---
+
+
+
+我们可以**改变起始的角度**，如
+
+`background-image: conic-gradient(from -90deg, #69f, #fd44ff);`
+
+![image-20211124161950340](css学习.assets/image-20211124161950340.png)
+
+**改变锥心位置**：
+
+`background-image: conic-gradient(from -90deg at 80px120px, #69f, #fd44ff)`
+
+![image-20211124162026269](css学习.assets/image-20211124162026269.png)
+
+---
+
+
+
+与线性、径向渐变一样，可以设颜色及渐变的起始位置。位置接受的参数有百分比和角度。例如：
+
+**百分比方式**:
+
+`background-image: conic-gradient(#69f 10%, #fd44ff10%);`
+
+**角度方式**:
+
+`background-image: conic-gradient(#69f 36deg, #fd44ff 36deg);`
+
+![image-20211124162109942](css学习.assets/image-20211124162109942.png)
+
+重复圆锥渐变
+
+与线性、径向渐变一样，圆锥渐变也有重复的属性。
+
+`background-image: repeating-conic-gradient(#69f 0 36deg, #fd44ff 36deg 72deg)`
+
+### 4.示例
+
+```javascript
+ 	<!-- 圆锥渐变 -->
+    <div class="box color1"></div>
+    <!-- 线性渐变 -->
+    <div class="line color2"></div>
+    <!-- 径向渐变 -->
+    <div class="line color3"></div>
+```
+
+```css
+    .line{
+        width: 200px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    .color1{
+        background: conic-gradient(red,orange,yellow,green,teal,blue,purple,red);
+    }
+    .color2{
+        background:linear-gradient(red,orange,yellow,green,teal,blue,purple,red) ;
+    }
+    .color3{
+        background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+    }
+```
+
+![image-20211124162419610](css学习.assets/image-20211124162419610.png)
 
