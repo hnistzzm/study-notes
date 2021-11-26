@@ -704,7 +704,7 @@ es6中的导入导出方式是
 
 对于es6中的模块方法,我们可以通过import来导入模块,通过export和export default来导出模块,并可以使用解构赋值等新特性来使得导入导出更加便捷
 
-## 5.node中的模块加载规则
+## 8.node中的模块加载规则
 
 #### 1.**模块加载顺序**
 
@@ -730,7 +730,7 @@ node在执行程序时,会将引入的模块存入缓存中，方便下次引用
 node为我们准备了一些核心模块,例如文件模块`fs`,网络模块`http`等,当我们引入模块时,node会优先加载这些文件
 
 ```javascript
-r
+require('fs')
 ```
 
 
@@ -840,3 +840,111 @@ package.json
 
 最终成功引入模板，也就是index.js
 
+## 9.npm操作
+
+`npm`全名**node package manager**，即node包管理器
+
+要了解npm,我们要先了解npm中最重要的一个文件，即`package.json`(**包说明文件**)
+
+### 1.package.json
+
+我们建议每个项目都要有一个`package.json`文件,他能对我们项目的基本信息进行描述,并且当我们使用npm进行一系列操作时都需要用到`package.json`
+
+怎么生成`package.json`文件?
+
+指令:`npm init`
+
+当我们在控制台输入以上指令,控制台就会根据我们的需求生成含有相应内容的`package.json`文件
+
+输入指令:npm init，根据我们的需求输入信息
+
+![image-20211125165103245](Node.Js学习.assets/image-20211125165103245.png)
+
+输入结束后,系统会自动创建`package.json`文件,内容就是我们所填入的信息
+
+**解释**:
+
+`entry point`:**入口文件**,即当我们运行项目时,系统会执行entry point所指定的入口文件
+
+**注意**:如果我们不指定入口文件,系统会默认将index.js文件作为我们项目的入口文件
+
+### 2.npm命令
+
+- `npm init`：生成package.json文件
+  - npm init -y:跳过向导,直接生成默认的package.json文件
+
+- `npm install xxx`:下载一个名为xxx的第三方依赖库,可以简写为`npm i xxx`
+
+```shell
+# npm install jquery
+```
+
+- `npm install xxx --save`:下载一个名为xxx的第三方依赖库并将依赖信息保存在`package.json`文件中,简写:`-S`
+
+```shell
+# npm install jquery --save
+```
+
+使用 --save指令有什么作用？
+
+在下载文件时使用--save指令会在下载文件的同时将文件信息存储在package.json文件中,例如
+
+我们执行以下命令
+
+```shell
+# npm install jquery --save
+```
+
+可以发现`package.json`的dependencies中增加了jquery的依赖信息
+
+![image-20211125170304989](Node.Js学习.assets/image-20211125170304989.png)
+
+有了这个依赖信息,当我们不小心将依赖包删除或者因为一些操作使得依赖包出现问题时,我们可以很轻松的还原这个依赖包
+
+- `npm install`:一次性把`package.json`中dependencies保存的依赖项全部安装
+
+这就印证了上方`--save`的必要性
+
+例如我现在将node_modules删除,然后执行`npm install`指令,会发现npm直接帮我们下载了我们原来的依赖包,也就是说:
+
+**只要我们的`package.json`中存在依赖信息，执行`npm install`指令就能帮我们重新下载依赖信息对应的依赖包**
+
+![image-20211125170847068](Node.Js学习.assets/image-20211125170847068.png)
+
+- `npm uninstall xxx`：卸载名为xxx的依赖库,packge.json中的依赖信息依然保存
+  - `npm uninstall xxx --save`:卸载依赖库的同时将依赖信息也删除
+
+- `npm -v`:查看npm版本号
+- `npm install --global npm`：将npm版本号升级到最新版本
+
+### 3.下载淘宝镜像
+
+npm服务器在国外,国内下载速度很慢，为了解决此问题,淘宝为npm做了一个镜像服务器cnpm
+
+**安装指令：**
+
+```shell
+# npm install --global cnpm
+```
+
+下载完成后,就可以使用cnpm代替npm了,操作方式与npm 一样
+
+
+
+如果不想安装cnpm又想使用淘宝的服务器来下载
+
+你可以在每个npm指令后加入这段话：`--registry=http://registry.npm.taobao.org`
+
+```shell
+# npm install xxx --registry=http://registry.npm.taobao.org
+```
+
+直接将这个选项加入配置文件中,一劳永逸
+
+```shell
+# npm config srt registry http://registry.npm.taobao.org
+```
+
+配置之后,你所有的npm操作都会默认通过淘宝的服务器来下载
+
+加油
