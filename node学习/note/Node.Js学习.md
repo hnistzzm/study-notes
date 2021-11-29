@@ -973,3 +973,192 @@ nodemon app.js
 =======
 加油加油呀
 >>>>>>> 2aabda34433c9f23b7c7af61a02873b77f02e6ba
+
+## 11.express框架
+
+### 1.安装以及基本使用
+
+安装:`npm install express --save`
+
+引用:`var express = require('express')`
+
+```javascript
+var express = require('express')
+var app = express()
+app.listen(3000,function(){
+    ...
+})
+```
+
+### 2.express中的静态资源服务
+
+在express中设置静态资源服务,**可以使得客户端可以通过url请求到后台的静态资源**
+
+`app.use('url请求路径',express.static('存放静态资源的文件夹路径'))`
+
+```javascript
+//如果不设置请求路径,则用户url请求中也不能带有’public‘
+app.use(express.static('public'))
+//当用户请求url以public开头时,后台从public文件夹中加载对应资源
+app.use('/public',express.static('public'))
+//当用户请求url以public开头时,后台从public文件夹中加载对应资源
+app.use('/static',express.static('static'))
+
+app.use('/static',express.static(path.join(__dirname,'static')))
+```
+
+
+
+**示例:**
+
+**客户端请求后台的静态资源**
+
+假设静态资源存放在文件夹public中
+
+```javascript
+var express = require('express')
+var app = express()
+app.use('/public',express.static('./public'))//设置静态资源请求和获取方式
+```
+
+**客户端请求静态资源**
+
+请求后端public文件夹下的comment.json文件
+
+![image-20211129192722727](Node.Js学习.assets/image-20211129192722727.png)
+
+**如果不设置请求路径**
+
+```javascript
+var express = require('express')
+var app = express()
+app.use(express.static('./public'))//设置静态资源请求和获取方式
+```
+
+请求方式为
+
+![image-20211129192910258](Node.Js学习.assets/image-20211129192910258.png)
+
+### 3.express中使用模板引擎
+
+安装
+
+```javascript
+npm install art-template --save
+npm install express-art-template --save
+```
+
+配置：
+
+```javascript
+app.engine('html',require('express-art-template'))
+```
+
+使用:
+
+```javascript
+app.get('/',function(req,res){
+    res.render('xxx.html')
+})
+```
+
+注意:express会默认去目录views中寻找相应的html文件
+
+如果希望修改默认的`views`视图渲染存储目录，你可以
+
+```javascript
+//注意第一个参数views不能改变
+app.set('views',目录路径)
+```
+
+实例:
+
+app.js
+
+```javascript
+var express = require('express')
+var app = express()
+app.engine('html',require('express-art-template'))
+app.get('/post',function(req,res){
+    res.render('hello.html',{
+        title:'你好世界'
+    })
+})
+```
+
+hello.html(html文档声明及结构省略)
+
+```html
+<h1>{{title}}</h1>
+```
+
+![image-20211129194127178](Node.Js学习.assets/image-20211129194127178.png)
+
+### 4.express中通过中间件获取post请求体数据
+
+在express中没有内置的获取表单post请求体的api，这里我们需要使用中间件`body-parser`来获取post请求体
+
+安装: `npm install body-parser --save`
+
+配置:
+
+```javascript
+var express = require('express')
+var bodyParser = require('body-parser')
+
+var app = express()
+//加入这个配置后就可以直接通过req.body获取表单post请求中的数据
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+app.use(function (req, res) {
+  res.setHeader('Content-Type', 'text/plain')
+  res.write('you posted:\n')
+  res.end(JSON.stringify(req.body, null, 2))
+})
+```
+
+示例:
+
+post.html
+
+```javascript
+<form action="/post" method="post">
+        <input type="text"  name="name">
+        <input type="text"  name="message">
+      <button type="submit">发表</button>
+</form>
+```
+
+app.js
+
+```javascript
+var express = require('express')
+var bodyParser = require('body-parser')
+
+var app = express()
+//加入这个配置后就可以直接通过req.body获取表单post请求中的数据
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+app.post('/post',function(req,res){
+    console.log(req.body)
+})
+```
+
+### 5.express获取get请求参数
+
+获取get参数不需要中间件，直接调用`req.query`即可获取
+
+```javascript
+app.get('/get',function(req,res){
+    console.log(req.query)
+})
+```
+
