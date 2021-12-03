@@ -1,4 +1,4 @@
-# Node.Js学习
+# 5Node.Js学习
 
 ## 1.对文件的各种操作
 
@@ -567,8 +567,8 @@ console.log("c模块被加载了")
 当我们执行a.js时，控制台的输出情况是
 
 ```javascript
-b模块被加载了
 c模块被加载了
+b模块被加载了
 ```
 
 `原因`:当我们执行b.js时,引入了c.js模块,此时c模块已经被存入缓存中,当我们在a.js中再次引入c.js时,node直接从缓存中读取c.js，故而不会读取c.js中的代码
@@ -1161,4 +1161,26 @@ app.get('/get',function(req,res){
     console.log(req.query)
 })
 ```
+
+### 6.crud案例
+
+接下来我们实现一个**学生信息增删改查**的案例
+
+#### **1.功能:**
+
+- 显示学生信息
+- 添加学生信息
+- 删除学生信息
+- 修改学生信息
+
+#### 2.路由设计
+
+| 请求方法 | 请求路径         | get参数 | post参数                | 备注             |
+| -------- | ---------------- | ------- | ----------------------- | ---------------- |
+| GET      | /students        |         |                         | 渲染首页         |
+| GET      | /students/new    |         |                         | 渲染添加页面     |
+| POST     | /students/new    |         | name,age,gender,hobbies | 处理添加学生请求 |
+| GET      | /students/edit   | id      |                         | 渲染编辑页面     |
+| POST     | /students/edit   |         | id,age,gender,hobbies   | 处理编辑学生请求 |
+| GET      | /students/delete | id      |                         | 处理删除请求     |
 
