@@ -1406,3 +1406,7 @@ async getData(){
 }
 ```
 
+## 18.find方法
+
+find() 方法返回的结果内存指向依然是 memoList 所指向的内存地址
+

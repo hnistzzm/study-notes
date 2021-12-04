@@ -1447,3 +1447,5 @@ const nowtime = document.getElementById('nowtime')
 
 ![GIF 2021-10-3 11-14-53](./JS基础学习笔记.assets/GIF 2021-10-3 11-14-53.gif)
 
+
+
