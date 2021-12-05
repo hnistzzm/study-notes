@@ -51,6 +51,8 @@ router.get('/students/edit',function(req,res){
 
 router.post('/students/edit',function(req,res){
     const editStudentInfo = req.body
+    editStudentInfo.id = Number(editStudentInfo.id)
+    console.log("req.body",req.body);
     Students.edit(editStudentInfo,function(err){
         if(err){
             errlog.output(err)

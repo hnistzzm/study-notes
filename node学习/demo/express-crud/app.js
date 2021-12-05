@@ -15,6 +15,6 @@ app.use('/node_modules/', express.static('./node_modules'))
 
 app.use(router)
 
-app.listen('3001', function () {
+app.listen('3002', function () {
 	console.log('服务器启动成功了...')
 })
