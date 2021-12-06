@@ -22,7 +22,6 @@ exports.getStudent = function(studentId,callback){
         let stu = students.find((item)=>{
             return item.id === studentId
         })
-        console.log("stu",stu);
         let fileData =JSON.stringify({
             students:students
         }) 
@@ -82,5 +81,24 @@ exports.edit = function(student,callback){
         })
     })
 
+
+}
+exports.delete = function(studentId,callback){
+    fs.readFile(dbPath,'utf-8',function(err,data){
+        if(err) return callback(err)
+        let students = JSON.parse(data).students
+        students.forEach((item,index)=>{
+            if(item.id === studentId){
+                students.splice(index,1)
+            }
+        })
+        let fileData = JSON.stringify({
+            students:students
+        })
+        fs.writeFile(dbPath,fileData,function(err){
+            if(err) return callback(err)
+            callback(null)
+        })
+    })
 
 }

@@ -63,7 +63,7 @@ router.post('/students/edit',function(req,res){
 })
 
 router.get('/students/delete',function(req,res){
-    res.send('ok')
+    console.log("即将被删除的学生的id为",req.query.id);
 })
 
 module.exports = router
