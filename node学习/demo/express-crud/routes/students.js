@@ -4,7 +4,7 @@
 */
 var fs = require('fs')
 const dbPath = './db.json'
-/* 查找学生信息 */
+/* 获取所有学生信息API */
 exports.find = function(callback){
     fs.readFile(dbPath,'utf-8',function(err,data){
         if(err){
@@ -13,6 +13,7 @@ exports.find = function(callback){
         callback(null,JSON.parse(data).students)
     })  
 }
+/*获取指定学生信息API*/
 exports.getStudent = function(studentId,callback){
     fs.readFile(dbPath,'utf-8',function(err,data){
         if(err){
@@ -34,6 +35,7 @@ exports.getStudent = function(studentId,callback){
     })  
 
 }
+/*添加学生信息API*/
 exports.add = function(student,callback){
     fs.readFile(dbPath,'utf-8',function(err,data){
         if(err) return callback(err)
@@ -55,6 +57,7 @@ exports.add = function(student,callback){
         
     })  
 }
+/*编辑学生信息API*/
 exports.edit = function(student,callback){
     fs.readFile(dbPath,'utf-8',function(err,data){
         if(err) return callback(err)
@@ -83,15 +86,19 @@ exports.edit = function(student,callback){
 
 
 }
+/*删除学生信息API*/
 exports.delete = function(studentId,callback){
+    console.log("进入deleteAPI了");
     fs.readFile(dbPath,'utf-8',function(err,data){
         if(err) return callback(err)
         let students = JSON.parse(data).students
+        console.log("studentsbefore",students);
         students.forEach((item,index)=>{
             if(item.id === studentId){
                 students.splice(index,1)
             }
         })
+        console.log("studentsafter",students);
         let fileData = JSON.stringify({
             students:students
         })

@@ -63,7 +63,15 @@ router.post('/students/edit',function(req,res){
 })
 
 router.get('/students/delete',function(req,res){
-    console.log("即将被删除的学生的id为",req.query.id);
+    const studentId = Number(req.query.id) 
+    console.log("进入delete接口了");
+    Students.delete(studentId,function(err){
+        if(err){
+            errlog.output(err)
+            return res.status(500).send('server err')
+        }
+        res.redirect('/students')
+    })
 })
 
 module.exports = router

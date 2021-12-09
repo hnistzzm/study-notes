@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="input1">
+        <input type="checkbox" id="input1">
+    </label>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    }
+
+    label{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        background-color: red;
+    }
+    label input{
+        position: relative;
+        z-index: 1;
+    }
+</style>

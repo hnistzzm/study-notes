@@ -1184,3 +1184,61 @@ app.get('/get',function(req,res){
 | POST     | /students/edit   |         | id,age,gender,hobbies   | 处理编辑学生请求 |
 | GET      | /students/delete | id      |                         | 处理删除请求     |
 
+#### 3.提取路由模块
+
+router.js
+
+```javascript
+/* 
+    moduleIntro:项目路由组件
+    information:此模块处理客户端发送的请求,根据不同的请求方法+请求路径设置具体的请求函数
+*/
+var express = require('express')
+var router = express.Router()
+
+var Students = require('./students')
+var errlog = require('../public/js/errlog')
+
+router.get('/students',function(req,res){
+   
+})
+
+router.get('/students/new',function(req,res){
+  
+})
+
+router.post('/students/new',function(req,res){
+   
+})
+
+router.get('/students/edit',function(req,res){
+    
+    
+})
+
+router.post('/students/edit',function(req,res){
+  
+})
+
+router.get('/students/delete',function(req,res){
+    
+})
+
+module.exports = router
+```
+
+#### 4.编写步骤
+
+- 处理模板
+- 配置开放静态资源
+- 配置模板引擎
+- 配置路由
+- 路由设计
+- 提取路由模块
+- 封装业务API
+
+---
+
+
+
+项目源码在demo中的express-crud中

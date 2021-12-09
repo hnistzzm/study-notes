@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转拦截vue版</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="wrap" :style = "box? {backgroundColor:'rgba(100, 100, 100, 0.5)'} : ''">
+        <a  href="https://www.baidu.com" @click.prevent = fun1 >点我跳转</a>
+
+        <div class="box" v-show="box">
+            <span>确定要跳转吗吗</span>
+            <button @click =  goto>确定</button>
+        </div>
+
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+    const vm = new Vue({
+        el:'#wrap',
+        data() {
+            return {
+                box:false
+            }
+        },
+        methods: {
+            fun1(){
+                this.box = true
+               
+            },
+            goto(){
+                console.log("goto");
+                window.location.assign('https://www.baidu.com')
+            }
+        },
+    })
+
+</script>
+<style scoped >
+      *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        height: 100%;
+    }
+    #wrap{
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+</style>

@@ -1845,3 +1845,40 @@ background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
 
 ![image-20211124162419610](css学习.assets/image-20211124162419610.png)
 
+## 13.label
+
+带有两个输入字段和相关标记的简单 HTML 表单：
+
+```
+<form>
+  <label for="male">Male</label>
+  <input type="radio" name="sex" id="male" />
+  <br />
+  <label for="female">Female</label>
+  <input type="radio" name="sex" id="female" />
+</form>
+```
+
+**注释**：**"for" 属性可把 label 绑定到另外一个元素**。请把 "for" 属性的值设置为相关元素的 id 属性的值。
+
+#### 定义和用法
+
+<label> 标签为 input 元素定义标注（标记）。
+
+label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。**如果您在 label 元素内点击文本，就会触发此控件**。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。
+
+<label> 标签的 for 属性应当与相关元素的 id 属性相同。
+
+#### 示例
+
+```html
+<label for="input1">
+    <input id="input1"></input>
+</label>
+```
+
+当我们点击label区域时,浏览器会将焦点聚集在id为**input1**的输入框中
+
+如下动图 当我们点击**非复选框框的红色label区域**时,复选框仍然选中
+
+![GIF 2021-12-9 18-03-54](css学习.assets/GIF 2021-12-9 18-03-54.gif)
