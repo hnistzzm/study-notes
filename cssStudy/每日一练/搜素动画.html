@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="start()">重新开始</button>
+    <div class="wrap">
+        <input type="text" id="search">
+        <div id="searchtag" onkeydown="search">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./jquery-3.5.1.js"></script>
+<script>
+
+var start = function(){
+    $('.tagline').remove()
+}
+
+var inputText=document.querySelector("#search");
+inputText.addEventListener("keyup",function(e){
+     
+    if(e.keyCode === 13){
+        console.log(e.keyCode);
+        let height = 800
+        
+            var tagInter =setInterval( () => {
+
+                var tagline = $('<div class="tagline"></div>')
+
+                tagline.css({"height":"30px","width":"90%","boder":"10px solid red","position":"absolute",
+                              "top":height+"px","display":"flex","justifyContent":"center"  })
+                $('#searchtag').append(tagline)
+
+
+
+                height-=30
+                for(let i = 0;i<Math.floor(Math.random()*(30-15))+15 ;i++){
+                    
+                    var tag = $('<span></span>')
+                    tag.css({
+                        'height': "25px",
+                        'width':  "30px",
+                        'backgroundColor':'blue',
+                        'marginRight':'5px',
+                        })
+                    tagline.append(tag).hide().fadeIn(Math.floor(Math.random()*(1000))+100)
+                }
+
+                  
+               
+
+                if(height<=0){
+                    clearInterval(tagInter)
+                }
+            }, 30);
+        
+            
+            
+        
+            
+         
+           
+        }
+            
+        
+
+    
+})
+</script>
+<style>
+body{
+    min-height: 100vh;
+    background-color: black;
+    text-align: center;
+}
+.wrap{
+    height: 100%;
+    width: 100%;
+
+}
+#searchtag{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+</style>
