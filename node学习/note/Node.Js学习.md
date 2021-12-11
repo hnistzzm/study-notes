@@ -868,7 +868,21 @@ package.json
 
 **注意**:如果我们不指定入口文件,系统会默认将index.js文件作为我们项目的入口文件
 
-### 2.npm命令
+### 2.package-lock.json
+
+npm5以前是不会生成`package-lock.json`这个文件的
+
+当使用npm安装包的时候，npm都会自动生成或者更新`package-lock.json`
+
+作用:
+
+- `package-lock.json`会保存`node_modules`中的所有包信息(版本、下载地址)
+  - 这样的话当我们重新`npm install`时下载的速度就会提升许多
+- 会保存包的版本信息，可以用来**锁定版本**
+
+
+
+### 3.npm命令
 
 - `npm init`：生成package.json文件
   - npm init -y:跳过向导,直接生成默认的package.json文件
@@ -917,7 +931,7 @@ package.json
 - `npm -v`:查看npm版本号
 - `npm install --global npm`：将npm版本号升级到最新版本
 
-### 3.下载淘宝镜像
+### 4.下载淘宝镜像
 
 npm服务器在国外,国内下载速度很慢，为了解决此问题,淘宝为npm做了一个镜像服务器cnpm
 
@@ -947,7 +961,7 @@ npm服务器在国外,国内下载速度很慢，为了解决此问题,淘宝为
 
 配置之后,你所有的npm操作都会默认通过淘宝的服务器来下载
 
-<<<<<<< HEAD
+
 加油
 
 ## 10.使用nodemon解决node修改代码后需要手动重启的问题
@@ -1242,3 +1256,46 @@ module.exports = router
 
 
 项目源码在demo中的express-crud中
+
+### 12.回调函数
+
+解释:回调函数就是我们在调用一个函数或者API时，向其传递一个函数作为参数供其调用
+
+使用场景:对于异步API，例如ajax请求等操作我们可以使用回调函数，等待请求拿到数据后在执行后面的操作
+
+示例:
+
+```javascript
+function fun1(){
+    const x=1,y=2
+    add(x,y,function(data){
+        console.log(data)
+    })
+}
+
+//callback就是fun1传递过来的回调函数
+function add(x1,y1,callback){
+    setTimeOut(()=>{//模拟异步情况，当延时1s后，调用回调函数，将x+y的结果返回给fun1
+        callback(x1+y1)
+    },1000)
+    
+}
+```
+
+模拟ajax请求
+
+```javascript
+//向后端发起请求获取数据
+function getdata(){
+    datarequest(...,function(err,data){//传入请求参数和回调函数
+        //得到数据后进行一系列操作...
+    })
+}
+//从数据库获取数据并f
+function datarequest(...,callback){
+    ... //从数据库获取数据data等一系列操作
+    if(err) return callback(err)//如果失败，返回err
+    return callback(null,data)//如果成功，返回data
+}
+```
+
