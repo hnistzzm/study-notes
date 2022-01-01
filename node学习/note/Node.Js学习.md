@@ -1257,7 +1257,7 @@ module.exports = router
 
 项目源码在demo中的express-crud中
 
-### 12.回调函数
+### 7.回调函数
 
 解释:回调函数就是我们在调用一个函数或者API时，向其传递一个函数作为参数供其调用
 
@@ -1297,5 +1297,24 @@ function datarequest(...,callback){
     if(err) return callback(err)//如果失败，返回err
     return callback(null,data)//如果成功，返回data
 }
+```
+
+封装ajax方法
+
+```sql
+function get(url,callback){
+	let oReq = new XMLHttpRequest()
+	//当请求加载成功后要调用指定的函数
+	oReq.onload = function(){
+		callback(oReq.responceText)
+	}
+	oReq.open('get',url,true)
+	oReq.send()
+
+}
+//调用ajax
+get('data.json',function(data){
+    console.log(data)
+})
 ```
 
