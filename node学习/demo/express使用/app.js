@@ -4,6 +4,14 @@ var bodyParser = require('body-parser')
 const dayjs = require('dayjs')
 var app =  express()
 
+
+app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Origin', '*') //允许所有不同源的地址访问
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization') //Content-Type必须要设置，Authorization是用户登录注册时存入的token值，可根据需求来设置，还有其他的都需要用逗号隔开
+	res.header('Access-Control-Allow-Credentials', true) // 这个必须要设置，否则解决跨域无效，注意true是字符串
+	next()
+})
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
@@ -18,6 +26,16 @@ app.get('/index',function(req,res){
         comments:comments.content
     })
 })
+app.get('/login',function(req,res){
+   console.log("收到login请求");
+   let data = {ok:'1'}
+   res.send(data)
+})
+app.post('/register',function(req,res){
+    console.log("收到register请求");
+    let data = {ok:'1'}
+    res.send(data)
+ })
 app.get('/post',function(req,res){
     res.render('post.html')})
     app.post('/post',function(req,res){

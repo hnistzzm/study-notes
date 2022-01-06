@@ -4614,3 +4614,6 @@ app.use(history());
 
 ![image-20211122135327918](Vue学习笔记.assets/image-20211122135327918.png)
 
+## 37.Vue项目结构设计
+
+![image-20220105183541014](Vue学习笔记.assets/image-20220105183541014.png)

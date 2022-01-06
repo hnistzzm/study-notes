@@ -86,3 +86,6 @@ mongo
 - `db.collection.find.pretty()`
   - 以格式化的方法显示所有文档
 
+![image-20220103175720252](MongoDB学习.assets/image-20220103175720252.png)
+
+日结缴费单

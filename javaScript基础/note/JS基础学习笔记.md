@@ -529,6 +529,39 @@ console.log(JSON.stringify(arr));["a","b","c"]
 
 
 
+**reduce**
+
+**解释**:reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+
+```javascript
+//reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+
+//参数	
+//function(total,currentValue, index,arr)	必需。用于执行每个数组元素的函数。
+//函数参数:
+//参数	描述
+//total	必需。初始值, 或者计算结束后的返回值。
+//currentValue	必需。当前元素
+//currentIndex	可选。当前元素的索引
+//arr	可选。当前元素所属的数组对象。
+
+//计算数组的和
+
+const arr = [...new Array(100).keys()]
+
+const sum = arr.reduce( (p , q) => p + q )
+
+console.log( sum );
+
+
+```
+
+
+
+
+
+
+
 ## 11.函数对象的方法call()和apply()
 
 ### 1.定义
