@@ -229,7 +229,6 @@ const ajax = {
 ```javascript
 function myNew(fn,...args) {
 
-    console.log(args);
     let obj = {} //创建一个新的对象
     obj.__proto__ = fn.prototype //对象继承构造函数的原型链
     fn.apply(obj,args) //将构造函数的this指向这个对象

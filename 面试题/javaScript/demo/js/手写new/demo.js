@@ -16,13 +16,18 @@ function myNew(fn,...args) {
 
 }
 
- function Person() {
+ function Person(name , age ,gender) {
     
 
-    this.name = arguments[0]
-    this.age = arguments[1]
-    this.gender = arguments[2]
+    // this.name = arguments[0]
+    // this.age = arguments[1]
+    // this.gender = arguments[2]
 
+    
+    console.log(arguments);
+    this.name = name
+    this.age = age
+    this.gender = gender
  } 
  Person.prototype.sayHello = function() {
 
@@ -33,3 +38,11 @@ function myNew(fn,...args) {
  test.sayHello()
  console.log(test.name);
  console.log(test.age);
+
+
+//  function test(name,age,gender){
+//     console.log(arguments);
+//  }
+//  test('李四',20,'女')
+
+  
