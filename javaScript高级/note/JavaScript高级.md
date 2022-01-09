@@ -592,6 +592,8 @@ const Object = new Object()
 
 #### 2.解释
 
+![image-20220108202709684](JavaScript高级.assets/image-20220108202709684.png)
+
 
 
 我们画图来描述
@@ -678,6 +680,24 @@ Fun--->Fun.prototype(Object的实例对象)
 obj--->obj.__ proto __(Object的原型对象)
 
 从以上查找路径我们可知,Fun的显式原型对象在obj的原型链中并没有出现，故而返回false
+
+
+
+注意:看下面是什么原因?
+
+```javascript
+Function instanceof Object;//true
+Object instanceof Function;//true
+```
+
+实际上是这样的
+
+```javascript
+Function.__proto__.__proto__ === Object.prototype;//true
+Object.__proto__ === Function.prototype;//true
+```
+
+![image-20220108202709684](JavaScript高级.assets/image-20220108202709684.png)
 
 ### 6.面试题
 

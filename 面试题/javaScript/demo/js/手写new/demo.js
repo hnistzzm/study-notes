@@ -40,9 +40,5 @@ function myNew(fn,...args) {
  console.log(test.age);
 
 
-//  function test(name,age,gender){
-//     console.log(arguments);
-//  }
-//  test('李四',20,'女')
 
   

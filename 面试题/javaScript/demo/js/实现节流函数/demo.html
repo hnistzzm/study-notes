@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流函数</title>
+</head>
+<body>
+    节流后的input:<input type="text" id="throttle" >
+</body>
+</html>
+<script>
+    // 节流函数需要立即执行的情况 
+    //类似fps游戏中的开枪 我的第一枪应该是立即执行的 第二枪以后需要经过一段时间才执行
+    function throttle(fun,delay){
+        let last , deferTimer
+        return function(){
+            const args = arguments
+            let now = +new Date()
+            if(last && now < last+delay){
+                clearTimeout(deferTimer)
+                deferTimer = setTimeout(()=>{
+                    last = now
+                    fun.apply(this,args)
+                },delay)
+            }else{
+                last = now
+                fun.apply(this,args)
+            }
+        }
+    }
+
+    //节流函数不会立即执行的情况
+    //第一次触发函数也需要经过一段时间延迟才会执行
+    // function throttle(fn,delay=200){
+    //     let flag = true
+    //     return function(){  
+    //         if(!flag) return
+    //         flag = false
+    //         const args = arguments
+    //         setTimeout(()=>{
+    //             fn.apply(this,args)
+    //             flag = true
+    //         },delay)
+    //     }
+
+    // }
+
+
+
+
+    function inputconsle(content){
+        console.log(content);
+    }
+
+    let inputa = document.getElementById('throttle')
+
+    let throttleinputconsle = throttle(inputconsle,500)
+    
+    inputa.addEventListener('keyup',function(e){
+
+        throttleinputconsle(e.target.value)
+    
+    })
+
+
+
+</script>
