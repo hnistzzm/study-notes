@@ -13,6 +13,7 @@ export default {
            mins:'0',
            seconds:'0',
            timer:null,
+           curTime: 0,// 新增代码：
 
        } 
     },
@@ -34,11 +35,17 @@ export default {
             return time
         }
     },
+    watch:{
+        duration() {
+            this.countDown()
+        }
+    },
     mounted(){
         this.countDown()
     },
     methods:{
         countDown(){
+            this.curTime = Date.now()
             this.getTime(this.duration)
         },
 
@@ -53,7 +60,10 @@ export default {
             this.mins = mm || 0
             this.seconds = ss || 0
             this.timer = setTimeout(() => {
-                this.getTime(duration - 1)
+                const now = Date.now();
+                const diffTime = Math.floor((now - this.curTime) / 1000);
+                this.curTime = now;
+                this.getTime(duration - diffTime)
             }, 1000)
         },
         //将时间转化为天数,小时,分钟,秒

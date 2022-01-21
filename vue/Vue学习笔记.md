@@ -1,4 +1,4 @@
-# Vue学习笔记
+​                     Vue学习笔记
 
 ## 1.创建第一个Vue实例
 
@@ -3136,9 +3136,7 @@ export default {
             this.$bus.$emit('getStudentName',this.studentName)
         }
     },
-    beforeDestroy(){
-    	this.$bus.$off('getStudentName')
-  	}
+       
 }
 ```
 
@@ -3598,7 +3596,7 @@ export default ({
 })
 ```
 
-![image-20210911114947228](E:\学习笔记\cssStudy\image/image-20210911114947228.png)
+![image-20210911114947228](../../%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/cssStudy/image/image-20210911114947228-16408499217741.png)
 
 ### 3.作用域插槽
 
@@ -3616,7 +3614,7 @@ export default ({
 
 比如下方示例中父组件接到的是
 
-![image-20210911113305684](E:\学习笔记\cssStudy\image/image-20210911113305684.png)
+![image-20210911113305684](../../%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/cssStudy/image/image-20210911113305684.png)
 
 实际数据**list**的外层又被一层对象包裹,对象名为子组件中定义的属性名**lists**
 
@@ -3669,7 +3667,7 @@ export default {
 </template>
 ```
 
-![image-20210911113558158](E:\学习笔记\cssStudy\image/image-20210911113558158.png)
+![image-20210911113558158](../../%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/cssStudy/image/image-20210911113558158.png)
 
 ## 35.Vuex
 
