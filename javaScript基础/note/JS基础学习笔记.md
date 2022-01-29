@@ -1506,3 +1506,61 @@ JS中的||符号：
  只要“&&”前面是true，无论“&&”后面是true还是false，结果都将返“&&”后面的值;
 ```
 
+## 21.JSON.parse和JSON.stringify与eval()
+
+(1)JSON.parse函数 
+
+ 	作用：将json字符串转换成json对象。
+
+​		语法：JSON. parse(text[,reviver]).
+
+​		参数：text  必须；一个有效的json字符串。
+
+​			reviver  可选。
+
+​		返回值：一个对象或数组。
+
+​		example：
+
+​			 ![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160506175633201-1065540405.png)
+
+​	(2)JSON.stringify()函数 
+
+​		作用：将json对象转换成json字符串。
+
+​		语法：JSON.stringify(value [, replacer] [, space]) 
+
+​		参数：value  必须；通常为对象或数组。
+
+​			replacer 可选，用于转换结果的函数或者数组。
+
+​			space 可选。向返回值 JSON 文本添加缩进、空格和换行符以使其更易于读取。 
+
+​		返回值：一个包含JSON文本的字符串。
+
+​		example:
+
+​			![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160506180310357-1699761671.png) 
+
+​	(3) eval()函数
+
+​		作用：eval()函数可计算某个字符串，并执行其中的javascript表达式或要执行的语句。
+
+​		语法：eval(string)
+
+​		参数： string  必须，需要计算的字符串，其中含有要计算的javascript表达式或要执行的语句。
+
+​		返回值：返回计算string的值，没有的话不做任何改变返回。
+
+​		example：
+
+​			 ![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160508223748405-965794737.png)
+
+​		使用eval()函数也可以将JSON字符串解析为对象，这个功能能完成JSON.parse()的功能，但是有不一样的地方，请看下面代码 ：
+
+​			![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160508231622202-559579264.png) 
+
+​		不知道大家有木有注意到eval()还要用一对圆括号将字符串包起来，对此我寻找到比较好的解释就是： 
+
+​		原因：归结于eval本身的问题，由于json是以”{}”的方式来开始以及结束的，在JS中，它会被当成一个语句块来处理，所以必须强制性的将它转换成一种表达式。 
+
