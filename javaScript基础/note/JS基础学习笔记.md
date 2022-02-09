@@ -1156,7 +1156,7 @@ let div = document.querySelector(".#box1")//
 ​	与document.querySelector()使用方法相同，但是他会将所有符合条件的元素封装到一个数组中返回，即使符合条件的元素是只有一个，他也会返回一个数组
 
 ```javascript
-let div = document.querySelectorAll(".#box1")//
+let div = document.querySelectorAll(".box1")//
 ```
 
 #### 8.DOM增删改
