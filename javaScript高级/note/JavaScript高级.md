@@ -1109,7 +1109,7 @@ console.log('global begin:' +i);//undefined
 
 测试题二:var b --> console.log(b)
 
-测试题三:var a -->a = function-->=1-->c(2)
+测试题三:var c -->c = function-->=1-->c(2)
 
 ## 7.闭包
 

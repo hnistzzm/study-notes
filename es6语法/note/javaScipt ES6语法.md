@@ -800,7 +800,172 @@ sleep(500).then( ()=> console.log("finished"));//等待了500ms后打印 ’fini
 - 2.如果不设置回调函数，Promise内部抛出的错误，不会反映到外部
 - 3.当处于pending状态时，无法得知目前进展到哪一个阶段，是刚刚开始还是即将完成
 
+### 5.promise.all
 
+> Promise.all() 方法接收一个promise的iterable类型（注：Array，Map，Set都属于ES6的iterable类型）的输入，并且只返回一个[`Promise`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)实例， 那个输入的所有promise的resolve回调的结果是一个数组。这个[`Promise`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)的resolve回调执行是在所有输入的promise的resolve回调都结束，或者输入的iterable里没有promise了的时候。它的reject回调执行是，只要任何一个输入的promise的reject回调执行或者输入不合法的promise就会立即抛出错误，并且reject的是第一个抛出的错误信息。
+
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values);
+});
+// expected output: Array [3, 42, "foo"]
+
+```
+
+[参数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#参数)
+
+- iterable
+
+  一个[可迭代](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol)对象，如 [`Array`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array) 或 [`String`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)。
+
+[返回值](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#返回值)
+
+- 如果传入的参数是一个空的可迭代对象，则返回一个**已完成（already resolved）**状态的 [`Promise`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
+- 如果传入的参数不包含任何 `promise`，则返回一个**异步完成（asynchronously resolved）** [`Promise`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)。注意：Google Chrome 58 在这种情况下返回一个**已完成（already resolved）**状态的 [`Promise`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
+- 其它情况下返回一个**处理中（pending）**的[`Promise`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)。这个返回的 `promise` 之后会在所有的 `promise` 都完成或有一个 `promise` 失败时**异步**地变为完成或失败。 见下方关于“Promise.all 的异步或同步”示例。返回值将会按照参数内的 `promise` 顺序排列，而不是由调用 `promise` 的完成顺序决定。
+
+[说明](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#说明)
+
+此方法在集合多个 `promise` 的返回结果时很有用。
+
+完成（Fulfillment）：
+如果传入的可迭代对象为空，`Promise.all` 会同步地返回一个已完成（resolved）状态的`promise`。
+如果所有传入的 `promise` 都变为完成状态，或者传入的可迭代对象内没有 `promise`，`Promise.all` 返回的 `promise` 异步地变为完成。
+在任何情况下，`Promise.all` 返回的 `promise` 的完成状态的结果都是一个数组，它包含所有的传入迭代参数对象的值（也包括非 `promise` 值）。
+
+失败/拒绝（Rejection）：
+如果传入的 `promise` 中有一个失败（rejected），`Promise.all` 异步地将失败的那个结果给失败状态的回调函数，而不管其它 `promise` 是否完成。
+
+[示例](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#示例)
+
+[`Promise.all` 的使用](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#promise.all_的使用)
+
+`Promise.all` 等待所有都完成（或第一个失败）。
+
+```
+var p1 = Promise.resolve(3);
+var p2 = 1337;
+var p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([p1, p2, p3]).then(values => {
+  console.log(values); // [3, 1337, "foo"]
+});
+```
+
+Copy to Clipboard
+
+如果参数中包含非 `promise` 值，这些值将被忽略，但仍然会被放在返回数组中（如果 `promise` 完成的话）：
+
+```javaScript
+// this will be counted as if the iterable passed is empty, so it gets fulfilled
+var p = Promise.all([1,2,3]);
+// this will be counted as if the iterable passed contains only the resolved promise with value "444", so it gets fulfilled
+var p2 = Promise.all([1,2,3, Promise.resolve(444)]);
+// this will be counted as if the iterable passed contains only the rejected promise with value "555", so it gets rejected
+var p3 = Promise.all([1,2,3, Promise.reject(555)]);
+
+// using setTimeout we can execute code after the stack is empty
+setTimeout(function(){
+    console.log(p);
+    console.log(p2);
+    console.log(p3);
+});
+
+// logs
+// Promise { <state>: "fulfilled", <value>: Array[3] }
+// Promise { <state>: "fulfilled", <value>: Array[4] }
+// Promise { <state>: "rejected", <reason>: 555 }
+```
+
+总结:
+
+- 传入一个promise数组
+- 如果传入的参数含有非promise,这些值将被忽略，但仍然会被放在返回数组中（如果 `promise` 完成的话）：
+- 如果数组中的promise都成功,则返回一个数组
+- 如果存在某一个promise失败,则返回失败的回调
+- **也就是说 谁跑的慢,以谁为准执行回调**
+
+有了all，你就可以并行执行多个异步操作，并且在一个回调中处理所有的返回数据，是不是很酷？*有一个场景是很适合用这个的，一些游戏类的素材比较多的应用，打开网页时，预先加载需要用到的各种资源如图片、flash以及各种静态文件。所有的都加载完后，我们再进行页面的初始化。*
+
+
+作者：蔓蔓雒轩
+链接：https://juejin.cn/post/6844903607968481287
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+```javascript
+
+const promise1 = new Promise((resolve, reject) => {
+    console.log("promise1");
+    resolve(1);
+});
+const promise2 = new Promise((resolve, reject) => {
+    resolve(2);
+});
+const promise3 = new Promise((resolve, reject) => {
+    // reject(3);
+    resolve(3);
+});
+
+let p = Promise.all([promise1,promise2,promise3])
+
+p.then((res) => {
+    // 三个都成功则成功  
+    console.log("res",res); //[1,2,3]
+},(err) => {
+    // 只要有失败，则失败
+    console.log("err",err);
+})
+
+var p1 = Promise.all([1,2,3])
+.then((res) => {console.log(res);})
+console.log(p1); // [1,2,3]
+```
+
+
+
+### 6.promise.race
+
+**`Promise.race(iterable)`** 方法返回一个 promise，一旦迭代器中的某个promise解决或拒绝，返回的 promise就会解决或拒绝。
+
+
+
+**race的使用场景**：比如我们可以用race给某个异步请求设置超时时间，并且在超时后执行相应的操作，代码如下：
+
+**用法与promise.all类似,传入promise数组**
+
+```javascript
+const promise1 = new Promise(function(resolve, reject) {
+    // resolve(1);
+    reject(1);
+})
+
+const promise2 = new Promise(function(resolve, reject) {
+    resolve(2);
+})
+
+const promise3 = new Promise(function(resolve, reject) {
+    resolve(3);
+})
+
+const p = Promise.race([promise1,promise2,promise3])
+
+p
+.then((data) => {
+    console.log("data",data);
+})
+.catch((err) => {
+    console.log("err",err);//1
+})
+```
 
 
 
