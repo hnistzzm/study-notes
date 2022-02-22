@@ -1270,7 +1270,7 @@ console.log('console');
 
 ## 9.深浅拷贝
 
-## 浅拷贝
+### 1.浅拷贝
 
 浅拷贝的意思就是只复制引用，而未复制真正的值。
 
@@ -1296,7 +1296,7 @@ console.log(originArray); // {a:{aa:'aa'},b:'b',c:Array[3],d:{dd:'dd'}}
 
 上面的代码是最简单的利用 `=` 赋值操作符实现了一个浅拷贝，可以很清楚的看到，随着 `cloneArray` 和 `cloneObj` 改变，`originArray` 和 `originObj` 也随着发生了变化。
 
-## 深拷贝
+### 2.深拷贝
 
 深拷贝就是对目标的完全拷贝，不像浅拷贝那样只是复制了一层引用，就连值也都复制了。
 
@@ -1307,7 +1307,7 @@ console.log(originArray); // {a:{aa:'aa'},b:'b',c:Array[3],d:{dd:'dd'}}
 1. 利用 `JSON` 对象中的 `parse` 和 `stringify`
 2. 利用递归来实现每一层都重新创建对象并赋值
 
-### JSON.stringify/parse的方法
+### 3.JSON.stringify/parse的方法
 
 先看看这两个方法吧：
 
@@ -1364,7 +1364,7 @@ console.log(cloneObj); // {name: "axuebin"}
 
 明白了吧，就是说如果对象中含有一个函数时（很常见），就不能用这个方法进行深拷贝。
 
-### 递归的方法
+### 4.递归的方法
 
 递归的思想就很简单了，就是对每一层的数据都实现一次 `创建对象->对象赋值` 的操作，简单粗暴上代码：
 
@@ -1418,7 +1418,7 @@ console.log(cloneObj); // {name: "axuebin", sayHello: ƒ}
 
 是不是以为这样就完了？？ 当然不是。
 
-## JavaScript中的拷贝方法
+### 5.JavaScript中的拷贝方法
 
 我们知道在 `JavaScript` 中，数组有两个方法 `concat` 和 `slice` 是可以实现对原数组的拷贝的，这两个方法都不会修改原数组，而是返回一个修改后的新数组。
 
@@ -1426,7 +1426,7 @@ console.log(cloneObj); // {name: "axuebin", sayHello: ƒ}
 
 那它们是浅拷贝还是深拷贝呢？
 
-### concat
+#### 1.concat
 
 > The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
 
@@ -1460,7 +1460,7 @@ console.log(originArray); // [1,[1,2,3,4],{a:2}]
 
 **结论：`concat` 只是对数组的第一层进行深拷贝。**
 
-### slice
+#### 2.slice
 
 > The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
 
@@ -1492,7 +1492,7 @@ console.log(originArray); // [1,[1,2,3,4],{a:2}]
 
 **结论：`slice` 只是对数组的第一层进行深拷贝。**
 
-### Object.assign()
+#### 3.Object.assign()
 
 > The Object.assign() method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
 
@@ -1504,7 +1504,7 @@ console.log(originArray); // [1,[1,2,3,4],{a:2}]
 
 **结论：`Object.assign()` 拷贝的是属性值。假如源对象的属性值是一个指向对象的引用，它也只拷贝那个引用值。**
 
-### ... 展开运算符
+#### 4.... 展开运算符
 
 ```
 const originArray = [1,2,3,4,5,[6,7,8]];
@@ -1523,7 +1523,7 @@ console.log(originObj); // {a:1,b:{bb:2}}
 
 **结论：`...` 实现的是对象第一层的深拷贝。后面的只是拷贝的引用值。**
 
-### 首层浅拷贝
+#### 5.首层浅拷贝
 
 我们知道了，会有一种情况，就是对目标对象的第一层进行深拷贝，然后后面的是浅拷贝，可以称作“首层浅拷贝”。
 
@@ -1568,7 +1568,7 @@ What happend?
 1. 从 `shallowClone` 的代码中我们可以看出，我们只对第一层的目标进行了 `深拷贝` ，而第二层开始的目标我们是直接利用 `=` 赋值操作符进行拷贝的。
 2. so，第二层后的目标都只是复制了一个引用，也就是浅拷贝。
 
-## 总结
+### 6.总结
 
 1. 赋值运算符 `=` 实现的是浅拷贝，只拷贝对象的引用值；
 2. JavaScript 中数组和对象自带的拷贝方法都是“首层浅拷贝”；

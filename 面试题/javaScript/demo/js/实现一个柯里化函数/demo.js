@@ -28,5 +28,5 @@
   
   const add = (a,b,c) =>  a+b+c
   const a = currying(add,1)
-  
+  // console.log(a);
   console.log(a(2,3));
