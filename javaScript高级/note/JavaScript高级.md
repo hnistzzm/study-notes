@@ -1208,3 +1208,369 @@ for (var i = 0; i <5; i++) {
 
 整个循环过程就是 ，每一次循环都立即执行函数，并将i值存储在内存中，在循环完成之后，延时函数开始执行，依次输出0 1 2 
 
+## 8.event loop(事件循环)
+
+既然js是单线程，那就像只有一个窗口的银行，客户需要排队一个一个办理业务，同理js任务也要一个一个顺序执行。如果一个任务耗时过长，那么后一个任务也必须等着。那么问题来了，假如我们想浏览新闻，但是新闻包含的超清图片加载很慢，难道我们的网页要一直卡着直到图片完全显示出来？因此聪明的程序员将任务分为两类：
+
+- 同步任务
+- 异步任务
+
+当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染。而像加载图片音乐之类占用资源大耗时久的任务，就是异步任务。关于这部分有严格的文字定义，但本文的目的是用最小的学习成本彻底弄懂执行机制，所以我们用导图来说明：
+
+![img](JavaScript%E9%AB%98%E7%BA%A7.assets/15fdd88994142347tplv-t2oaga2asx-watermark.awebp)
+
+导图要表达的内容用文字来表述的话：
+
+- 同步和异步任务分别进入不同的执行"场所"，同步的进入主线程，异步的进入Event Table并注册函数。
+- 当指定的事情完成时，Event Table会将这个函数移入Event Queue。
+- 主线程内的任务执行完毕为空，会去Event Queue读取对应的函数，进入主线程执行。
+- 上述过程会不断重复，也就是常说的Event Loop(事件循环)。
+
+---
+
+
+
+我们进入正题，除了广义的同步任务和异步任务，我们对任务有更精细的定义：
+
+- macro-task(宏任务)：包括整体代码script，setTimeout，setInterval
+- micro-task(微任务)：Promise，process.nextTick
+
+不同类型的任务会进入对应的Event Queue，比如`setTimeout`和`setInterval`会进入相同的Event Queue。
+
+事件循环的顺序，决定js代码的执行顺序。进入整体代码(宏任务)后，开始第一次循环。接着执行所有的微任务。然后再次从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。听起来有点绕，我们用文章最开始的一段代码说明：
+
+```javascript
+setTimeout(function() {
+    console.log('setTimeout');
+})
+
+new Promise(function(resolve) {
+    console.log('promise');
+}).then(function() {
+    console.log('then');
+})
+
+console.log('console');
+复制代码
+```
+
+- 这段代码作为宏任务，进入主线程。
+- 先遇到`setTimeout`，那么将其回调函数注册后分发到宏任务Event Queue。(注册过程与上同，下文不再描述)
+- 接下来遇到了`Promise`，`new Promise`立即执行，`then`函数分发到微任务Event Queue。
+- 遇到`console.log()`，立即执行。
+- 好啦，整体代码script作为第一个宏任务执行结束，看看有哪些微任务？我们发现了`then`在微任务Event Queue里面，执行。
+- ok，第一轮事件循环结束了，我们开始第二轮循环，当然要从宏任务Event Queue开始。我们发现了宏任务Event Queue中`setTimeout`对应的回调函数，立即执行。
+- 结束。
+
+事件循环，宏任务，微任务的关系如图所示：
+
+![img](JavaScript%E9%AB%98%E7%BA%A7.assets/15fdcea13361a1ectplv-t2oaga2asx-watermark.awebp)
+
+总结:任务执行的顺序:**同步任务->异步宏任务->该宏任务中的微任务->下一个异步宏任务->...**
+
+## 9.深浅拷贝
+
+## 浅拷贝
+
+浅拷贝的意思就是只复制引用，而未复制真正的值。
+
+```
+const originArray = [1,2,3,4,5];
+const originObj = {a:'a',b:'b',c:[1,2,3],d:{dd:'dd'}};
+
+const cloneArray = originArray;
+const cloneObj = originObj;
+
+console.log(cloneArray); // [1,2,3,4,5]
+console.log(originObj); // {a:'a',b:'b',c:Array[3],d:{dd:'dd'}}
+
+cloneArray.push(6);
+cloneObj.a = {aa:'aa'};
+
+console.log(cloneArray); // [1,2,3,4,5,6]
+console.log(originArray); // [1,2,3,4,5,6]
+
+console.log(cloneObj); // {a:{aa:'aa'},b:'b',c:Array[3],d:{dd:'dd'}}
+console.log(originArray); // {a:{aa:'aa'},b:'b',c:Array[3],d:{dd:'dd'}}
+```
+
+上面的代码是最简单的利用 `=` 赋值操作符实现了一个浅拷贝，可以很清楚的看到，随着 `cloneArray` 和 `cloneObj` 改变，`originArray` 和 `originObj` 也随着发生了变化。
+
+## 深拷贝
+
+深拷贝就是对目标的完全拷贝，不像浅拷贝那样只是复制了一层引用，就连值也都复制了。
+
+只要进行了深拷贝，它们老死不相往来，谁也不会影响谁。
+
+目前实现深拷贝的方法不多，主要是两种：
+
+1. 利用 `JSON` 对象中的 `parse` 和 `stringify`
+2. 利用递归来实现每一层都重新创建对象并赋值
+
+### JSON.stringify/parse的方法
+
+先看看这两个方法吧：
+
+> The JSON.stringify() method converts a JavaScript value to a JSON string.
+
+`JSON.stringify` 是将一个 `JavaScript` 值转成一个 `JSON` 字符串。
+
+> The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string.
+
+`JSON.parse` 是将一个 `JSON` 字符串转成一个 `JavaScript` 值或对象。
+
+很好理解吧，就是 `JavaScript` 值和 `JSON` 字符串的相互转换。
+
+它能实现深拷贝呢？我们来试试。
+
+```
+const originArray = [1,2,3,4,5];
+const cloneArray = JSON.parse(JSON.stringify(originArray));
+console.log(cloneArray === originArray); // false
+
+const originObj = {a:'a',b:'b',c:[1,2,3],d:{dd:'dd'}};
+const cloneObj = JSON.parse(JSON.stringify(originObj));
+console.log(cloneObj === originObj); // false
+
+cloneObj.a = 'aa';
+cloneObj.c = [1,1,1];
+cloneObj.d.dd = 'doubled';
+
+console.log(cloneObj); // {a:'aa',b:'b',c:[1,1,1],d:{dd:'doubled'}};
+console.log(originObj); // {a:'a',b:'b',c:[1,2,3],d:{dd:'dd'}};
+```
+
+确实是深拷贝，也很方便。但是，这个方法只能适用于一些简单的情况。比如下面这样的一个对象就不适用：
+
+```
+const originObj = {
+  name:'axuebin',
+  sayHello:function(){
+    console.log('Hello World');
+  }
+}
+console.log(originObj); // {name: "axuebin", sayHello: ƒ}
+const cloneObj = JSON.parse(JSON.stringify(originObj));
+console.log(cloneObj); // {name: "axuebin"}
+```
+
+发现在 `cloneObj` 中，有属性丢失了。。。那是为什么呢？
+
+在 `MDN` 上找到了原因：
+
+> If undefined, a function, or a symbol is encountered during conversion it is either omitted (when it is found in an object) or censored to null (when it is found in an array). JSON.stringify can also just return undefined when passing in "pure" values like JSON.stringify(function(){}) or JSON.stringify(undefined).
+
+`undefined`、`function`、`symbol` 会在转换过程中被忽略。。。
+
+明白了吧，就是说如果对象中含有一个函数时（很常见），就不能用这个方法进行深拷贝。
+
+### 递归的方法
+
+递归的思想就很简单了，就是对每一层的数据都实现一次 `创建对象->对象赋值` 的操作，简单粗暴上代码：
+
+```
+function deepClone(source){
+  const targetObj = source.constructor === Array ? [] : {}; // 判断复制的目标是数组还是对象
+  for(let keys in source){ // 遍历目标
+    if(source.hasOwnProperty(keys)){
+      if(source[keys] && typeof source[keys] === 'object'){ // 如果值是对象，就递归一下
+        targetObj[keys] = source[keys].constructor === Array ? [] : {};
+        targetObj[keys] = deepClone(source[keys]);
+      }else{ // 如果不是，就直接赋值
+        targetObj[keys] = source[keys];
+      }
+    } 
+  }
+  return targetObj;
+}
+```
+
+我们来试试：
+
+```
+const originObj = {a:'a',b:'b',c:[1,2,3],d:{dd:'dd'}};
+const cloneObj = deepClone(originObj);
+console.log(cloneObj === originObj); // false
+
+cloneObj.a = 'aa';
+cloneObj.c = [1,1,1];
+cloneObj.d.dd = 'doubled';
+
+console.log(cloneObj); // {a:'aa',b:'b',c:[1,1,1],d:{dd:'doubled'}};
+console.log(originObj); // {a:'a',b:'b',c:[1,2,3],d:{dd:'dd'}};
+```
+
+可以。那再试试带有函数的：
+
+```
+const originObj = {
+  name:'axuebin',
+  sayHello:function(){
+    console.log('Hello World');
+  }
+}
+console.log(originObj); // {name: "axuebin", sayHello: ƒ}
+const cloneObj = deepClone(originObj);
+console.log(cloneObj); // {name: "axuebin", sayHello: ƒ}
+```
+
+也可以。搞定。
+
+是不是以为这样就完了？？ 当然不是。
+
+## JavaScript中的拷贝方法
+
+我们知道在 `JavaScript` 中，数组有两个方法 `concat` 和 `slice` 是可以实现对原数组的拷贝的，这两个方法都不会修改原数组，而是返回一个修改后的新数组。
+
+同时，ES6 中 引入了 `Object.assgn` 方法和 `...` 展开运算符也能实现对对象的拷贝。
+
+那它们是浅拷贝还是深拷贝呢？
+
+### concat
+
+> The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+
+该方法可以连接两个或者更多的数组，但是它不会修改已存在的数组，而是返回一个新数组。
+
+看着这意思，很像是深拷贝啊，我们来试试：
+
+```
+const originArray = [1,2,3,4,5];
+const cloneArray = originArray.concat();
+
+console.log(cloneArray === originArray); // false
+cloneArray.push(6); // [1,2,3,4,5,6]
+console.log(originArray); [1,2,3,4,5];
+```
+
+看上去是深拷贝的。
+
+我们来考虑一个问题，如果这个对象是多层的，会怎样。
+
+```
+const originArray = [1,[1,2,3],{a:1}];
+const cloneArray = originArray.concat();
+console.log(cloneArray === originArray); // false
+cloneArray[1].push(4);
+cloneArray[2].a = 2; 
+console.log(originArray); // [1,[1,2,3,4],{a:2}]
+```
+
+`originArray` 中含有数组 `[1,2,3]` 和对象 `{a:1}`，如果我们直接修改数组和对象，不会影响 `originArray`，但是我们修改数组 `[1,2,3]` 或对象 `{a:1}` 时，发现 `originArray` 也发生了变化。
+
+**结论：`concat` 只是对数组的第一层进行深拷贝。**
+
+### slice
+
+> The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
+
+解释中都直接写道是 `a shallow copy` 了 ~
+
+但是，并不是！
+
+```
+const originArray = [1,2,3,4,5];
+const cloneArray = originArray.slice();
+
+console.log(cloneArray === originArray); // false
+cloneArray.push(6); // [1,2,3,4,5,6]
+console.log(originArray); [1,2,3,4,5];
+```
+
+同样地，我们试试多层的数组。
+
+```
+const originArray = [1,[1,2,3],{a:1}];
+const cloneArray = originArray.slice();
+console.log(cloneArray === originArray); // false
+cloneArray[1].push(4);
+cloneArray[2].a = 2; 
+console.log(originArray); // [1,[1,2,3,4],{a:2}]
+```
+
+果然，结果和 `concat` 是一样的。
+
+**结论：`slice` 只是对数组的第一层进行深拷贝。**
+
+### Object.assign()
+
+> The Object.assign() method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
+
+复制复制复制。
+
+那到底是浅拷贝还是深拷贝呢？
+
+自己试试吧。。
+
+**结论：`Object.assign()` 拷贝的是属性值。假如源对象的属性值是一个指向对象的引用，它也只拷贝那个引用值。**
+
+### ... 展开运算符
+
+```
+const originArray = [1,2,3,4,5,[6,7,8]];
+const originObj = {a:1,b:{bb:1}};
+
+const cloneArray = [...originArray];
+cloneArray[0] = 0;
+cloneArray[5].push(9);
+console.log(originArray); // [1,2,3,4,5,[6,7,8,9]]
+
+const cloneObj = {...originObj};
+cloneObj.a = 2;
+cloneObj.b.bb = 2;
+console.log(originObj); // {a:1,b:{bb:2}}
+```
+
+**结论：`...` 实现的是对象第一层的深拷贝。后面的只是拷贝的引用值。**
+
+### 首层浅拷贝
+
+我们知道了，会有一种情况，就是对目标对象的第一层进行深拷贝，然后后面的是浅拷贝，可以称作“首层浅拷贝”。
+
+我们可以自己实现一个这样的函数：
+
+```
+function shallowClone(source) {
+  const targetObj = source.constructor === Array ? [] : {}; // 判断复制的目标是数组还是对象
+  for (let keys in source) { // 遍历目标
+    if (source.hasOwnProperty(keys)) {
+      targetObj[keys] = source[keys];
+    }
+  }
+  return targetObj;
+}
+```
+
+我们来测试一下：
+
+```
+const originObj = {a:'a',b:'b',c:[1,2,3],d:{dd:'dd'}};
+const cloneObj = shallowClone(originObj);
+console.log(cloneObj === originObj); // false
+cloneObj.a='aa';
+cloneObj.c=[1,1,1];
+cloneObj.d.dd='surprise';
+```
+
+经过上面的修改，`cloneObj` 不用说，肯定是 `{a:'aa',b:'b',c:[1,1,1],d:{dd:'surprise'}}` 了，那 `originObj` 呢？刚刚我们验证了 `cloneObj === originObj` 是 `false`，说明这两个对象引用地址不同啊，那应该就是修改了 `cloneObj` 并不影响 `originObj`。
+
+```
+console.log(cloneObj); // {a:'aa',b:'b',c:[1,1,1],d:{dd:'surprise'}}
+console.log(originObj); // {a:'a',b:'b',c:[1,2,3],d:{dd:'surprise'}}
+```
+
+What happend?
+
+`originObj` 中关于 `a`、`c`都没被影响，但是 `d` 中的一个对象被修改了。。。说好的深拷贝呢？不是引用地址都不一样了吗？
+
+原来是这样：
+
+1. 从 `shallowClone` 的代码中我们可以看出，我们只对第一层的目标进行了 `深拷贝` ，而第二层开始的目标我们是直接利用 `=` 赋值操作符进行拷贝的。
+2. so，第二层后的目标都只是复制了一个引用，也就是浅拷贝。
+
+## 总结
+
+1. 赋值运算符 `=` 实现的是浅拷贝，只拷贝对象的引用值；
+2. JavaScript 中数组和对象自带的拷贝方法都是“首层浅拷贝”；
+3. `JSON.stringify` 实现的是深拷贝，但是对目标对象有要求；
+4. 若想真正意义上的深拷贝，请递归。
