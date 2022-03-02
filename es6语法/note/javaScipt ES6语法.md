@@ -1081,7 +1081,7 @@ m.set('key',['北京','上海','深圳'])//添加对象作为key，数组作为v
 ```javascript
 console.log(m.get('name'))//小张
 console.log(m.get('change'))//function(){...}
-console.log(m.get(key))//['北京','上海','深圳']
+console.log(m.get('key'))//['北京','上海','深圳']
 ```
 
 检测map集合中是否包含某个元素,返回Boolean值

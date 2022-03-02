@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basic</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item yellow"></div>
+        <div class="item blue"></div>
+        <div class="item red big"></div>
+        <div class="item green"></div>
+        <div class="item purple"></div>
+    </div>
+</body>
+</html>
+<style>
+.wrap{
+    width: 1000px;
+    height: 500px;
+    background-color: #ccc;
+    display: flex;
+    justify-content:space-between;
+}
+.item{
+    width:100px;
+    height: 100px;
+    /* flex: 1; */
+    flex-grow: 1;
+    /* flex-shrink: 1; */
+    /* flex-basis: 300px; */
+    /* flex:flex-grow | flex-shrink | flex-basis */
+}
+.big{
+    flex-grow:2;
+}
+.yellow{
+    background-color:yellow;
+}
+.blue{
+    background-color:blue;
+}
+.red{
+    background-color:red;
+}
+.green{
+    background-color:green;
+}
+.purple{
+    background-color:purple;
+}
+</style>
