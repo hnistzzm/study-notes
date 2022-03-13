@@ -10,14 +10,13 @@
 */
 
 Function.prototype.cs_call = function(obj,...args){
-    obj = obj || window
-
-    const fn = Symbol()
-
-    obj[fn] = this
-
-    return obj[fn](...args)
-
+    obj = obj || window;
+    
+    const fn = Symbol();
+    obj[fn] = this;
+    
+    obj[fn](...args);
+    delete obj[fn];
 }
 
 function fn(age){
