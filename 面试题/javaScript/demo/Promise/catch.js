@@ -6,7 +6,7 @@ const promise = new Promise((resolve, reject) => {
 promise
     .then((data) => {
         console.log(data);
-        console.log(a);
+        // console.log(a);
         return 'ok2'
     })
     .then((data) =>{
