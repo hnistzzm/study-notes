@@ -14,6 +14,7 @@
 - undefined:undefined
 - null:null
 - Symbol
+- BigInt
 
 2.对象(引用)类型
 

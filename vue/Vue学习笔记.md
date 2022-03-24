@@ -2521,7 +2521,7 @@ export default ({
 
 ​	类似于node.js中的工具类
 
-​	mixin中可以写VC(VueComponent)中的任何属性,例如 methods data 生命周期函数等等
+​	mixin中可以写VC(VueComponent)中的任 何属性,例如 methods data 生命周期函数等等
 
 ​	**使用方式**:
 
@@ -4138,8 +4138,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 export default new Router({
     routes:[
-        {path:'/xxx',component:xxx,},//page是页面的路径，component是页面
-        {path:'/yyy',component:yyy,  
+        {path:'/xxx',component:xxx},//page是页面的路径，component是页面
+        {path:'/yyy',component:yyy}  
     	]
 })
 ```
@@ -4461,7 +4461,7 @@ export default new Router({
 
 ```html
 //缓存多个路由组件
-<keep-alive :include="['News',]"></keep-alive>
+<keep-alive :include="['News',‘old’]"></keep-alive>
 
 //缓存一个路由组件
 <keep-alive include="New">
