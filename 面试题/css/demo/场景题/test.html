@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+    <div class="wrap">
+        <div id="sun"></div>
+        <div id="moon"></div>
+    </div>
+</body>
+</html>
+    
+<style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .wrap{
+      width:500px;
+      height:500px;
+      background-color:gray;
+      display:flex;
+      align-items:center;
+      position:relative;
+    }
+    #sun{
+      width:100px;
+      height:100px;
+      background-color:gold;
+      border-radius:50%;
+      margin:0 auto;
+      
+    }
+    #moon{
+      width:30px;
+      height:30px;
+    
+      background-color:blue;
+      border-radius:50%;
+      position:absolute;
+      left:0%;
+      top:50%;
+    
+    }
+    </style>
+<script>
+    (function test(){
+  
+  let sun = document.getElementById('sun')
+  let moon = document.getElementById('moon')
+  console.log(sun.offsetLeft,sun.offsetTop)
+  let x0 = sun.offsetLeft+50;//太阳的横坐标
+  let y0 = sun.offsetTop+50;//太阳y坐标
+
+  let angle = 0;
+    function move(){
+        angle++;
+        moon.style.left = x0-15+150*Math.cos((angle*Math.PI)/180)+'px'
+        moon.style.top = y0+150*Math.sin((angle*Math.PI)/180)+'px'
+        requestAnimationFrame(move)
+    }
+        requestAnimationFrame(move)
+    })()
+</script>
+

@@ -344,7 +344,7 @@ console.log(-3.75 % 1); // -0.75
 
 遍历child的隐式原型链,如果隐式原型链上存在father的显式原型,则返回true,否则为false
 
-```js
+```javascript
 function instanceOf(father, child) {
     const fp = father.prototype
     var cp = child.__proto__
@@ -358,12 +358,12 @@ function instanceOf(father, child) {
 
     return false
 }
-复制代
+
 ```
 
 ### 4、实现防抖函数
 
-```js
+```javascript
 function debounce(fn, delay = 500) {
     let timer;
     return function () {
@@ -376,12 +376,12 @@ function debounce(fn, delay = 500) {
         }, delay)
     }
 }
-复制代码
+
 ```
 
 ### 5、实现节流函数
 
-```js
+```javascript
 function throttle(fn, delay = 200) {
     let flag = true
     return function () {
@@ -394,14 +394,14 @@ function throttle(fn, delay = 200) {
         }, delay)
     }
 }
-复制代码
+
 ```
 
 ### 6、实现数组去重
 
 > 题目描述：实现一个数组的去重
 
-```js
+```javascript
 // 第一种：Map记录
 function quchong1(arr) {
     const newArr = []
@@ -419,14 +419,14 @@ function quchong1(arr) {
 function quchong2(arr) {
     return [...new Set(arr)]
 }
-复制代码
+
 ```
 
 ### 7、用setTimeout实现setInterval
 
 > 题目描述：setinterval 用来实现循环定时调用 可能会存在一定的问题 能用 settimeout 解决吗
 
-```js
+```javascript
 function mySetTimout(fn, delay) {
     let timer = null
     const interval = () => {
@@ -446,14 +446,14 @@ const { cancel } = mySetTimout(() => console.log(888), 1000)
 setTimeout(() => {
     cancel()
 }, 4000)
-复制代码
+
 ```
 
 ### 8、用setInterval实现setTimeout
 
 > 题目说明：没有，就是想刁难你
 
-```js
+```javascript
 function mySetInterval(fn, delay) {
     const timer = setInterval(() => {
         fn()
@@ -463,14 +463,14 @@ function mySetInterval(fn, delay) {
 
 // 测试
 mySetInterval(() => console.log(888), 1000)
-复制代码
+
 ```
 
 ### 9、实现一个compose函数
 
 > 题目说明：实现以下效果
 
-```js
+```javascript
 function fn1(x) {
     return x + 1;
 }
@@ -486,12 +486,12 @@ function fn4(x) {
 const a = compose(fn1, fn2, fn3, fn4);
 console.log(a)
 console.log(a(1)); // 1+2+3+4=11
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 function compose(...fn) {
     if (fn.length === 0) return (num) => num
     if (fn.length === 1) return fn[0]
@@ -501,23 +501,23 @@ function compose(...fn) {
         }
     })
 }
-复制代码
+
 ```
 
 ### 10、实现一个科里化函数
 
 > 题目要求：
 
-```js
+```javascript
 const add = (a, b, c) => a + b + c;
 const a = currying(add, 1);
 console.log(a(2,3)) // 1 + 2 + 3=6
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 function currying(fn, ...args1) {
   // 获取fn参数有几个
   const length = fn.length
@@ -539,7 +539,7 @@ function currying(fn, ...args1) {
 const add = (a, b, c) => a + b + c;
 const a = currying(add, 1);
 console.log(a(2,3))
-复制代码
+
 ```
 
 ### 11、实现一个LRU缓存函数
@@ -550,7 +550,7 @@ console.log(a(2,3))
 
 > 实现如下：
 
-```js
+```javascript
 class LRUCache {
   constructor(size) {
     this.size = size
@@ -581,14 +581,14 @@ class LRUCache {
   }
 
 }
-复制代码
+
 ```
 
 ### 12、简单实现 发布订阅模式
 
 > 题目描述:实现一个发布订阅模式拥有`on emit once off`方法
 
-```js
+```javascript
 class EventEmitter {
     constructor() {
         this.cache = {}
@@ -631,25 +631,25 @@ class EventEmitter {
         this.on(name, fn)
     }
 }
-复制代码
+
 ```
 
 ### 13、实现JSON.parse
 
 > 题目描述：实现`JSON.parse`
 
-```js
+```javascript
 function parse (json) {
     return eval("(" + json + ")");
 }
-复制代码
+
 ```
 
 ### 14、将DOM转化成树结构对象
 
 > 题目描述：
 
-```js
+```javascript
 <div>
     <span></span>
     <ul>
@@ -673,12 +673,12 @@ function parse (json) {
         }
     ]
 }
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 function dom2tree(dom) {
     const obj = {}
     obj.tag = dom.tagName
@@ -686,14 +686,14 @@ function dom2tree(dom) {
     dom.childNodes.forEach(child => obj.children.push(dom2tree(child)))
     return obj
 }
-复制代码
+
 ```
 
 ### 15、将树结构转换为DOM
 
 > 题目描述：
 
-```js
+```javascript
 {
     tag: 'DIV',
     children: [
@@ -717,12 +717,12 @@ function dom2tree(dom) {
         <li></li>
     </ul>
 </div>
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 // 真正的渲染函数
 function _render(vnode) {
   // 如果是数字类型转化为字符串
@@ -746,14 +746,14 @@ function _render(vnode) {
   vnode.children.forEach((child) => dom.appendChild(_render(child)));
   return dom;
 }
-复制代码
+
 ```
 
 ### 16、判断一个对象有环引用
 
 > 题目描述：验证一个对象有无环引用
 
-```js
+```javascript
 var obj = {
     a: {
         c: [
@@ -764,12 +764,11 @@ var obj = {
 }
 obj.a.c.d = obj
 console.log(cycleDetector(obj)) // true
-复制代码
 ```
 
 > 实现思路：用一个数组存储每一个遍历过的对象，下次找到数组中存在，则说明环引用
 
-```js
+```javascript
 function cycleDetector(obj) {
     const arr = [obj]
     let flag = false
@@ -793,26 +792,26 @@ function cycleDetector(obj) {
 
     return flag
 }
-复制代码
+
 ```
 
 ### 17、计算一个对象的层数
 
 > 题目描述：给你一个对象，统计一下它的层数
 
-```js
+```javascript
 const obj = {
     a: { b: [1] },
     c: { d: { e: { f: 1 } } }
 }
 
 console.log(loopGetLevel(obj)) // 4
-复制代码
+
 ```
 
 > 实现如下:
 
-```js
+```javascript
 function loopGetLevel(obj) {
     var res = 1;
 
@@ -834,14 +833,13 @@ function loopGetLevel(obj) {
 
     return res
 }
-复制代码
 ```
 
 ### 18、对象的扁平化
 
 > 题目描述：
 
-```js
+```javascript
 const obj = {
   a: {
          b: 1,
@@ -863,12 +861,12 @@ const obj = {
  //  'b[2].b': 3
  //   c: 3
  // }
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 const isObject = (val) =>  typeof val === "object" && val !== null
 
 function flatten(obj) {
@@ -895,14 +893,14 @@ function flatten(obj) {
 
 // 测试
 console.log(flatten(obj))
-复制代码
+
 ```
 
 ### 19、实现(a == 1 && a == 2 && a == 3)为true
 
 > 题目描述：`实现(a == 1 && a == 2 && a == 3)为true`
 
-```js
+```javascript
 // 第一种方法
 var a = {
   i: 1,
@@ -925,14 +923,14 @@ Object.defineProperty(window, 'a', {
     }
 });
 console.log(a == 1 && a == 2 && a == 3) // true
-复制代码
+
 ```
 
 ### 20、实现限制并发的Promise调度器
 
 > 题目描述：JS 实现一个带并发限制的异步调度器 Scheduler，保证同时运行的任务最多有两个
 
-```js
+```javascript
 addTask(1000,"1");
 addTask(500,"2");
 addTask(300,"3");
@@ -946,12 +944,12 @@ addTask(400,"4");
 800ms时，3任务执行完毕，输出3，任务4开始执行
 1000ms时，1任务执行完毕，输出1，此时只剩下4任务在执行
 1200ms时，4任务执行完毕，输出4
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 class Scheduler {
   constructor(limit) {
     this.queue = []
@@ -998,14 +996,14 @@ addTask(500, "2");
 addTask(300, "3");
 addTask(400, "4");
 scheduler.taskStart();
-复制代码
+
 ```
 
 ### 21、实现lazyMan函数
 
 > 题目描述：
 
-```js
+```javascript
 实现一个LazyMan，可以按照以下方式调用:
 LazyMan(“Hank”)输出:
 Hi! This is Hank!
@@ -1026,12 +1024,12 @@ LazyMan(“Hank”).eat(“supper”).sleepFirst(5)输出
 Wake up after 5
 Hi This is Hank!
 Eat supper
-复制代码
+
 ```
 
 > 实现如下：
 
-```js
+```javascript
 class _LazyMan {
   constructor(name) {
     this.tasks = []
@@ -1087,7 +1085,7 @@ lazyMan('Hank').sleep(1).eat('dinner')
 lazyMan('Hank').eat('dinner').eat('supper')
 
 lazyMan('Hank').eat('supper').sleepFirst(5)
-复制代码
+
 ```
 
 ### 22、实现add函数
@@ -1097,7 +1095,7 @@ lazyMan('Hank').eat('supper').sleepFirst(5)
 > - add(1)(2)(3)()=6
 > - add(1,2,3)(4)()=10
 
-```js
+```javascript
 function add(...args1) {
   let allArgs = [...args1]
 
@@ -1117,7 +1115,7 @@ function add(...args1) {
 // 测试
 console.log(add(1)(2)(3)())
 console.log(add(1, 2)(3)())
-复制代码
+
 ```
 
 ### 23、实现一个合格的深拷贝
@@ -1136,7 +1134,7 @@ console.log(add(1, 2)(3)())
 
 定义一个测试数组
 
-```js
+```javascript
 const players = [
     { name: '科比', num: 24 },
     { name: '詹姆斯', num: 23 },
@@ -1144,7 +1142,7 @@ const players = [
     { name: '威少', num: 0 },
     { name: '杜兰特', num: 35 }
 ]
-复制代码
+
 ```
 
 ### 26、forEach
@@ -1155,7 +1153,7 @@ const players = [
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_forEach = function (callback) {
     for (let i = 0; i < this.length; i++) {
         callback(this[i], i, this)
@@ -1170,7 +1168,7 @@ players.sx_forEach((item, index, arr) => {
 // { name: '保罗', num: 3 } 2
 // { name: '威少', num: 0 } 3
 // { name: '杜兰特', num: 35 } 4
-复制代码
+
 ```
 
 ### 27、map
@@ -1181,7 +1179,7 @@ players.sx_forEach((item, index, arr) => {
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_map = function (callback) {
     const res = []
     for (let i = 0; i < this.length; i++) {
@@ -1192,7 +1190,7 @@ Array.prototype.sx_map = function (callback) {
 
 console.log(players.sx_map((item, index) => `${item.name}--${item.num}--${index}`))
 // [ '科比--24--0', '詹姆斯--23--1', '保罗--3--2', '威少--0--3', '杜兰特--35--4' ]
-复制代码
+
 ```
 
 ### 28、filter
@@ -1203,7 +1201,7 @@ console.log(players.sx_map((item, index) => `${item.name}--${item.num}--${index}
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_filter = function (callback) {
     const res = []
     for (let i = 0; i < this.length; i++) {
@@ -1218,7 +1216,7 @@ console.log(players.sx_filter(item => item.num >= 23))
 //     { name: '詹姆斯', num: 23 },
 //     { name: '杜兰特', num: 35 }
 // ]
-复制代码
+
 ```
 
 ### 29、every
@@ -1229,7 +1227,7 @@ console.log(players.sx_filter(item => item.num >= 23))
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_every = function (callback) {
     let flag = true
     for (let i = 0; i < this.length; i++) {
@@ -1242,7 +1240,7 @@ Array.prototype.sx_every = function (callback) {
 
 console.log(players.sx_every(item => item.num >= 23)) // false
 console.log(players.sx_every(item => item.num >= 0)) // true
-复制代码
+
 ```
 
 ### 30、some
@@ -1253,7 +1251,7 @@ console.log(players.sx_every(item => item.num >= 0)) // true
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_some = function (callback) {
     let flag = false
     for (let i = 0; i < this.length; i++) {
@@ -1266,7 +1264,7 @@ Array.prototype.sx_some = function (callback) {
 
 console.log(players.sx_some(item => item.num >= 23)) // true
 console.log(players.sx_some(item => item.num >= 50)) // false
-复制代码
+
 ```
 
 ### 31、reduce
@@ -1278,7 +1276,7 @@ console.log(players.sx_some(item => item.num >= 50)) // false
 - index：当前索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_reduce = function (callback, ...args) {
   let start = 0, pre
   if (args.length) {
@@ -1298,7 +1296,7 @@ const sum = players.sx_reduce((pre, next) => {
     return pre + next.num
 }, 0)
 console.log(sum) // 85
-复制代码
+
 ```
 
 ### 32、findIndex
@@ -1309,7 +1307,7 @@ console.log(sum) // 85
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_findIndex = function (callback) {
     for (let i = 0; i < this.length; i++) {
         if (callback(this[i], i, this)) {
@@ -1321,7 +1319,7 @@ Array.prototype.sx_findIndex = function (callback) {
 
 console.log(players.sx_findIndex(item => item.name === '科比')) // 0
 console.log(players.sx_findIndex(item => item.name === '安东尼')) // -1
-复制代码
+
 ```
 
 ### 33、find
@@ -1332,7 +1330,7 @@ console.log(players.sx_findIndex(item => item.name === '安东尼')) // -1
 - index：遍历项的索引
 - arr：数组本身
 
-```js
+```javascript
 Array.prototype.sx_find = function (callback) {
     for (let i = 0; i < this.length; i++) {
         if (callback(this[i], i, this)) {
@@ -1344,7 +1342,7 @@ Array.prototype.sx_find = function (callback) {
 
 console.log(players.sx_find(item => item.name === '科比')) // { name: '科比', num: 24 }
 console.log(players.sx_find(item => item.name === '安东尼')) // undefined
-复制代码
+
 ```
 
 ### 34、fill
@@ -1357,7 +1355,7 @@ console.log(players.sx_find(item => item.name === '安东尼')) // undefined
 - start：开始填充索引，默认0
 - end：结束填充索引，默认length
 
-```js
+```javascript
 Array.prototype.sx_fill = function (value, start = 0, end) {
   end = end || this.length
   for (let i = start; i < end; i++) {
@@ -1374,14 +1372,14 @@ console.log(players.sx_fill('林三心', 1, 3))
 //     '林三心',
 //     { name: '杜兰特', num: 35 }
 // ]
-复制代码
+
 ```
 
 ### 35、includes
 
 用处：查找元素，查到返回`true`，反之返回`false`，可查找`NaN`
 
-```js
+```javascript
 Array.prototype.sx_includes = function (value, start = 0) {
     if (start < 0) start = this.length + start
     const isNaN = Number.isNaN(value)
@@ -1396,14 +1394,14 @@ Array.prototype.sx_includes = function (value, start = 0) {
 console.log([1, 2, 3].sx_includes(2)) // true
 console.log([1, 2, 3, NaN].sx_includes(NaN)) // true
 console.log([1, 2, 3].sx_includes(1, 1)) // false
-复制代码
+
 ```
 
 ### 36、join
 
 用处：将数组用分隔符拼成字符串，分隔符默认为`,`
 
-```js
+```javascript
 Array.prototype.sx_join = function (s = ',') {
     let str = ''
     for(let i = 0; i < this.length; i++) {
@@ -1414,12 +1412,12 @@ Array.prototype.sx_join = function (s = ',') {
 
 console.log([1, 2, 3].sx_join()) // 1,2,3
 console.log([1, 2, 3].sx_join('*')) // 1*2*3
-复制代码
+
 ```
 
 ### 37、flat
 
-```js
+```javascript
 Array.prototype.sx_flat = function (num = Infinity) {
   let arr = this
   let i = 0
@@ -1435,7 +1433,7 @@ const testArr = [1, [2, 3, [4, 5]], [8, 9]]
 
 console.log(testArr.sx_flat(1))
 // [1, 2, 3, 4, 5, 8, 9]
-复制代码
+
 ```
 
 ### 38、splice
@@ -1444,7 +1442,7 @@ console.log(testArr.sx_flat(1))
 
 - 截取长度和替换长度的比较，不同情况
 
-```js
+```javascript
 Array.prototype.sx_splice = function (start, length, ...values) {
   if (length === 0) return []
   length = start + length > this.length - 1 ? this.length - start : length
@@ -1472,27 +1470,27 @@ Array.prototype.sx_splice = function (start, length, ...values) {
   }
   return res
 }
-复制代码
+
 ```
 
 ## Object篇
 
 定义一个测试对象
 
-```js
+```javascript
 const obj = {
     name: '林三心',
     age: 22,
     gender: '男'
 }
-复制代码
+
 ```
 
 ### 39、entries
 
 用处：将对象转成键值对数组
 
-```js
+```javascript
 Object.prototype.sx_entries = function (obj) {
     const res = []
     for (let key in obj) {
@@ -1503,14 +1501,14 @@ Object.prototype.sx_entries = function (obj) {
 
 console.log(Object.sx_entries(obj))
 // [ [ 'name', '林三心' ], [ 'age', 22 ], [ 'gender', '男' ] ]
-复制代码
+
 ```
 
 ### 40、fromEntries
 
 用处：跟`entries`相反，将键值对数组转成对象
 
-```js
+```javascript
 Object.prototype.sx_fromEntries = function (arr) {
     const obj = {}
     for (let i = 0; i < arr.length; i++) {
@@ -1522,14 +1520,14 @@ Object.prototype.sx_fromEntries = function (arr) {
 
 console.log(Object.sx_fromEntries([['name', '林三心'], ['age', 22], ['gender', '男']]))
 // { name: '林三心', age: 22, gender: '男' }
-复制代码
+
 ```
 
 ### 41、keys
 
 用处：将对象的key转成一个数组合集
 
-```js
+```javascript
 Object.prototype.sx_keys = function (obj) {
     const keys = []
     for (let key in obj) {
@@ -1540,14 +1538,14 @@ Object.prototype.sx_keys = function (obj) {
 
 console.log(Object.keys(obj))
 // [ 'name', 'age', 'gender' ]
-复制代码
+
 ```
 
 ### 42、values
 
 用处：将对象的所有值转成数组合集
 
-```js
+```javascript
 Object.prototype.sx_values = function (obj) {
     const values = []
     for (let key in obj) {
@@ -1558,14 +1556,14 @@ Object.prototype.sx_values = function (obj) {
 
 console.log(Object.sx_values(obj))
 // [ '林三心', 22, '男' ]
-复制代码
+
 ```
 
 ### 43、instanceOf
 
 用处：A instanceOf B，判断A是否经过B的原型链
 
-```js
+```javascript
 function instanceOf(father, child) {
     const fp = father.prototype
     var cp = child.__proto__
@@ -1587,14 +1585,14 @@ const sx = new Person('林三心')
 
 console.log(instanceOf(Person, sx)) // true
 console.log(instanceOf(Person, sx2)) // false
-复制代码
+
 ```
 
 ### 44、is
 
 用处：Object.is(a, b)，判断a是否等于b
 
-```js
+```javascript
 Object.prototype.sx_is = function (x, y) {
     if (x === y) {
         // 防止 -0 和 +0
@@ -1611,7 +1609,7 @@ const c = { name: '林三心' }
 
 console.log(Object.sx_is(a, b)) // true
 console.log(Object.sx_is(a, c)) // false
-复制代码
+
 ```
 
 ### 45、Object.assign
@@ -1622,7 +1620,7 @@ console.log(Object.sx_is(a, c)) // false
 - 这些对象如果有重名属性，以后来的对象属性值为准
 - assign返回一个对象，`这个对象 === 第一个对象`
 
-```js
+```javascript
 Object.prototype.sx_assign = function (target, ...args) {
     if (target === null || target === undefined) {
         throw new TypeError('Cannot convert undefined or null to object')
@@ -1644,14 +1642,14 @@ const testc = { age: 18, gender: '男' }
 const testd = Object.sx_assign(testa, testb, testc)
 console.log(testd) // { name: 'sunshine_lin', age: 18, gender: '男' }
 console.log(testa === testd) // true
-复制代码
+
 ```
 
 ## Function篇
 
 ### 46、call
 
-```js
+```javascript
 Function.prototype.sx_call = function (obj, ...args) {
     obj = obj || window
 
@@ -1674,12 +1672,12 @@ const testobj2 = {
 }
 
 testobj.testFn.sx_call(testobj2, 22) // sunshine_lin22岁了
-复制代码
+
 ```
 
 ### 47、apply
 
-```js
+```javascript
 Function.prototype.sx_apply = function (obj, args) {
     obj = obj || window
 
@@ -1702,7 +1700,7 @@ const testobj2 = {
 }
 
 testobj.testFn.sx_apply(testobj2, [22]) // sunshine_lin22岁了
-复制代码
+
 ```
 
 ### 48、Function.prototype.bind
@@ -1712,7 +1710,7 @@ testobj.testFn.sx_apply(testobj2, [22]) // sunshine_lin22岁了
 - bind是返回一个函数，而不是执行结果
 - bind返回的函数，拿来当做构造函数，该怎么处理
 
-```
+```javascript
 Function.prototype.sx_bind = function (obj, ...args) {
     obj = obj || window
 
@@ -1735,7 +1733,7 @@ Function.prototype.sx_bind = function (obj, ...args) {
     res.prototype = Object.create(this.prototype)
     return res
 }
-复制代码
+
 ```
 
 ## String篇
@@ -1752,7 +1750,7 @@ Function.prototype.sx_bind = function (obj, ...args) {
 - start > end：返回空字符串
 - start < 0：`start = 数组长度 + start`
 
-```js
+```javascript
 String.prototype.sx_slice = function (start = 0, end) {
     start = start < 0 ? this.length + start : start
     end = !end && end !== 0 ? this.length : end
@@ -1770,7 +1768,7 @@ console.log(str.sx_slice(2)) // nshine_lin
 console.log(str.sx_slice(-2)) // in
 console.log(str.sx_slice(-9, 10)) // shine_l
 console.log(str.sx_slice(5, 1)) // ''
-复制代码
+
 ```
 
 ### 50、substr
@@ -1786,7 +1784,7 @@ console.log(str.sx_slice(5, 1)) // ''
 - length超出所能截取范围，需要做处理
 - length < 0：返回空字符串
 
-```js
+```javascript
 String.prototype.sx_substr = function (start = 0, length) {
     if (length < 0) return ''
 
@@ -1803,7 +1801,7 @@ String.prototype.sx_substr = function (start = 0, length) {
 console.log(str.sx_substr(3)) // shine_lin
 console.log(str.sx_substr(3, 3)) // shi
 console.log(str.sx_substr(5, 300)) // ine_lin
-复制代码
+
 ```
 
 ### 51、substring
@@ -1814,7 +1812,7 @@ console.log(str.sx_substr(5, 300)) // ine_lin
 
 - start > end：互换值
 
-```js
+```javascript
 String.prototype.sx_sunstring = function (start = 0, end) {
     start = start < 0 ? this.length + start : start
     end = !end && end !== 0 ? this.length : end
@@ -1832,7 +1830,7 @@ console.log(str.sx_sunstring(2)) // nshine_lin
 console.log(str.sx_sunstring(-2)) // in
 console.log(str.sx_sunstring(-9, 10)) // shine_l
 console.log(str.sx_sunstring(5, 1)) // unsh
-复制代码
+
 ```
 
 ## Promise篇
@@ -1843,7 +1841,7 @@ console.log(str.sx_sunstring(5, 1)) // unsh
 - 如果所有Promise都成功，则返回成功结果数组
 - 如果有一个Promise失败，则返回这个失败结果
 
-```js
+```javascript
     function all(promises) {
         const result = []
         let count = 0
@@ -1864,7 +1862,7 @@ console.log(str.sx_sunstring(5, 1)) // unsh
             })
         })
     }
-复制代码
+
 ```
 
 ### 53、race
@@ -1872,7 +1870,7 @@ console.log(str.sx_sunstring(5, 1)) // unsh
 - 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
 - 哪个Promise最快得到结果，就返回那个结果，无论成功失败
 
-```js
+```javascript
     function race(promises) {
         return new MyPromise((resolve, reject) => {
             promises.forEach(promise => {
@@ -1888,7 +1886,6 @@ console.log(str.sx_sunstring(5, 1)) // unsh
             })
         })
     }
-复制代码
 ```
 
 ### 54、allSettled
@@ -1896,7 +1893,7 @@ console.log(str.sx_sunstring(5, 1)) // unsh
 - 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
 - 把每一个Promise的结果，集合成数组，返回
 
-```js
+```javascript
     function allSettled(promises) {
         return new Promise((resolve, reject) => {
             const res = []
@@ -1924,7 +1921,6 @@ console.log(str.sx_sunstring(5, 1)) // unsh
             })
         })
     }
-复制代码
 ```
 
 ### 55、any
@@ -1935,7 +1931,7 @@ any与all相反
 - 如果有一个Promise成功，则返回这个成功结果
 - 如果所有Promise都失败，则报错
 
-```js
+```javascript
     function any(promises) {
         return new Promise((resolve, reject) => {
             let count = 0
@@ -1952,7 +1948,6 @@ any与all相反
         })
     }
 }
-复制代码
 ```
 
 ### 56、finally
@@ -1960,7 +1955,7 @@ any与all相反
 - 接收一个回调函数，但无参数接收
 - 无论成功失败状态，都会执行finally
 
-```js
+```javascript
 Promise.prototype.finally = function(callback) {
   return this.then(res => {
     callback()
@@ -1971,5 +1966,4 @@ Promise.prototype.finally = function(callback) {
   })
 }
 ```
-
 
