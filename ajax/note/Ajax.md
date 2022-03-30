@@ -14,7 +14,7 @@ AJAX 是一种用于创建快速动态网页的技术。
 
 ### 2.AJAX 工作原理
 
-![image-20220106155444799](C:\Users\zhangzhenming\AppData\Roaming\Typora\typora-user-images\image-20220106155444799.png)
+![image-20220106155444799](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282111971.png)
 
 ### 3.XHR创建对象
 
@@ -79,7 +79,7 @@ xmlhttp.send("fname=Henry&lname=Ford");
 
 如需获得来自服务器的响应，请使用 XMLHttpRequest 对象的 responseText 或 responseXML 属性。
 
-![image-20220106164201408](Ajax.assets/image-20220106164201408.png)
+![image-20220106164201408](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282111087.png)
 
 
 

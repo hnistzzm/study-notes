@@ -130,7 +130,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
   - 基本类型:保存的就是基本类型的数据,例如const a=1
   - 引用类型:保存的是地址值,例如const b = {a:1},b保存的是对象在内存中的地址值，而不是对象本身
 
-![image-20211004171738317](./JavaScript高级.assets/image-20211004171738317.png)
+![image-20211004171738317](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112519.png)
 
 我们将蓝色内存块中的对象数据赋值给a时，a中保存的实际上是对象的地址值
 
@@ -165,7 +165,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
 
 ### 2.示例
 
-![image-20211004192032044](./JavaScript高级.assets/image-20211004192032044.png)
+![image-20211004192032044](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112374.png)
 
 我们定义一个变量名为obj的对象时,内存块A中产生一块小内存存储变量名以及对象的地址值0x123，内存块B中产生一块小内存存储对象的地址值以及对象中包含的数据
 
@@ -190,7 +190,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
     console.log(d);//{name:'tom'}
 ```
 
-![image-20211004201950089](./JavaScript高级.assets/image-20211004201950089.png)
+![image-20211004201950089](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113420.png)
 
 我们定义变量a为3，此时3是一个常量,a中保存的是常量3
 
@@ -220,7 +220,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
 
 ```
 
-![image-20211004204311497](./JavaScript高级.assets/image-20211004204311497.png)
+![image-20211004204311497](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113550.png)
 
 由上述第一个问题解释我们已知，当给变量a赋值为另一个变量b且这个b变量为对象时，a和b都会与堆内存中的存放变量的内存建立联系
 
@@ -239,7 +239,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
     console.log(obj1);//{name: 'Tom'}
 ```
 
-![image-20211004205737789](./JavaScript高级.assets/image-20211004205737789.png)
+![image-20211004205737789](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113235.png)
 
 上述代码与上例不同的是,我们将obj1赋值给obj2后,将obj2修改为一个新的对象，此时obj2中存放的地址值已经变成了新的内存块的地址值,obj2与地址值为0x123内存已经没有联系,函数fun与obj2类似,修改成新的对象后,fun与0x123内存已经没有联系
 
@@ -247,7 +247,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
 
 3.在js调用函数传递变量参数时，是值传递还是引用传递?
 
-![image-20211005170032810](./JavaScript高级.assets/image-20211005170032810.png)
+![image-20211005170032810](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113852.png)
 
 ```javascript
 	let obj1 = {name:'Tom'}
@@ -505,7 +505,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
 
 - 原型对象中有一个属性constructor，它指向函数对象(如下图)
 
-  ![image-20211007210009192](./JavaScript高级.assets/image-20211007210009192.png)
+  ![image-20211007210009192](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113757.png)
 
 2.给原型对象添加属性(一般为方法)
 
@@ -531,7 +531,7 @@ obj = null//结束前，让对象成为垃圾对象(被垃圾回收器回收
 
 4. 内存结构
 
-   ![image-20211007211444437](./JavaScript高级.assets/image-20211007211444437.png)
+   ![image-20211007211444437](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113925.png)
 
 5. 总结
 
@@ -571,7 +571,7 @@ const fun = new Fun()
 const Object = new Object()
 ```
 
-![image-20211009143630036](./JavaScript高级.assets/image-20211009143630036.png)
+![image-20211009143630036](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113740.png)
 
 如上图所示,假设我现在想在fun函数中查找toString()方法,那么查询的顺序是这样的:
 
@@ -594,13 +594,13 @@ const Object = new Object()
 
 #### 2.解释
 
-![image-20220108202709684](JavaScript高级.assets/image-20220108202709684.png)
+![image-20220108202709684](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113470.png)
 
 
 
 我们画图来描述
 
-![image-20211009184735222](./JavaScript高级.assets/image-20211009184735222.png)
+![image-20211009184735222](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113740.png)
 
 如上图
 
@@ -669,7 +669,7 @@ console.log(obj instanceof Fun)//false
 
 
 
-![image-20211009184735222](./JavaScript高级.assets/image-20211009184735222.png)
+![image-20211009184735222](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113219.png)
 
 obj instanceof Fun的过程:
 
@@ -699,7 +699,7 @@ Function.__proto__.__proto__ === Object.prototype;//true
 Object.__proto__ === Function.prototype;//true
 ```
 
-![image-20220108202709684](JavaScript高级.assets/image-20220108202709684.png)
+![image-20220108202709684](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113107.png)
 
 ### 6.面试题
 
@@ -738,7 +738,7 @@ Object.__proto__ === Function.prototype;//true
 
 先抛图
 
-![image-20211009184735222](./JavaScript高级.assets/image-20211009184735222.png)
+![image-20211009184735222](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113204.png)
 
 1.
 
@@ -824,7 +824,7 @@ f: f-->f.__ proto __ (f的隐式原型对象)-->f. __ proto __ . __ proto __ (Ob
 
 解释
 
-![image-20211025160000537](./JavaScript高级.assets/image-20211025160000537.png)
+![image-20211025160000537](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113319.png)
 
 1.对原型链继承的解释
 
@@ -1044,7 +1044,7 @@ c(2)//报错 c is not a function
 - 在当前函数执行完之后，将栈顶的对象出栈
 - 当所有代码执行完之后，栈中只剩下Window
 
-![image-20211011154006589](./JavaScript高级.assets/image-20211011154006589.png)
+![image-20211011154006589](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113910.png)
 
 ---
 
@@ -1219,7 +1219,7 @@ for (var i = 0; i <5; i++) {
 
 当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染。而像加载图片音乐之类占用资源大耗时久的任务，就是异步任务。关于这部分有严格的文字定义，但本文的目的是用最小的学习成本彻底弄懂执行机制，所以我们用导图来说明：
 
-![img](JavaScript%E9%AB%98%E7%BA%A7.assets/15fdd88994142347tplv-t2oaga2asx-watermark.awebp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113590.awebp)
 
 导图要表达的内容用文字来表述的话：
 
@@ -1266,7 +1266,7 @@ console.log('console');
 
 事件循环，宏任务，微任务的关系如图所示：
 
-![img](JavaScript%E9%AB%98%E7%BA%A7.assets/15fdcea13361a1ectplv-t2oaga2asx-watermark.awebp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282113324.awebp)
 
 总结:任务执行的顺序:**同步任务->异步宏任务->该宏任务中的微任务->下一个异步宏任务->...**
 

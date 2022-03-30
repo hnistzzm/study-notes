@@ -1,12 +1,29 @@
-
-/*let a = {};
-console.log(typeof typeof typeof a);
-console.log(null == undefined );
-console.log(undefined === undefined );
-console.log(null == null)
-console.log(null instanceof Object);
-*/
-var mergeTwoLists = function(list1, list2) {
-        
-};
-mergeTwoLists([1,2,4],[1,3,4]);// output:[1,1,2,3,4,4]
+function getUsers(){
+    setTimeout(()=>{
+        let data = '用户数据'
+        iterator.next(data)
+    },1000)
+}
+function getOrders(){
+    setTimeout(()=>{
+        let data = '订单数据'
+        iterator.next(data)
+    },1000)
+}
+function getGoods(){
+    setTimeout(()=>{
+        let data = '商品数据'
+        iterator.next(data)
+    },1000)
+}
+function * gen(){
+    const users = yield getUsers()
+    console.log(users);//用户数据
+    const orders = yield getOrders()
+    console.log(orders);//订单数据
+    const goods = yield getGoods()
+    console.log(goods);//商品数据
+}
+let iterator = gen()
+// iterator.next()
+console.log(iterator.next());

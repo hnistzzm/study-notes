@@ -525,7 +525,7 @@ console.log(JSON.stringify(arr));["a","b","c"]
 
 ## 10.数组
 
-![image-20210921151642246](./JS基础学习笔记.assets/image-20210921151642246.png)
+![image-20210921151642246](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114431.png)
 
 
 
@@ -656,7 +656,7 @@ fun(1,2)//不论我们是否在函数内定义形参，依然可以使用argumen
 
 ## 13.Date()
 
-![image-20210921161942819](./JS基础学习笔记.assets/image-20210921161942819.png)
+![image-20210921161942819](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114564.png)
 
 ## 14.Math
 
@@ -664,7 +664,7 @@ fun(1,2)//不论我们是否在函数内定义形参，依然可以使用argumen
 
 Math是一个**工具类**，和其它对象不同，它不是一个构造函数，它封装了数学运算相关的属性和方法
 
-![image-20210921164408017](./JS基础学习笔记.assets/image-20210921164408017.png)
+![image-20210921164408017](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114918.png)
 
 ## 15.字符串方法
 
@@ -932,17 +932,17 @@ console.log(reg5.test('17576260472'));//true
 
 
 
-![image-20210928195852462](./JS基础学习笔记.assets/image-20210928195852462.png)
+![image-20210928195852462](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114956.png)
 
-![image-20210928195913006](./JS基础学习笔记.assets/image-20210928195913006.png)
+![image-20210928195913006](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114749.png)
 
 ### 2.node节点
 
-![image-20210928200010093](./JS基础学习笔记.assets/image-20210928200010093.png)
+![image-20210928200010093](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114420.png)
 
-![image-20210928200031596](./JS基础学习笔记.assets/image-20210928200031596.png)
+![image-20210928200031596](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114557.png)
 
-![image-20210928200050508](./JS基础学习笔记.assets/image-20210928200050508.png)
+![image-20210928200050508](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114324.png)
 
 ### 3.示例
 
@@ -958,7 +958,7 @@ console.log(reg5.test('17576260472'));//true
 
 效果
 
-![image-20210928200741221](./JS基础学习笔记.assets/image-20210928200741221.png)
+![image-20210928200741221](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114948.png)
 
 ```javascript
  let element = document.getElementById('btn')
@@ -968,7 +968,7 @@ console.log(reg5.test('17576260472'));//true
 
 效果
 
-![image-20210928200700674](./JS基础学习笔记.assets/image-20210928200700674.png)
+![image-20210928200700674](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282114558.png)
 
 ### 4.DOM查询
 
@@ -1161,7 +1161,7 @@ let div = document.querySelectorAll(".box1")//
 
 #### 8.DOM增删改
 
-![image-20211002103230986](./JS基础学习笔记.assets/image-20211002103230986.png)
+![image-20211002103230986](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115118.png)
 
 示例
 
@@ -1227,7 +1227,7 @@ let div = document.querySelectorAll(".box1")//
     })
 ```
 
-![image-20211002111226131](./JS基础学习笔记.assets/image-20211002111226131.png)
+![image-20211002111226131](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115579.png)
 
 #### 9.操作内联样式 
 
@@ -1243,7 +1243,7 @@ let div = document.querySelectorAll(".box1")//
 
 在标签内style中直接定义的是内联样式，内联样式的优先级较高
 
-![image-20211002144630382](./JS基础学习笔记.assets/image-20211002144630382.png)
+![image-20211002144630382](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115915.png)
 
 
 
@@ -1278,7 +1278,7 @@ let div = document.querySelectorAll(".box1")//
 </style>
 ```
 
-![GIF 2021-10-2 14-41-29](./JS基础学习笔记.assets/GIF 2021-10-2 14-41-29.gif)
+![GIF 2021-10-2 14-41-29](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115926.gif)
 
 #### 10.获取元素的生效样式
 
@@ -1318,7 +1318,7 @@ let div = document.querySelectorAll(".box1")//
 
    
 
-![image-20211002151559724](./JS基础学习笔记.assets/image-20211002151559724.png)
+![image-20211002151559724](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115076.png)
 
 #### 11.取消事件冒泡
 
@@ -1478,7 +1478,7 @@ const nowtime = document.getElementById('nowtime')
     },1000)
 ```
 
-![GIF 2021-10-3 11-14-53](./JS基础学习笔记.assets/GIF 2021-10-3 11-14-53.gif)
+![GIF 2021-10-3 11-14-53](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115394.gif)
 
 
 
@@ -1522,7 +1522,7 @@ JS中的||符号：
 
 ​		example：
 
-​			 ![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160506175633201-1065540405.png)
+​			 ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115885.png)
 
 ​	(2)JSON.stringify()函数 
 
@@ -1540,7 +1540,7 @@ JS中的||符号：
 
 ​		example:
 
-​			![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160506180310357-1699761671.png) 
+​			![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115371.png) 
 
 ​	(3) eval()函数
 
@@ -1554,11 +1554,11 @@ JS中的||符号：
 
 ​		example：
 
-​			 ![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160508223748405-965794737.png)
+​			 ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115422.png)
 
 ​		使用eval()函数也可以将JSON字符串解析为对象，这个功能能完成JSON.parse()的功能，但是有不一样的地方，请看下面代码 ：
 
-​			![img](JS%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.assets/814132-20160508231622202-559579264.png) 
+​			![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282115135.png) 
 
 ​		不知道大家有木有注意到eval()还要用一对圆括号将字符串包起来，对此我寻找到比较好的解释就是： 
 

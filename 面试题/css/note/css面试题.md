@@ -206,7 +206,7 @@ MDN对该方法的描述：
 
 ### 11. 对盒模型的理解
 
-CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型 ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922521.webp) ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922252.webp) 盒模型都是由四个部分组成的，分别是margin、border、padding和content。
+CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型 ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922521.webp) ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922252.webp) 盒模型都是由四个部分组成的，分别是margin、border、padding和content。
 
 标准盒模型和IE盒模型的区别在于设置width和height时，所对应的范围不同：
 
@@ -308,7 +308,7 @@ CSSSprites（精灵图），将一个页面涉及到的所有图片都包含到�
 
 而如果有一把尺子来实际测量这部手机的物理像素，实际为 1242*2688 物理像素；经过计算可知，1242/414=3，也就是说，在单边上，一个逻辑像素=3个物理像素，就说这个屏幕的像素密度为 3，也就是常说的 3 倍屏。
 
-对于图片来说，为了保证其不失真，1 个图片像素至少要对应一个物理像素，假如原始图片是 500300 像素，那么在 3 倍屏上就要放一个 1500900 像素的图片才能保证 1 个物理像素至少对应一个图片像素，才能不失真。 ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922062.webp) 当然，也可以针对所有屏幕，都只提供最高清图片。虽然低密度屏幕用不到那么多图片像素，而且会因为下载多余的像素造成带宽浪费和下载延迟，但从结果上说能保证图片在所有屏幕上都不会失真。
+对于图片来说，为了保证其不失真，1 个图片像素至少要对应一个物理像素，假如原始图片是 500300 像素，那么在 3 倍屏上就要放一个 1500900 像素的图片才能保证 1 个物理像素至少对应一个图片像素，才能不失真。 ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922062.webp) 当然，也可以针对所有屏幕，都只提供最高清图片。虽然低密度屏幕用不到那么多图片像素，而且会因为下载多余的像素造成带宽浪费和下载延迟，但从结果上说能保证图片在所有屏幕上都不会失真。
 
 还可以使用 CSS 媒体查询来判断不同的像素密度，从而选择不同的图片:
 
@@ -498,7 +498,7 @@ CSS 工程化是为了解决以下问题：
 
 **（1）预处理器：为什么要用预处理器？它的出现是为了解决什么问题？**
 
-预处理器，其实就是 CSS 世界的“轮子”。预处理器支持我们写一种类似 CSS、但实际并不是 CSS 的语言，然后把它编译成 CSS 代码： ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922321.webp) 那为什么写 CSS 代码写得好好的，偏偏要转去写“类 CSS”呢？这就和本来用 JS 也可以实现所有功能，但最后却写 React 的 jsx 或者 Vue 的模板语法一样——为了爽！要想知道有了预处理器有多爽，首先要知道的是传统 CSS 有多不爽。随着前端业务复杂度的提高，前端工程中对 CSS 提出了以下的诉求：
+预处理器，其实就是 CSS 世界的“轮子”。预处理器支持我们写一种类似 CSS、但实际并不是 CSS 的语言，然后把它编译成 CSS 代码： ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922321.webp) 那为什么写 CSS 代码写得好好的，偏偏要转去写“类 CSS”呢？这就和本来用 JS 也可以实现所有功能，但最后却写 React 的 jsx 或者 Vue 的模板语法一样——为了爽！要想知道有了预处理器有多爽，首先要知道的是传统 CSS 有多不爽。随着前端业务复杂度的提高，前端工程中对 CSS 提出了以下的诉求：
 
 1. 宏观设计上：我们希望能优化 CSS 文件的目录结构，对现有的 CSS 文件实现复用；
 2. 编码优化上：我们希望能写出结构清晰、简明易懂的 CSS，需要它具有一目了然的嵌套层级关系，而不是无差别的一铺到底写法；我们希望它具有变量特征、计算能力、循环能力等等更强的可编程性，这样我们可以少写一些无用的代码；
@@ -515,7 +515,7 @@ CSS 工程化是为了解决以下问题：
 
 **（2）PostCss：PostCss 是如何工作的？我们在什么场景下会使用 PostCss？**
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921579.webp) 它和预处理器的不同就在于，预处理器处理的是 类CSS，而 PostCss 处理的就是 CSS 本身。Babel 可以将高版本的 JS 代码转换为低版本的 JS 代码。PostCss 做的是类似的事情：它可以编译尚未被浏览器广泛支持的先进的 CSS 语法，还可以自动为一些需要额外兼容的语法增加前缀。更强的是，由于 PostCss 有着强大的插件机制，支持各种各样的扩展，极大地强化了 CSS 的能力。
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921579.webp) 它和预处理器的不同就在于，预处理器处理的是 类CSS，而 PostCss 处理的就是 CSS 本身。Babel 可以将高版本的 JS 代码转换为低版本的 JS 代码。PostCss 做的是类似的事情：它可以编译尚未被浏览器广泛支持的先进的 CSS 语法，还可以自动为一些需要额外兼容的语法增加前缀。更强的是，由于 PostCss 有着强大的插件机制，支持各种各样的扩展，极大地强化了 CSS 的能力。
 
 PostCss 在业务中的使用场景非常多：
 
@@ -546,7 +546,7 @@ PostCss 在业务中的使用场景非常多：
 - `imgs.offsetTop` 是元素顶部距离文档顶部的高度（包括滚动条的距离）；
 - 内容达到显示区域的：`img.offsetTop < window.innerHeight + document.body.scrollTop;`
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922007.webp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922007.webp)
 
 ### 30. z-index属性在什么情况下会失效
 
@@ -1120,7 +1120,7 @@ clear属性只有块级元素才有效的，而::after等伪元素默认都是�
 
 ### 5. 元素的层叠顺序
 
-层叠顺序，英文称作 stacking order，表示元素发生层叠时有着特定的垂直显示顺序。下面是盒模型的层叠规则： ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922320.webp) 对于上图，由上到下分别是： （1）背景和边框：建立当前层叠上下文元素的背景和边框。 （2）负的z-index：当前层叠上下文中，z-index属性值为负的元素。 （3）块级盒：文档流内非行内级非定位后代元素。 （4）浮动盒：非定位浮动元素。 （5）行内盒：文档流内行内级非定位后代元素。 （6）z-index:0：层叠级数为0的定位元素。 （7)正z-index：z-index属性值为正的定位元素。
+层叠顺序，英文称作 stacking order，表示元素发生层叠时有着特定的垂直显示顺序。下面是盒模型的层叠规则： ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922320.webp) 对于上图，由上到下分别是： （1）背景和边框：建立当前层叠上下文元素的背景和边框。 （2）负的z-index：当前层叠上下文中，z-index属性值为负的元素。 （3）块级盒：文档流内非行内级非定位后代元素。 （4）浮动盒：非定位浮动元素。 （5）行内盒：文档流内行内级非定位后代元素。 （6）z-index:0：层叠级数为0的定位元素。 （7)正z-index：z-index属性值为正的定位元素。
 
 **注意:** 当定位元素z-index:auto，生成盒在当前层叠上下文中的层级为 0，不会建立新的层叠上下文，除非是根元素。
 
@@ -1140,15 +1140,15 @@ position有以下属性值：
 
 - **relative：** 元素的定位永远是相对于元素自身位置的，和其他元素没关系，也不会影响其他元素。
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921935.webp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921935.webp)
 
 - **fixed：** 元素的定位是相对于 window （或者 iframe）边界的，和其他元素没有关系。但是它具有破坏性，会导致其他元素位置的变化。
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922602.webp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922602.webp)
 
 - **absolute：** 元素的定位相对于前两者要复杂许多。如果为 absolute 设置了 top、left，浏览器会根据什么去确定它的纵向和横向的偏移量呢？答案是浏览器会递归查找该元素的所有父元素，如果找到一个设置了`position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922208.webp) ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221922865.webp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922208.webp) ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221922865.webp)
 
 ### 7. **display、float、position的关系**
 
@@ -1199,14 +1199,14 @@ div {
 复制代码
 ```
 
-将元素的长宽都设置为0，显示出来的效果是这样的： ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921284.webp) 所以可以根据border这个特性来绘制三角形： **（1)三角1**
+将元素的长宽都设置为0，显示出来的效果是这样的： ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921284.webp) 所以可以根据border这个特性来绘制三角形： **（1)三角1**
 
 ```css
 div {    width: 0;    height: 0;    border-top: 50px solid red;    border-right: 50px solid transparent;    border-left: 50px solid transparent;}
 复制代码
 ```
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921643.webp) **（2)三角2**
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921643.webp) **（2)三角2**
 
 ```css
 div {
@@ -1219,7 +1219,7 @@ div {
 复制代码
 ```
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921447.webp) **（3)三角3**
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921447.webp) **（3)三角3**
 
 ```css
 div {
@@ -1232,7 +1232,7 @@ div {
 复制代码
 ```
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921993.webp) **（4)三角4**
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921993.webp) **（4)三角4**
 
 ```css
 div {
@@ -1245,7 +1245,7 @@ div {
 复制代码
 ```
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921400.webp) **（5)三角5**
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921400.webp) **（5)三角5**
 
 ```css
 div {
@@ -1257,7 +1257,7 @@ div {
 复制代码
 ```
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921065.webp) 还有很多，就不一一实现了，总体的原则就是通过上下左右边框来控制三角形的方向，用边框的宽度比来控制三角形的角度。
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921065.webp) 还有很多，就不一一实现了，总体的原则就是通过上下左右边框来控制三角形的方向，用边框的宽度比来控制三角形的角度。
 
 ### 2. 实现一个扇形
 
@@ -1274,7 +1274,7 @@ div{
 复制代码
 ```
 
-![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921625.webp)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921625.webp)
 
 ### 3. 实现一个宽高自适应的正方形
 
@@ -1354,7 +1354,7 @@ window.devicePixelRatio = 设备的物理像素 / CSS像素。
 复制代码
 ```
 
-打开 Chrome 浏览器，启动移动端调试模式，在控制台去输出这个 `devicePixelRatio` 的值。这里选中 iPhone6/7/8 这系列的机型，输出的结果就是2： ![img](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203221921167.webp) 这就意味着设置的 1px CSS 像素，在这个设备上实际会用 2 个物理像素单元来进行渲染，所以实际看到的一定会比 1px 粗一些。 **解决1px 问题的三种思路：**
+打开 Chrome 浏览器，启动移动端调试模式，在控制台去输出这个 `devicePixelRatio` 的值。这里选中 iPhone6/7/8 这系列的机型，输出的结果就是2： ![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203221921167.webp) 这就意味着设置的 1px CSS 像素，在这个设备上实际会用 2 个物理像素单元来进行渲染，所以实际看到的一定会比 1px 粗一些。 **解决1px 问题的三种思路：**
 
 #### 思路一：直接写 0.5px
 
@@ -1430,5 +1430,4 @@ metaEl.setAttribute('content', `width=device-width,user-scalable=no,initial-scal
 ```
 
 这样解决了，但这样做的副作用也很大，整个页面被缩放了。这时 1px 已经被处理成物理像素大小，这样的大小在手机上显示边框很合适。但是，一些原本不需要被缩小的内容，比如文字、图片等，也被无差别缩小掉了。
-
 

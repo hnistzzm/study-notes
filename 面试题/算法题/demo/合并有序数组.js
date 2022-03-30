@@ -1,20 +1,19 @@
-var arr1 = [1,2,3,0,0,0]
-var arr2 = [2,5,4]
-// console.log((arr1.splice(0,3)).concat(arr2).sort());
+function quickSort(arr){
+    if(arr.length <= 1) return arr;
 
-function merge( A, m, B, n ) {
-    // write code here
-    console.log("A0",A);
-    for (let i = 0; i < n; i++) {
-      A.pop()
+    let left = [];
+    let right = [];
+    let basic = arr.shift();
+
+    for(let i=0;i<arr.length;i++){
+
+       if(arr[i]<basic) left.push(arr[i]);
+       if(arr[i]>=basic) right.push(arr[i]);
+
     }
-    console.log("A1",A);
-    (A.concat(B)).sort()
-    console.log(A.concat(B).sort());
+
+    return quickSort(left).concat(basic,quickSort(right));
 
 }
-
-merge(arr1,3,arr2,3);
-
-console.log(arr1); 
-console.log(arr2);
+let nums1 = [1,5,4,2,6,8,3,55]
+console.log( quickSort(nums1));

@@ -7,8 +7,8 @@ const promise2 = new Promise((resolve, reject) => {
     resolve(2);
 });
 const promise3 = new Promise((resolve, reject) => {
-    reject(3);
-    // resolve(3);
+    // reject(3);
+    resolve(3);
 });
 
 let p = Promise.all([promise1,promise2,promise3])

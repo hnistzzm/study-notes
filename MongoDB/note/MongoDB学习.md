@@ -8,11 +8,11 @@
 
   找到mongoDB文件夹的bin目录,将地址添加在环境变量的path中
 
-  ![image-20220103151538220](C:\Users\zhangzhenming\AppData\Roaming\Typora\typora-user-images\image-20220103151538220.png)
+  ![image-20220103151538220](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282116815.png)
 
 - win+R(cmd) 输入`mongod --version`查看是否能获取到版本号,获取到说明已经安装成功
 
-  ![image-20220103151746095](C:\Users\zhangzhenming\AppData\Roaming\Typora\typora-user-images\image-20220103151746095.png)
+  ![image-20220103151746095](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282116595.png)
 
 ### 2.开启和关闭数据库
 
@@ -86,6 +86,6 @@ mongo
 - `db.collection.find.pretty()`
   - 以格式化的方法显示所有文档
 
-![image-20220103175720252](MongoDB学习.assets/image-20220103175720252.png)
+![image-20220103175720252](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282116622.png)
 
 日结缴费单

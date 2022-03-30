@@ -25,7 +25,7 @@ fs.writeFile("写入和读取文件/data/hello.txt",'hello,nodeJs',function(err)
 
 代码成功执行后,会在data文件夹中创建hello.txt文件
 
-![image-20211108130450154](./Node.Js学习.assets/image-20211108130450154.png)
+![image-20211108130450154](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282116023.png)
 
 ### 2.读取文件
 
@@ -55,7 +55,7 @@ fs.readFile('hello.txt',function(err,data){
 - **mode** - 设置文件模式(权限)，文件创建默认权限为 0666(可读，可写)。
 - **callback** - 回调函数，带有两个参数如：callback(err, fd)。
 
-![image-20211108130823432](./Node.Js学习.assets/image-20211108130823432.png)
+![image-20211108130823432](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117613.png)
 
 ---
 
@@ -129,7 +129,7 @@ server.listen(3000,function(){
 
 当我们请求3000端口时,服务器就会接收到请求
 
-![image-20211108133118472](./Node.Js学习.assets/image-20211108133118472.png)
+![image-20211108133118472](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117195.png)
 
 ---
 
@@ -192,15 +192,15 @@ server.listen(3001,function(){
 
 请求 /a
 
-![image-20211108135022540](./Node.Js学习.assets/image-20211108135022540.png)
+![image-20211108135022540](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117611.png)
 
 请求 /b
 
-![image-20211108135037723](./Node.Js学习.assets/image-20211108135037723.png)
+![image-20211108135037723](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117467.png)
 
 普通请求
 
-![image-20211108135054546](./Node.Js学习.assets/image-20211108135054546.png)
+![image-20211108135054546](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117861.png)
 
 ## 3.响应内容类型
 
@@ -272,7 +272,7 @@ html文件
 
 页面效果
 
-![image-20211108165158465](./Node.Js学习.assets/image-20211108165158465.png)
+![image-20211108165158465](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117662.png)
 
 ## 4.使用模板引擎向客户端传递信息
 
@@ -538,7 +538,7 @@ exports.obj = obj
 module.exports = {add,obj}
 ```
 
-![image-20211122181326774](Node.Js学习.assets/image-20211122181326774.png)
+![image-20211122181326774](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117088.png)
 
 ### 3.require方法加载规则
 
@@ -828,7 +828,7 @@ package.json
 
 控制台输出以下结果
 
-![image-20211123213156524](Node.Js学习.assets/image-20211123213156524.png)
+![image-20211123213156524](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117414.png)
 
 以上的引入过程
 
@@ -858,7 +858,7 @@ package.json
 
 输入指令:npm init，根据我们的需求输入信息
 
-![image-20211125165103245](Node.Js学习.assets/image-20211125165103245.png)
+![image-20211125165103245](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117836.png)
 
 输入结束后,系统会自动创建`package.json`文件,内容就是我们所填入的信息
 
@@ -911,7 +911,7 @@ npm5以前是不会生成`package-lock.json`这个文件的
 
 可以发现`package.json`的dependencies中增加了jquery的依赖信息
 
-![image-20211125170304989](Node.Js学习.assets/image-20211125170304989.png)
+![image-20211125170304989](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117130.png)
 
 有了这个依赖信息,当我们不小心将依赖包删除或者因为一些操作使得依赖包出现问题时,我们可以很轻松的还原这个依赖包
 
@@ -923,7 +923,7 @@ npm5以前是不会生成`package-lock.json`这个文件的
 
 **只要我们的`package.json`中存在依赖信息，执行`npm install`指令就能帮我们重新下载依赖信息对应的依赖包**
 
-![image-20211125170847068](Node.Js学习.assets/image-20211125170847068.png)
+![image-20211125170847068](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117683.png)
 
 - `npm uninstall xxx`：卸载名为xxx的依赖库,packge.json中的依赖信息依然保存
   - `npm uninstall xxx --save`:卸载依赖库的同时将依赖信息也删除
@@ -982,11 +982,9 @@ npm服务器在国外,国内下载速度很慢，为了解决此问题,淘宝为
 nodemon app.js
 ```
 
-![image-20211128200047752](Node.Js学习.assets/image-20211128200047752.png)
+![image-20211128200047752](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117531.png)
 
-=======
-加油加油呀
->>>>>>> 2aabda34433c9f23b7c7af61a02873b77f02e6ba
+
 
 ## 11.express框架
 
@@ -1039,7 +1037,7 @@ app.use('/public',express.static('./public'))//设置静态资源请求和获取
 
 请求后端public文件夹下的comment.json文件
 
-![image-20211129192722727](Node.Js学习.assets/image-20211129192722727.png)
+![image-20211129192722727](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282117894.png)
 
 **如果不设置请求路径**
 
@@ -1051,7 +1049,7 @@ app.use(express.static('./public'))//设置静态资源请求和获取方式
 
 请求方式为
 
-![image-20211129192910258](Node.Js学习.assets/image-20211129192910258.png)
+![image-20211129192910258](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282118747.png)
 
 ### 3.express中使用模板引擎
 
@@ -1106,7 +1104,7 @@ hello.html(html文档声明及结构省略)
 <h1>{{title}}</h1>
 ```
 
-![image-20211129194127178](Node.Js学习.assets/image-20211129194127178.png)
+![image-20211129194127178](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282118148.png)
 
 ### 4.express中通过中间件获取post请求体数据
 

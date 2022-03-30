@@ -44,7 +44,7 @@ new Vue({
 
 
 
-![image-20210814113734769](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131749156.png)
+![image-20210814113734769](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131749156.png)
 
 ## 2.v-bind和v-model的区别
 
@@ -74,7 +74,7 @@ new Vue({
     })
 ```
 
-![GIF 2021-8-14 11-58-26](./Vue学习笔记.assets/GIF 2021-8-14 11-58-26.gif)
+![GIF 2021-8-14 11-58-26](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282119422.gif)
 
 > 如果我们想在a标签中添加url，除了最原始的方式，也可以利用vue中的v-bind
 
@@ -116,13 +116,13 @@ new Vue({
     })
 ```
 
-![GIF 2021-8-14 11-51-03](./Vue学习笔记.assets/GIF 2021-8-14 11-51-03.gif)
+![GIF 2021-8-14 11-51-03](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282119797.gif)
 
 ## 3.理解MVVM模型
 
 ### 1.理解
 
-![image-20210816105550773](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131750069.png)
+![image-20210816105550773](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131750069.png)
 
 1.M:模型(Model):对应data中的数据
 
@@ -217,7 +217,7 @@ Object.defineProperty方法中的**get**和**set**函数
 
 当我们运行这段代码并在控制台打印时，可以看到
 
-![image-20210816112939028](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131750894.png)
+![image-20210816112939028](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131750894.png)
 
 其中name和sex是能直接显示的，而我们插入的**age**属性则需要手动点击才能显示，这是为什么呢？
 
@@ -227,15 +227,15 @@ Object.defineProperty方法中的**get**和**set**函数
 
 当我们在**person**中查看**age**的属性时，我们可以看到
 
-![image-20210816113346460](./Vue学习笔记.assets/image-20210816113346460.png)
+![image-20210816113346460](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282119029.png)
 
 此时的**value**值为**18**，当我们修改**age**的值时，
 
-![image-20210816113425221](./Vue学习笔记.assets/image-20210816113425221.png)
+![image-20210816113425221](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282119717.png)
 
 此时**person.age**的值变为**19**,此时我们再观察**number**的值
 
-![image-20210816113508877](./Vue学习笔记.assets/image-20210816113508877.png)
+![image-20210816113508877](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282120646.png)
 
 我们可以发现，此时**number**的值也变成了**19**！！！
 
@@ -255,7 +255,7 @@ Object.defineProperty方法中的**get**和**set**函数
 
 ### 1.理解
 
-![image-20210816114443781](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131750403.png)
+![image-20210816114443781](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131750403.png)
 
 我们写一个vm实例对象,此时vue就会创建一个**vm**对象，并将**data**中的数据赋值到 **_data**中，
 
@@ -294,7 +294,7 @@ Object.defineProperty方法中的**get**和**set**函数
 
 看上述示例，当我们点击链接时
 
-![GIF 2021-8-17 11-18-24](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751755.gif)
+![GIF 2021-8-17 11-18-24](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751755.gif)
 
 我们可以看到，点击链接之后，浏览器跳转到了新的网址,然后我们再看看使用**prevent**事件符
 
@@ -304,7 +304,7 @@ Object.defineProperty方法中的**get**和**set**函数
     </div>
 ```
 
-![GIF 2021-8-17 11-23-30](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751010.gif)
+![GIF 2021-8-17 11-23-30](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751010.gif)
 
 **此时我们点击链接之后，只会触发click绑定的函数，而不会执行默认事件**
 
@@ -336,7 +336,7 @@ const vm = new Vue({
 
 当我们点击按钮时
 
-![image-20210817112607915](./Vue学习笔记.assets/image-20210817112607915.png)
+![image-20210817112607915](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282120157.png)
 
 控制台输出了两次，也就是调用了两次函数，这是为什么呢？
 
@@ -352,7 +352,7 @@ const vm = new Vue({
 
 当我们再次点击按钮时
 
-![image-20210817112833936](./Vue学习笔记.assets/image-20210817112833936.png)
+![image-20210817112833936](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282120484.png)
 
 函数只触发了一次
 
@@ -386,9 +386,9 @@ const vm = new Vue({
 
 ## 7.Vue中的键盘事件
 
-![image-20210817113509787](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751137.png)
+![image-20210817113509787](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751137.png)
 
-![image-20210817113527197](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751851.png)
+![image-20210817113527197](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751851.png)
 
 ## 8.Vue中的计算属性
 
@@ -420,7 +420,7 @@ const vm = new Vue({
 
 假设1我们需要实现一个“填入姓和名,自动生成姓名”的效果,如下图
 
-![image-20210817114101012](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751401.png)
+![image-20210817114101012](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751401.png)
 
 我们可以用修饰符**{{}}**、**methods**、和计算属性**computed**三种方式来实现这个案例
 
@@ -455,7 +455,7 @@ const vm = new Vue({
 
 通过v-model双向绑定，我们可以在姓名输入框输入相应的值，全名使用**通配符+表达式**，实现全名的渲染
 
-![GIF 2021-8-17 15-10-46](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751947.gif)
+![GIF 2021-8-17 15-10-46](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751947.gif)
 
 #### 2.methods函数
 
@@ -489,7 +489,7 @@ const vm = new Vue({
 
 通过**通配符+函数**，我们可以实现复杂的逻辑判断，函数内可以进行很多的操作
 
-![GIF 2021-8-17 15-18-24](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751913.gif)
+![GIF 2021-8-17 15-18-24](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751913.gif)
 
 #### 3.计算属性computed
 
@@ -527,7 +527,7 @@ const vm = new Vue({
     })
 ```
 
-![GIF 2021-8-17 15-18-24](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751035.gif)
+![GIF 2021-8-17 15-18-24](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751035.gif)
 
 以上案例也可以实现，但是我们使用计算属性的优点是什么呢，我们为什么要选择用似乎更加麻烦的计算属性呢，我们先来看它的get函数
 
@@ -555,7 +555,7 @@ const vm = new Vue({
 
 当我们多次调用fullName，那么我们的get函数会不会多次调用呢?
 
-![GIF 2021-8-17 15-48-17](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751267.gif)
+![GIF 2021-8-17 15-48-17](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751267.gif)
 
 我们可以发现，当我们修改姓名的值时，get函数只执行了一次，这就是计算属性特有的**缓存机制**，即只有以下情况**get**才会调用,这样可以大大的提高执行效率
 
@@ -580,7 +580,7 @@ set(value){
 
 当我们在控制台修改fullName的值时
 
-![image-20210817155523934](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751772.png)
+![image-20210817155523934](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751772.png)
 
 页面没有任何变化,这是为什么呢？
 
@@ -588,7 +588,7 @@ set(value){
 
 我们现在使用set函数并修改fullName的值
 
-![image-20210817155952721](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751290.png)
+![image-20210817155952721](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751290.png)
 
 ![image-20210817155959237](./Vue学习笔记.assets/image-20210817155959237.png)
 
@@ -665,7 +665,7 @@ set什么时候调用呢？
 
 当我们点击“修改isHot”的按钮时,
 
-![image-20210818102937115](./Vue学习笔记.assets/image-20210818102937115.png)
+![image-20210818102937115](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282120789.png)
 
 控制台会弹出以下信息,说明**监察属性的handler函数被触发了**
 
@@ -711,7 +711,7 @@ const vm = new Vue({
 
 点击按钮
 
-![image-20210818104108289](./Vue学习笔记.assets/image-20210818104108289.png)
+![image-20210818104108289](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282120077.png)
 
 我们可以得出结论:**vue监视属性可以监视计算属性**
 
@@ -758,7 +758,7 @@ const vm = new Vue({
 
 当我们让a+1时
 
-![image-20210818105514889](./Vue学习笔记.assets/image-20210818105514889.png)
+![image-20210818105514889](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282120824.png)
 
 a的值的确改变了,但是控制台没有任何输出
 
@@ -782,7 +782,7 @@ a的值的确改变了,但是控制台没有任何输出
 
 我们配置之后再看控制台
 
-![image-20210818105851513](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751492.png)
+![image-20210818105851513](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751492.png)
 
 成功监听到a
 
@@ -825,7 +825,7 @@ a的值的确改变了,但是控制台没有任何输出
     })
 ```
 
-查看效果![GIF 2021-8-17 15-10-46](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751674.gif)
+查看效果![GIF 2021-8-17 15-10-46](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751674.gif)
 
 可以实现
 
@@ -861,7 +861,7 @@ const vm = new Vue({
 
 我们分别监听firstName和lastName的值，每当它们的值发生改变，我们就给fullName重新赋值，查看效果
 
-![GIF 2021-8-17 15-10-46](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751106.gif)
+![GIF 2021-8-17 15-10-46](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751106.gif)
 
 和之前的效果是一样的
 
@@ -896,7 +896,7 @@ const vm = new Vue({
 
 我们在监听函数中设置setTimeout方法(注意这是window方法，我们需要使用箭头函数来是他的作用域指向window)，我们看结果
 
-![GIF 2021-8-18 11-20-58](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751324.gif)
+![GIF 2021-8-18 11-20-58](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751324.gif)
 
 每次全名显示时，都会有1s的延迟
 
@@ -931,7 +931,7 @@ const vm = new Vue({
 
 效果
 
-![GIF 2021-8-18 11-24-07](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751145.gif)
+![GIF 2021-8-18 11-24-07](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751145.gif)
 
 我们可以看到，页面没有任何反应
 
@@ -993,9 +993,9 @@ computed:{
 
 ## 11.动态class和style样式
 
-![image-20210826152031172](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751300.png)
+![image-20210826152031172](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751300.png)
 
-![image-20210826152052221](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131751948.png)
+![image-20210826152052221](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131751948.png)
 
 ## 12.key的作用与原理
 
@@ -1031,9 +1031,9 @@ computed:{
 
 **index作为key和id作为key的区别**
 
-![image-20210819211653838](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752075.png)
+![image-20210819211653838](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752075.png)
 
-![image-20210819211812731](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752436.png)
+![image-20210819211812731](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752436.png)
 
 ## 2.举例
 
@@ -1079,21 +1079,21 @@ computed:{
 
 效果是这样的
 
-![image-20210819213633889](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752468.png)
+![image-20210819213633889](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752468.png)
 
 当我们点击按钮，会看到
 
-![image-20210819213700053](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752940.png)
+![image-20210819213700053](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752940.png)
 
 王八被逆序添加进了persons中
 
 但我们进行如下操作，**在input中添加数据再点击button**
 
-![image-20210819213751779](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752987.png)
+![image-20210819213751779](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752987.png)
 
 点击按钮
 
-![image-20210819213813123](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752378.png)
+![image-20210819213813123](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752378.png)
 
 我们发现，**input中的数据错位了！**
 
@@ -1135,11 +1135,11 @@ computed:{
 
 初始页面是这样的
 
-![image-20210819214745070](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752706.png)
+![image-20210819214745070](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752706.png)
 
 当我们点击按钮
 
-![image-20210819214758529](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752089.png)
+![image-20210819214758529](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752089.png)
 
 会发现数据没有任何问题，不存在像使用index作为key时数据错位的情况
 
@@ -1205,11 +1205,11 @@ new Vue({
 
 搜索前:
 
-![image-20210820212314581](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752236.png)
+![image-20210820212314581](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752236.png)
 
 搜索后:
 
-![image-20210820212333964](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752133.png)
+![image-20210820212333964](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752133.png)
 
 **如果不存放到新数组filterPersons中，会发生什么情况?**
 
@@ -1230,7 +1230,7 @@ persons:[
 
 当我们搜索关键词为“冬”时
 
-![image-20210820212537283](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752298.png)
+![image-20210820212537283](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752298.png)
 
 搜索数据没有问题，但此时persons已经变成了
 
@@ -1246,7 +1246,7 @@ persons:[
 
 我们再次搜索关键词为“伦”时
 
-![image-20210820212641689](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752452.png)
+![image-20210820212641689](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752452.png)
 
 就出问题了
 
@@ -1294,11 +1294,11 @@ const vm = new Vue({
 
 我们定义一个计算属性，当我们需要获取计算属性的值时，我们通过判断p.name中是否含有关键词keyword，如果存在就将其返回
 
-![image-20210820220553469](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752676.png)
+![image-20210820220553469](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752676.png)
 
 输入关键词后
 
-![image-20210820220607177](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752222.png)
+![image-20210820220607177](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752222.png)
 
 当我们使用计算属性来过滤列表时，不需要创建新数组
 
@@ -1354,15 +1354,15 @@ const vm = new Vue({
 
 点击”升序“按钮
 
-![image-20210821153336125](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752269.png)
+![image-20210821153336125](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752269.png)
 
 点击”降序“按钮
 
-![image-20210821153355595](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752516.png)
+![image-20210821153355595](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752516.png)
 
 点击默认排序按钮
 
-![image-20210821153408281](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752564.png)
+![image-20210821153408281](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752564.png)
 
 实现方法：我们通过点击按钮修改sortType的值，并使用计算属性filPersons来控制列表的排序与过滤
 
@@ -1494,7 +1494,7 @@ const vm = new Vue({
 
 点击按钮 发现列表的数据并没有改变
 
-![image-20210823205706758](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752035.png)
+![image-20210823205706758](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752035.png)
 
 我们在控制台输出persons[0]
 
@@ -1506,7 +1506,7 @@ const vm = new Vue({
 
 我们查看vm中persons
 
-![image-20210823210011405](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752386.png)
+![image-20210823210011405](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752386.png)
 
 会发现我们修改的数据并没有被Vue监测
 
@@ -1516,13 +1516,13 @@ const vm = new Vue({
 this.persons[0].name = '张振明'
 ```
 
-![image-20210823210829283](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131752254.png)
+![image-20210823210829283](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131752254.png)
 
 页面能成功渲染
 
 我们查看vm中的persons
 
-![image-20210823210942199](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131753892.png)
+![image-20210823210942199](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131753892.png)
 
 会发现每一个对象的属性都有对应的getter和setter，说明数据被Vue监测到了
 
@@ -1591,11 +1591,11 @@ persons[0].name是对象中的属性，在创建实例对象中，Vue就对其�
 
 页面效果是这样的
 
-![image-20210823214144468](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131753139.png)
+![image-20210823214144468](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131753139.png)
 
 我们点击按钮，会发现列表成功渲染
 
-![image-20210823214207104](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131753698.png)
+![image-20210823214207104](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131753698.png)
 
 原理是:**点击按钮触发函数，在函数中使用vue.set对student添加‘sex‘属性，此时Vue会为其添加监视属性，并通过setter重新渲染页面**
 
@@ -1657,7 +1657,7 @@ const vm = new Vue({
 
 当我们点击添加修改朋友姓名的按钮
 
-![image-20210823215139391](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131753435.png)
+![image-20210823215139391](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131753435.png)
 
 页面成功渲染
 
@@ -1665,7 +1665,7 @@ const vm = new Vue({
 
 ## 15.Vue收集表单数据
 
-![image-20210825200449603](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754530.png)
+![image-20210825200449603](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754530.png)
 
 ## 16.Vue过滤器
 
@@ -1689,7 +1689,7 @@ Dayjs，可以将输入的时间戳格式化，而且有非常多的格式化方
 
 [Dayjs]([Format · Day.js (gitee.io)](https://dayjs.gitee.io/docs/zh-CN/display/format))
 
-![image-20210825210841701](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754139.png)
+![image-20210825210841701](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754139.png)
 
 我们利用Vue中的filter实现这个需求
 
@@ -1740,7 +1740,7 @@ formatTime函数中的val就是newData的值(当前为时间戳),通过dayjs格�
 
 回顾以下以前学过的指令
 
-![image-20210826214233943](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754851.png)
+![image-20210826214233943](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754851.png)
 
 #### 1.v-text
 
@@ -1766,7 +1766,7 @@ formatTime函数中的val就是newData的值(当前为时间戳),通过dayjs格�
     })
 ```
 
-![image-20210826214637710](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754538.png)
+![image-20210826214637710](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754538.png)
 
 #### 2.v-html
 
@@ -1792,7 +1792,7 @@ formatTime函数中的val就是newData的值(当前为时间戳),通过dayjs格�
     })
 ```
 
-![image-20210826214647289](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754363.png)
+![image-20210826214647289](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754363.png)
 
 #### 3.v-cloak
 
@@ -1853,7 +1853,7 @@ new Vue({
     })
 ```
 
-![GIF 2021-8-26 21-57-25](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754274.gif)
+![GIF 2021-8-26 21-57-25](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754274.gif)
 
 使用v-once之后，节点只渲染一次
 
@@ -1884,7 +1884,7 @@ new Vue({
     })
 ```
 
-![image-20210826220133906](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754842.png)
+![image-20210826220133906](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754842.png)
 
 加了v-pre之后，vue不对标签中的内容进行解析
 
@@ -2043,7 +2043,7 @@ const vm =new Vue({
 
 ![	](E:\学习笔记\cssStudy\image/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png)
 
-![image-20210830210912386](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754450.png)
+![image-20210830210912386](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754450.png)
 
 **beforeCreate**:此时生命周期以及事件已经被初始化但是数据代理还未开始，无法通过vm访问到data中的数据、methods中的方法
 
@@ -2114,7 +2114,7 @@ const vm = new Vue({
     })
 ```
 
-![GIF 2021-8-30 21-32-22](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754429.gif)
+![GIF 2021-8-30 21-32-22](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754429.gif)
 
 点击按钮时触发stop函数，对vm实例进行销毁，销毁后，原来的dom仍有残留，但实际上已经全部销毁
 
@@ -2167,7 +2167,7 @@ const component = Vue.extend({
     let x2= x
 ```
 
-![image-20210831165908958](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754985.png)
+![image-20210831165908958](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754985.png)
 
 当我们将data定义为函数，我们修改x1和x2的值都不会对x造成影响
 
@@ -2192,7 +2192,7 @@ const component = Vue.extend({
     let x2= new x()
 ```
 
-![image-20210831170918103](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754795.png)
+![image-20210831170918103](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754795.png)
 
 ##### 2.注册和使用属性
 
@@ -2238,11 +2238,11 @@ const vm =new Vue({
 
 最终呈现在页面是这样的
 
-![image-20210831172346737](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754228.png)
+![image-20210831172346737](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754228.png)
 
 ##### 3.创建属性需要注意的几个地方
 
-![image-20210831172731368](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754368.png)
+![image-20210831172731368](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754368.png)
 
 #### 2.组件的嵌套
 
@@ -2313,7 +2313,7 @@ const student =Vue.extend({
 
 #### 4.Vue与VueComponent的关系
 
-![image-20210831194531264](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131754098.png)
+![image-20210831194531264](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131754098.png)
 
 ## 21.单文件组件
 
@@ -3695,7 +3695,7 @@ export default {
 
 **3.Vuex工作原理图**
 
-![vuex](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131755165.png)
+![vuex](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131755165.png)
 
 ### 2.vuex核心概念和API
 
@@ -3827,7 +3827,7 @@ new Vue({
 
 案例:点击按钮对数字进行各种操作
 
-![image-20210911201800277](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131755515.png)
+![image-20210911201800277](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131755515.png)
 
 我们将求和之后的数字定义为count，存入vuex的临时组件中，每次进行操作从原组件中调用vuex的api，最终完成求和的计算
 
@@ -3923,7 +3923,7 @@ export default new Vuex.Store({
 
 效果
 
-![GIF 2021-9-11 20-22-35](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131755308.gif)
+![GIF 2021-9-11 20-22-35](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131755308.gif)
 
 ### 5.getters的使用
 
@@ -4624,4 +4624,4 @@ app.use(history());
 
 ## 37.Vue项目结构设计
 
-![image-20220105183541014](https://gitee.com/hnistzzm/typora-cloud-img/raw/master/202203131755160.png)
+![image-20220105183541014](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203131755160.png)

@@ -40,7 +40,7 @@ ctx.fillRect(0,0,150,75);
 
 ###### 示例图
 
-![image-20210619161708763](./Canvas学习.assets/image-20210619161708763.png)
+![image-20210619161708763](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112182.png)
 
 #### Canvas-路径
 
@@ -81,7 +81,7 @@ ctx.stroke();
 
 ###### 示例图
 
-![img](./Canvas学习.assets/%MU1JJ$(JZMXU8)JE2WXO3W.png)
+![img](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112635.png)
 
 在canvas中绘制圆形, 我们将使用以下方法:
 
@@ -121,7 +121,7 @@ ctx.stroke();
 
 ###### 示例图
 
-![image-20210619163218445](./Canvas学习.assets/image-20210619163218445.png)
+![image-20210619163218445](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112651.png)
 
 #### Canvas-文本
 
@@ -162,7 +162,7 @@ ctx.fillText("Hello World",10,50);
 
 ###### 示例图
 
-![image-20210619164153296](./Canvas学习.assets/image-20210619164153296.png)
+![image-20210619164153296](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112836.png)
 
 ###### 空心文本实例
 
@@ -193,7 +193,7 @@ ctx.strokeText("Hello World",10,50);
 
 ###### 示例图
 
-![image-20210619164333034](./Canvas学习.assets/image-20210619164333034.png)
+![image-20210619164333034](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112329.png)
 
 #### Canvas渐变
 
@@ -248,7 +248,7 @@ ctx.fillRect(10,10,150,80);
 
 ###### 示例图
 
-![image-20210619170432758](./Canvas学习.assets/image-20210619170432758.png)
+![image-20210619170432758](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112002.png)
 
 ###### 圆渐变实例
 
@@ -286,7 +286,7 @@ ctx.fillRect(10,10,150,80);
 
 ###### 示例图
 
-![image-20210619170522170](./Canvas学习.assets/image-20210619170522170.png)
+![image-20210619170522170](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112490.png)
 
 #### Canvas-画像
 
@@ -329,5 +329,5 @@ img.onload = function() {
 
 ###### 示例图
 
-![image-20210619170658879](./Canvas学习.assets/image-20210619170658879.png)
+![image-20210619170658879](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282112866.png)
 

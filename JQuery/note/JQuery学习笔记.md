@@ -112,6 +112,6 @@ var div2 = divs.get(1)
     })
 ```
 
-![GIF 2021-11-6 11-37-25](./JQuery学习笔记.assets/GIF 2021-11-6 11-37-25.gif)
+![GIF 2021-11-6 11-37-25](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203282116575.gif)
 
 123

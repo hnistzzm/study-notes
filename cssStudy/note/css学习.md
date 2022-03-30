@@ -4,7 +4,7 @@
 
 ## 1.box模型
 
-![image-20210806103424834](./css学习.assets/image-20210806103424834.png)
+![image-20210806103424834](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827028.png)
 
 定义一个class为box的div
 
@@ -116,7 +116,7 @@ box-sizing:border-box;
 margin: 0 auto;
 ```
 
-![image-20210806105649966](./css学习.assets/image-20210806105649966.png)
+![image-20210806105649966](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827122.png)
 
 ## 2.浮动布局
 
@@ -163,7 +163,7 @@ float:left
 }
 ```
 
-![image-20210806114038231](./css学习.assets/image-20210806114038231.png)
+![image-20210806114038231](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827347.png)
 
 #### float浮动布局的特性
 
@@ -199,7 +199,7 @@ float:left
 }
 ```
 
-![image-20210806114326821](./css学习.assets/image-20210806114326821.png)
+![image-20210806114326821](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827843.png)
 
 #### 解决float元素不占位的方案
 
@@ -245,7 +245,7 @@ clear:both
 
 
 
-##### ![image-20210806114811294](./css学习.assets/image-20210806114811294.png)
+##### ![image-20210806114811294](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827147.png)
 
 ##### 利用伪元素选择器实现
 
@@ -263,7 +263,7 @@ clear:both
 
 ## 3.CSS定位
 
-### ![image-20210807110825309](./css学习.assets/image-20210807110825309.png)
+### ![image-20210807110825309](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827109.png)
 
 ### 绝对定位(absolute)
 
@@ -295,7 +295,7 @@ clear:both
 }
 ```
 
-![image-20210807112009294](./css学习.assets/image-20210807112009294-16283064881691.png)
+![image-20210807112009294](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827353.png)
 
 **以浏览器左上角为参照物**
 
@@ -335,13 +335,13 @@ clear:both
 }
 ```
 
-![image-20210807112009294](./css学习.assets/image-20210807112009294-16283064881691.png)
+![image-20210807112009294](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827729.png)
 
 默认参照物为浏览器**视窗位置**,不会随着滚动条的移动而移动 
 
 ## 4.CSS3新增样式
 
-![image-20210807145226699](./css学习.assets/image-20210807145226699.png)
+![image-20210807145226699](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827482.png)
 
 ### 圆角
 
@@ -349,7 +349,7 @@ clear:both
 
 如果设置两个值，第一个值表示左上和右下，第二个值表示右上和左下
 
-![image-20210807145612799](./css学习.assets/image-20210807145612799.png)
+![image-20210807145612799](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827417.png)
 
 ```html
 <div class="radius"></div>
@@ -365,7 +365,7 @@ clear:both
 }
 ```
 
-![image-20210807145958173](./css学习.assets/image-20210807145958173.png)
+![image-20210807145958173](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827641.png)
 
 在样式中添加 border-radius: 50%;
 
@@ -382,7 +382,7 @@ clear:both
 
 得到
 
-![image-20210807150108773](./css学习.assets/image-20210807150108773.png)
+![image-20210807150108773](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827585.png)
 
 **将角度设置为50%可以得到圆形**
 
@@ -407,7 +407,7 @@ box-shadow:10px 20px 30px blue
     }
 ```
 
-![image-20210807150810105](./css学习.assets/image-20210807150810105.png)
+![image-20210807150810105](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827495.png)
 
 **添加box-shadow后：**
 
@@ -422,7 +422,7 @@ box-shadow:10px 20px 30px blue
     }
 ```
 
-![image-20210807150851377](./css学习.assets/image-20210807150851377.png)
+![image-20210807150851377](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827457.png)
 
 ### 形变
 
@@ -445,7 +445,7 @@ box-shadow:10px 20px 30px blue
     }
 ```
 
-![image-20210807151557969](./css学习.assets/image-20210807151557969.png)
+![image-20210807151557969](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281827059.png)
 
 **旋转后**:
 
@@ -461,7 +461,7 @@ box-shadow:10px 20px 30px blue
 
 
 
-![image-20210807151720838](./css学习.assets/image-20210807151720838.png)
+![image-20210807151720838](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828771.png)
 
 #### 缩放(scale)
 
@@ -483,7 +483,7 @@ transform:scale(**倍数**)
     }
 ```
 
-![image-20210807151931234](./css学习.assets/image-20210807151931234.png)
+![image-20210807151931234](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828467.png)
 
 缩放后:
 
@@ -499,7 +499,7 @@ transform:scale(**倍数**)
     }
 ```
 
-![image-20210807152110955](./css学习.assets/image-20210807152110955.png)
+![image-20210807152110955](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828834.png)
 
 #### 位移(translate)
 
@@ -526,7 +526,7 @@ transform:scale(**倍数**)
     }
 ```
 
-![image-20210807152653349](./css学习.assets/image-20210807152653349.png)
+![image-20210807152653349](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828041.png)
 
 位移后:
 
@@ -543,7 +543,7 @@ transform:scale(**倍数**)
     }
 ```
 
-![image-20210807152723567](./css学习.assets/image-20210807152723567.png)
+![image-20210807152723567](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828950.png)
 
 #### 使得div垂直水平居中的方法
 
@@ -563,13 +563,13 @@ transform:scale(**倍数**)
     }
 ```
 
-![image-20210807154155446](./css学习.assets/image-20210807154155446.png)
+![image-20210807154155446](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828091.png)
 
 ## 5.过渡效果
 
 ### transition
 
-![image-20210809102107340](./css学习.assets/image-20210809102107340.png)
+![image-20210809102107340](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828181.png)
 
 ![image-20210809102223263](./css学习.assets/image-20210809102223263.png)
 
@@ -636,13 +636,13 @@ li{
 
 鼠标悬停前:
 
-![image-20210809102726207](./css学习.assets/image-20210809102726207.png)
+![image-20210809102726207](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828908.png)
 
 鼠标悬停后(有过渡效果):
 
-![image-20210809103225718](./css学习.assets/image-20210809103225718.png)
+![image-20210809103225718](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828571.png)
 
-![image-20210809102745842](./css学习.assets/image-20210809102745842.png)
+![image-20210809102745842](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828297.png)
 
 ##### 2.实现滚动导航效果
 
@@ -695,13 +695,13 @@ li{
 
 鼠标悬停前:
 
-![image-20210809102848912](./css学习.assets/image-20210809102848912.png)
+![image-20210809102848912](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828484.png)
 
 鼠标悬停后(有过渡效果):
 
-![image-20210809103149665](./css学习.assets/image-20210809103149665.png)
+![image-20210809103149665](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828515.png)
 
-![image-20210809102918432](./css学习.assets/image-20210809102918432.png)
+![image-20210809102918432](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828089.png)
 
 ##### 3.实现百度菜单效果
 
@@ -761,13 +761,13 @@ li{
 
 鼠标悬停前:
 
-![image-20210809103007292](./css学习.assets/image-20210809103007292.png)
+![image-20210809103007292](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828723.png)
 
 鼠标悬停后(有过渡效果):
 
-![image-20210809103103204](./css学习.assets/image-20210809103103204.png)
+![image-20210809103103204](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828693.png)
 
-![image-20210809103030772](./css学习.assets/image-20210809103030772.png)
+![image-20210809103030772](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828339.png)
 
 ## 6.动画效果
 
@@ -775,7 +775,7 @@ li{
 
 ![image-20210810101149620](./css学习.assets/image-20210810101149620-16285664074441.png)
 
-![image-20210810103143494](./css学习.assets/image-20210810103143494-16285664094572.png)
+![image-20210810103143494](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828948.png)
 
 **可以简写成**:
 
@@ -811,7 +811,7 @@ li{
 
 > 注:**需要将animation-name绑定到需要添加动画效果的元素中才能生效**
 
-![GIF 2021-8-10 10-27-10](./css学习.assets/GIF 2021-8-10 10-27-10.gif)
+![GIF 2021-8-10 10-27-10](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281828771.gif)
 
 ##### 2.实现唱片旋转效果
 
@@ -840,7 +840,7 @@ li{
     }
 ```
 
-![GIF 20210810 102923](./css学习.assets/GIF 20210810 102923.gif)
+![GIF 20210810 102923](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829107.gif)
 
 ## 7.flex布局
 
@@ -852,7 +852,7 @@ li{
 
 ![image-20210810103455520](./css学习.assets/image-20210810103455520.png)
 
-![image-20210810104530941](./css学习.assets/image-20210810104530941.png)
+![image-20210810104530941](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829156.png)
 
 ![image-20210810104646896](./css学习.assets/image-20210810104646896.png)
 
@@ -864,7 +864,7 @@ li{
 
 
 
-![image-20210810104205410](./css学习.assets/image-20210810104205410.png)
+![image-20210810104205410](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829708.png)
 
 设置**display: flex之后;**
 
@@ -898,21 +898,21 @@ li{
 }
 ```
 
-![image-20210810104021434](./css学习.assets/image-20210810104021434.png)
+![image-20210810104021434](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829186.png)
 
 **如果不给item设置高度**
 
 > flex-item会默认撑满容器
 
-![image-20210810104428682](./css学习.assets/image-20210810104428682.png)
+![image-20210810104428682](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829947.png)
 
 ### 设置flex容器
 
-![image-20210810104744923](./css学习.assets/image-20210810104744923.png)
+![image-20210810104744923](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829066.png)
 
 #### flex-direction
 
-![image-20210810104823712](./css学习.assets/image-20210810104823712.png)
+![image-20210810104823712](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829532.png)
 
 ##### 举例
 
@@ -949,25 +949,25 @@ li{
 
 ###### 1.flex-direction:row
 
-![image-20210810105047051](./css学习.assets/image-20210810105047051.png)
+![image-20210810105047051](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829604.png)
 
 ###### 2.flex-direction:row-reverse
 
-![image-20210810105132049](./css学习.assets/image-20210810105132049.png)
+![image-20210810105132049](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829491.png)
 
 ###### 3.flex-direction: column
 
 > **需要给item设置高度**
 
-![image-20210810105342577](./css学习.assets/image-20210810105342577.png)
+![image-20210810105342577](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829117.png)
 
 ###### 4.flex-direction: column-reverse;
 
-![image-20210810105406052](./css学习.assets/image-20210810105406052.png)
+![image-20210810105406052](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829636.png)
 
 #### justify-content
 
-![image-20210810105532705](./css学习.assets/image-20210810105532705.png)
+![image-20210810105532705](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829548.png)
 
 ##### 举例
 
@@ -1002,29 +1002,29 @@ li{
 
 ###### 1.justify-content: start
 
-![image-20210810105814195](./css学习.assets/image-20210810105814195.png![image-20210810110018477](./css学习.assets/image-20210810110018477.png)
+![image-20210810105814195](./css学习.assets/image-20210810105814195.png![image-20210810110018477](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829458.png)
 
 ###### 2.justify-content: end
 
 > **与flex-direction:row-reverse不同的是,justify-content: end不会改变item的排列顺序**
 
-![image-20210810105905721](./css学习.assets/image-20210810105905721.png)
+![image-20210810105905721](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829723.png)
 
 ###### 3.justify-content: center
 
-![image-20210810110058559](./css学习.assets/image-20210810110058559.png)
+![image-20210810110058559](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829998.png)
 
 ###### 4.justify-content: space-between
 
-![image-20210810110143076](./css学习.assets/image-20210810110143076.png)
+![image-20210810110143076](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829513.png)
 
 ###### 5.justify-content: space-around
 
-##### ![image-20210810110214144](./css学习.assets/image-20210810110214144.png)
+##### ![image-20210810110214144](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829891.png)
 
 #### align-item
 
-![image-20210810110341562](./css学习.assets/image-20210810110341562.png)
+![image-20210810110341562](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829501.png)
 
 ##### 举例
 
@@ -1059,21 +1059,21 @@ li{
 
 ###### 1.align-items: flex-start
 
-![image-20210810110842845](./css学习.assets/image-20210810110842845.png)
+![image-20210810110842845](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281829171.png)
 
 ###### 2.align-items: flex-end
 
-![image-20210810110857615](./css学习.assets/image-20210810110857615.png)
+![image-20210810110857615](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830973.png)
 
 ###### 3.align-items: center
 
-![image-20210810110917337](./css学习.assets/image-20210810110917337.png)
+![image-20210810110917337](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830869.png)
 
 ###### 4.align-items: stretch
 
 > 若不设置item高度值，item会默认撑满容器
 
-![image-20210810111122659](./css学习.assets/image-20210810111122659.png)
+![image-20210810111122659](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830379.png)
 
 ### flex项目
 
@@ -1125,17 +1125,17 @@ li{
 
 ##### 1.flex-grow
 
-![image-20210810112210585](./css学习.assets/image-20210810112210585.png)
+![image-20210810112210585](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830099.png)
 
 ##### 2.flex-shrink
 
-![image-20210810112345650](./css学习.assets/image-20210810112345650.png)
+![image-20210810112345650](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830124.png)
 
 ##### 3.flex-basis
 
 > **表示flex-item在主轴排列的高度**
 
-![image-20210810112532919](./css学习.assets/image-20210810112532919.png)
+![image-20210810112532919](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830107.png)
 
 ##### 4.flex
 
@@ -1143,7 +1143,7 @@ li{
 
 **flex:1**常用，用于设置flex容器内元素的排列大小
 
-![image-20210810112811530](./css学习.assets/image-20210810112811530.png)
+![image-20210810112811530](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830971.png)
 
 ##### 5.align-self
 
@@ -1159,11 +1159,11 @@ li{
 
 **flex布局**：
 
-![image-20210811100003854](./css学习.assets/image-20210811100003854.png)
+![image-20210811100003854](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830204.png)
 
 **grid布局：**
 
-![image-20210811100027879](./css学习.assets/image-20210811100027879.png)
+![image-20210811100027879](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830189.png)
 
 ### 基本概念
 
@@ -1177,7 +1177,7 @@ li{
 
 > 与flex属性相似
 
-![image-20210811101249381](./css学习.assets/image-20210811101249381.png)
+![image-20210811101249381](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830148.png)
 
 #### 1.justify-items
 
@@ -1214,7 +1214,7 @@ li{
 }
 ```
 
-![image-20210811102045249](./css学习.assets/image-20210811102045249.png)
+![image-20210811102045249](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830092.png)
 
 #### 2.align-items
 
@@ -1251,7 +1251,7 @@ li{
 }
 ```
 
-![image-20210811102155485](./css学习.assets/image-20210811102155485.png)
+![image-20210811102155485](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830804.png)
 
 #### 3.justify-content
 
@@ -1275,7 +1275,7 @@ li{
 }
 ```
 
-![image-20210811102556934](./css学习.assets/image-20210811102556934.png)
+![image-20210811102556934](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281830453.png)
 
 #### 4.align-content
 
@@ -1299,7 +1299,7 @@ li{
   
 ```
 
-![image-20210811102629947](./css学习.assets/image-20210811102629947.png)
+![image-20210811102629947](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831975.png)
 
 
 
@@ -1315,7 +1315,7 @@ li{
 
 ### 项目属性
 
-![image-20210811102847864](./css学习.assets/image-20210811102847864.png)
+![image-20210811102847864](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831827.png)
 
 #### 1.grid-column
 
@@ -1357,7 +1357,7 @@ li{
 }
 ```
 
-![image-20210811105100166](./css学习.assets/image-20210811105100166.png)
+![image-20210811105100166](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831715.png)
 
 #### 2.grid-row
 
@@ -1386,7 +1386,7 @@ li{
 }
 ```
 
-![image-20210811105203189](./css学习.assets/image-20210811105203189.png)
+![image-20210811105203189](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831454.png)
 
 #### 3.justify-self
 
@@ -1416,13 +1416,13 @@ li{
 }
 ```
 
-![image-20210811105533940](./css学习.assets/image-20210811105533940.png)
+![image-20210811105533940](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831195.png)
 
 #### 4.align-self
 
 > 与align-item类似，区别是align-items作用在整个容器，align-self作用在具体的元素
 
-![image-20210811105627662](./css学习.assets/image-20210811105627662.png)
+![image-20210811105627662](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831347.png)
 
 ### 举例
 
@@ -1457,7 +1457,7 @@ li{
 }
 ```
 
-![image-20210811100748731](./css学习.assets/image-20210811100748731.png)
+![image-20210811100748731](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831036.png)
 
 #### 2.实现一个页面布局效果
 
@@ -1503,7 +1503,7 @@ li{
     }
 ```
 
-![image-20210811111316919](./css学习.assets/image-20210811111316919.png)
+![image-20210811111316919](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831669.png)
 
 ## 9.响应式布局
 
@@ -1517,7 +1517,7 @@ li{
 
 **通过@media定义样式，浏览器窗口满足指定条件，才会应用此样式**
 
-![image-20210813104306645](./css学习.assets/image-20210813104306645.png)
+![image-20210813104306645](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831522.png)
 
 ##### 举例
 
@@ -1542,21 +1542,21 @@ li{
 
 当浏览器视窗大于600px时
 
-![image-20210813104417767](./css学习.assets/image-20210813104417767.png)
+![image-20210813104417767](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831876.png)
 
 **当浏览器视窗小于600px时**
 
-![image-20210813104447215](./css学习.assets/image-20210813104447215.png)
+![image-20210813104447215](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831291.png)
 
 ### 特点
 
-![image-20210813104604497](./css学习.assets/image-20210813104604497.png)
+![image-20210813104604497](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831027.png)
 
 ## 10.rem、em、px
 
 ### 概述
 
-![image-20210813105959688](./css学习.assets/image-20210813105959688.png)
+![image-20210813105959688](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831236.png)
 
 ### 属性
 
@@ -1617,7 +1617,7 @@ li{
 
 html标签的font-size默认为0
 
-![image-20210813110741631](./css学习.assets/image-20210813110741631.png)
+![image-20210813110741631](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831228.png)
 
 引入js文件之后 
 
@@ -1625,13 +1625,13 @@ html标签的font-size改变
 
 ![image-20210813110726376](./css学习.assets/image-20210813110726376.png)
 
-![GIF 2021-8-13 11-10-30](./css学习.assets/GIF 2021-8-13 11-10-30.gif)
+![GIF 2021-8-13 11-10-30](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831693.gif)
 
 ## 11.伪类选择器
 
 ### 1.结构伪类选择器
 
-![image-20210920154704252](./css学习.assets/image-20210920154704252.png)
+![image-20210920154704252](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831588.png)
 
 **first-child** :选取属于其父元素的首个子元素的指定选择器
 
@@ -1657,7 +1657,7 @@ direction:起点或方向
 background-image: background:linear-gradient(red,orange,yellow,green,teal,blue,purple,red) ;
 ```
 
-![image-20211124092621158](css学习.assets/image-20211124092621158.png)
+![image-20211124092621158](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831634.png)
 
 我们可以自定义方向,方式可以是css给定的属性，也可以是角度值deg
 
@@ -1717,7 +1717,7 @@ background-image: radial-gradient(shape size at position, start-color, ..., last
 background-image:radial-gradient(red,yellow,green)
 ```
 
-![image-20211124093259256](css学习.assets/image-20211124093259256.png)
+![image-20211124093259256](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831501.png)
 
 也可以**自定义**径向渐变的颜色分布
 
@@ -1725,7 +1725,7 @@ background-image:radial-gradient(red,yellow,green)
 background-image: radial-gradient(red 5%, yellow 15%, green 60%);
 ```
 
-![image-20211124093437051](css学习.assets/image-20211124093437051.png)
+![image-20211124093437051](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831298.png)
 
 我们可以给渐变设置形状
 
@@ -1784,13 +1784,13 @@ background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
 
 `background-image: conic-gradient(from -90deg, #69f, #fd44ff);`
 
-![image-20211124161950340](css学习.assets/image-20211124161950340.png)
+![image-20211124161950340](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831986.png)
 
 **改变锥心位置**：
 
 `background-image: conic-gradient(from -90deg at 80px120px, #69f, #fd44ff)`
 
-![image-20211124162026269](css学习.assets/image-20211124162026269.png)
+![image-20211124162026269](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831650.png)
 
 ---
 
@@ -1806,7 +1806,7 @@ background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
 
 `background-image: conic-gradient(#69f 36deg, #fd44ff 36deg);`
 
-![image-20211124162109942](css学习.assets/image-20211124162109942.png)
+![image-20211124162109942](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831059.png)
 
 重复圆锥渐变
 
@@ -1847,7 +1847,7 @@ background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
     }
 ```
 
-![image-20211124162419610](css学习.assets/image-20211124162419610.png)
+![image-20211124162419610](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281831083.png)
 
 ## 13.label
 
@@ -1885,7 +1885,7 @@ label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用�
 
 如下动图 当我们点击**非复选框框的红色label区域**时,复选框仍然选中
 
-![GIF 2021-12-9 18-03-54](css学习.assets/GIF 2021-12-9 18-03-54.gif)
+![GIF 2021-12-9 18-03-54](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281832149.gif)
 
 ## 14.层叠上下文
 
@@ -1897,7 +1897,7 @@ label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用�
 
 判断元素在`Z轴`上的堆叠顺序，不仅仅是直接比较两个元素的`z-index`值的大小，这个堆叠顺序实际由元素的**层叠上下文**、**层叠等级**共同决定。
 
-![image-20220226103650745](css学习.assets/image-20220226103650745.png)
+![image-20220226103650745](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281832813.png)
 
 ### 1.什么是层叠上下文
 

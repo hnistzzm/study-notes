@@ -51,7 +51,7 @@ let star = '张三'
 
 需求:点击item框,修改item的背景色,页面初始为
 
-![image-20211028201539990](./javaScipt ES6语法.assets/image-20211028201539990.png)
+![image-20211028201539990](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281826755.png)
 
 要实现的效果为
 
@@ -1416,7 +1416,7 @@ Object.getPrototypeOf(school)
 
 对school设置原型对象后
 
-![image-20211101155756134](./javaScipt ES6语法.assets/image-20211101155756134.png)
+![image-20211101155756134](http://image-yunsheng.test.upcdn.net/typora-cloud-img/raw/master/202203281825867.png)
 
 ## 19.es6中模块的导入与导出
 
