@@ -4509,7 +4509,7 @@ export default new Router({
 ```javascript
 //全局前置守卫:初始化时执行、每次路由切换前执行
 router.beforeEach((to,from,next)=>{
-  if(to.meta.isAuth){//判断当前路由是否需要进行权限控制,meta时在路由中的一个属性，里面的内容自定义
+  if(to.meta.isAuth){//判断当前路由是否需要进行权限控制,meta是在路由中的一个属性，里面的内容自定义
     const tokenStr = window.sessionStorage.getItem('token')
     if(!tokenStr){
       return next('/home')
@@ -4580,6 +4580,8 @@ export default{
 ### 13.路由器的两种工作模式
 
 1.对于一个url来说 hash值的定义:#及其后面的内容就是hash值
+
+
 
 2.hash值不会包含在http请求中，即hash值不会带给服务器
 

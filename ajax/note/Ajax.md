@@ -102,7 +102,7 @@ const ajax = {
         xhr.send()
     },
 
-    post(){
+    post(url,fn){
         const xhr = new XMLHttpRequest()
         xhr.open('POST',url,true)
         xhr.setRequestHeader('Conten-type','application/x-www-form-urlencoded')

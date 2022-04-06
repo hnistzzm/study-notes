@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM操作训练</title>
+</head>
+<body>
+    
+    <header>
+        
+        <button>start</button>
+        <button>stop</button>
+
+        <span>游戏进行了0秒</span>
+
+        <div id="progress-border">
+            <div id="progress"></div>
+        </div>
+
+    </header>
+
+    <!-- 星星区 -->
+    <div class="wrap">
+        
+    </div>
+
+</body>
+</html>
+<script>
+
+
+function start(){//开始游戏
+
+    setInterval(()=>{
+        createStar();
+    },2000)
+
+}
+
+
+function createStar(){//在游戏区域内随即区域生成星星
+
+    //获取wrap(游戏区域)节点
+    let wrap = document.getElementsByClassName('wrap')[0];
+
+    //创建一个img节点
+    let star = document.createElement("img");
+    //设置星星的size
+    star.width = Math.floor(Math.random()*80+30);
+    star.height = Math.floor(Math.random()*80+50);
+    //设置星星的坐标
+    let star_x = Math.floor(Math.random()*1000)+60;
+    let star_y = Math.floor(Math.random()*500)+30;
+    star.style.position = 'absolute';
+    star.style.left = star_x+'px';
+    star.style.top = star_y+'px';
+    //设置星星图片
+    star.src = './img/star.png'
+    //将星星添加进游戏区域
+    wrap.appendChild(star);
+}
+
+// createStar()
+start()
+
+
+</script>
+
+<style>
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+header > button,span,div{
+    margin: 10px;
+}
+#progress-border{
+
+    height: 30px;
+    width: 200px;
+    border: 1px solid black;
+
+}
+#progress{
+
+    
+
+}
+.wrap{
+
+    height: 600px;
+    border: 1px solid red;
+}
+
+
+</style>
