@@ -17,12 +17,17 @@
         return function(){
             const args = arguments
             let now = +new Date()
-            if(last && now < last+delay){
-                clearTimeout(deferTimer)
+            
+            clearTimeout(deferTimer)
+
+            if(last && now < last + delay){
+
                 deferTimer = setTimeout(()=>{
                     last = now
                     fun.apply(this,args)
+
                 },delay)
+               
             }else{
                 last = now
                 fun.apply(this,args)
@@ -55,7 +60,7 @@
 
     let inputa = document.getElementById('throttle')
 
-    let throttleinputconsle = throttle(inputconsle,500)
+    let throttleinputconsle = throttle(inputconsle,1000)
     
     inputa.addEventListener('keyup',function(e){
 

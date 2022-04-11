@@ -17,7 +17,7 @@ function inputconsle(content){
     console.log(content);
 }
 
-//防抖函数
+//防抖函数:不立即执行版
 function debounce (fun,delay){
 
     let timer
@@ -35,10 +35,12 @@ function debounce (fun,delay){
     }
 
 }
+
+
 let inputa = document.getElementById('primary')
 let inputb = document.getElementById('debounce')
 
-let debounceReq = debounce(inputconsle,500)
+let debounceReq = debounce(inputconsle,1000)
 
 inputa.addEventListener('keyup',function(e){
 

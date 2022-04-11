@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖测试</title>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>
+<script>
+
+    //防抖函数的作用是:在一个单位之间内如果一直执行某个事件,
+    //那么这个事件将一直不会执行,也就是说它只执行最后一次操作
+
+    function debounce(fn,delay){
+
+        let timer;
+
+        return function(){
+            let args = arguments;
+            if(timer){
+                clearTimeout(timer);
+                
+            }
+
+            timer = setTimeout(() => {
+                fn.apply(this,args)
+            }, delay);
+        }
+
+
+    }
+
+    function consoleInput(e){
+
+        console.log("key",e.target.value);
+
+    }
+
+    let input = document.getElementsByTagName('input')[0]
+    input.addEventListener('keyup',debounce(consoleInput,1000));
+
+
+
+</script>
