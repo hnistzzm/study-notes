@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双飞翼布局</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="center">
+            <div class="inside">
+
+            </div>
+        </div>
+        <div class="left"></div>  
+        
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<style>
+
+/* 方法:左右栏绝对定位 中间设置对应偏移 */
+.outer{
+    height: 500px;
+    background-color: black;
+    
+
+}
+.left{
+
+    float: left;
+    margin-left: -100%;
+
+    width: 200px;
+    height: 100%;
+   
+    background-color: red;
+    
+
+}
+
+.center{
+
+    float: left;
+    height: 100%;
+    width: 100%;
+
+
+}
+.inside{
+    margin-left: 200px;
+    margin-right: 200px;
+    height: 100%;
+    background-color: grey;
+}
+
+.right{
+
+   
+    float: left;
+    margin-left: -200px;
+
+
+    width: 200px;
+    height: 100%;
+   
+    background-color: blue;
+}
+
+
+</style>

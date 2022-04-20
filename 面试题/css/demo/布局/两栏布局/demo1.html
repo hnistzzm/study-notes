@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="outer">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<style>
+/* 方法:利用浮动使得左栏固定  给右栏宽度设置为auto,再使用margin-left设置偏移 */
+.outer{
+    height: 500px;
+    background-color: black;
+
+}
+.left{
+    height: 100%;
+
+    float: left;
+    width: 200px;
+    background-color: red;
+    
+
+}
+.right{
+
+    height: 100%;
+
+    margin-left: 200px;
+    width: auto;
+    background-color: blue;
+}
+</style>

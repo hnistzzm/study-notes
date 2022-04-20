@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo5</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<style>
+    /*方法:父级设置相对定位,左栏固定宽度，右栏绝对定位,设置左边定位宽度*/
+   
+.outer{
+    height: 500px;
+    background-color: black;
+    position: relative;
+
+}
+.left{
+    height: 100%;
+
+    
+    width: 200px;
+
+    background-color: red;
+    
+
+}
+.right{
+
+   height: 100%; 
+
+   position: absolute;
+
+    left: 200px;
+    bottom: 0;
+    top: 0;
+    right: 0;
+   
+   background-color: blue;
+}
+</style>

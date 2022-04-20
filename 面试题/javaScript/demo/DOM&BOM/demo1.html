@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    window.onload = function(){
+        let div = document.getElementsByTagName('div')[0];
+        console.log("浏览器视窗高度",window.innerHeight);
+        console.log("浏览器视窗高度",document.documentElement.clientHeight);
+        console.log("浏览器滚动高度",document.body.scrollTop);
+        console.log("元素距离文档顶部的高度",div.offsetTop);
+        
+        //如果元素距文档顶部距离 < 浏览器滚动高度 + 浏览器视窗高度,那么元素经过了浏览器视窗
+        let inClient = div.offsetTop < window.innerHeight + document.body.scrollTop ? 'YES' : 'NO';
+        console.log('元素是否经过浏览器视窗里',inClient);
+    }
+
+
+   
+</script>
+
+
+<style>
+div{
+
+    height: 100px;
+    width: 100px;
+    background-color: red;
+
+    margin: 100px;
+
+}
+</style>
+

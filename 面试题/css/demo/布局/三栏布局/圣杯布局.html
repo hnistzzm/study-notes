@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="center"></div>
+        <div class="left"></div>  
+        
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<style>
+
+/* 方法:
+    1.给三栏都设置左浮动 让中间一栏占宽百分百,使得左右两栏下移 
+    2.给中间一栏设置左右padding，用来给左右两栏设置存放空间
+    3.设置左栏的margin-left为-100%,这样左栏就会移动到中间一栏的最左边
+    4.给右栏设置margin-left为负的右栏的宽度,这样右栏就会移动到中间一栏的最右边
+    5.左右两栏使用相对定位进行偏移,移动到之前给他们准备好的空间中
+
+    为什么margin-left为负数会使元素上移?
+    答:浏览器会判断margin-left与元素宽度,如果margin-left+width<0,浏览器就会认为元素的宽度小于0，
+       上一层是可以容纳这个元素的,于是就会上移
+*/
+.outer{
+    height: 500px;
+    background-color: black;
+    padding-left: 200px;
+    padding-right: 200px;
+
+}
+.left{
+
+    position: relative;
+    left: -200px;
+
+    float: left;
+    margin-left: -100%;
+
+    width: 200px;
+    height: 100%;
+   
+    background-color: red;
+
+}
+
+.center{
+
+    width: 100%;
+    height: 100%;
+    float: left;
+    background-color: green;
+
+}
+
+.right{
+
+    position: relative;
+    left: 200px;
+
+    float: left;
+    margin-left: -200px;
+
+
+    width: 200px;
+    height: 100%;
+   
+    background-color: blue;
+}
+
+
+</style>

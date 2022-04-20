@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center"></div>
+    </div>
+</body>
+</html>
+
+<style>
+
+/* 方法:左栏固定宽度,左浮动 右栏固定宽度 右浮动 中间一栏设置左右偏移 注意中间一栏要写最后 */
+.outer{
+    height: 500px;
+    background-color: black;
+
+}
+.left{
+    height: 100%;
+
+    width: 200px;
+    float: left;
+    background-color: red;
+
+}
+
+.center{
+    height: 100%;
+
+
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: green;
+
+}
+
+.right{
+
+    height: 100%;
+
+    width: 200px;
+
+    float: right;
+   
+    background-color: blue;
+}
+
+
+</style>

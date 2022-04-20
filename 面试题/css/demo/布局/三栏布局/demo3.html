@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo3</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="left"></div>  
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<style>
+
+/* 方法:左右栏绝对定位 中间设置对应偏移 */
+.outer{
+    height: 500px;
+    background-color: black;
+    display: flex;
+
+}
+.left{
+
+    width: 200px;
+   
+    background-color: red;
+
+}
+
+.center{
+
+    flex: 1;
+    background-color: green;
+
+}
+
+.right{
+
+    width: 200px;
+   
+    background-color: blue;
+}
+
+
+</style>

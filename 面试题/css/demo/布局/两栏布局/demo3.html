@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo3</title>
+</head>
+<body>
+    <div class="outer">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+<style>
+    /*方法:父级节点设置flex布局,左栏固定宽度,右栏设置flex:1(实际上是利用flex-grow:1属性 让元素放大) */
+   
+.outer{
+    height: 500px;
+    background-color: black;
+    display: flex;
+
+}
+.left{
+    
+
+
+    width: 200px;
+    background-color: red;
+    
+
+}
+.right{
+
+   
+    flex: 1;
+
+
+   
+    background-color: blue;
+}
+</style>
