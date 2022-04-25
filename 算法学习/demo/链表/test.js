@@ -13,3 +13,5 @@ var missingNumber = function(nums) {
     
 };
 console.log(missingNumber([0,1,2,3,4])); 
+
+

@@ -1299,7 +1299,7 @@ function datarequest(...,callback){
 
 封装ajax方法
 
-```sql
+```javascript
 function get(url,callback){
 	let oReq = new XMLHttpRequest()
 	//当请求加载成功后要调用指定的函数

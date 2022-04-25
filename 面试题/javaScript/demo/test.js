@@ -1,8 +1,10 @@
 
-let a = 1;
-let b = 2;
 
- a = b = 4;
+let arr = [1,2,3,4,6]
 
-console.log(a);
-console.log(b);
+arr.sort((a,b) =>{
+    console.log(a,b);
+    return a-b;
+})
+
+console.log(arr);

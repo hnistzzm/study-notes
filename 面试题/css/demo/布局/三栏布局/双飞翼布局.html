@@ -21,7 +21,10 @@
 
 <style>
 
-/* 方法:左右栏绝对定位 中间设置对应偏移 */
+/* 方法:与圣杯布局类似,不同点是双飞翼布局给左右两栏留空间是这样做的:
+    在中间div中新增一个div(inside),给inside设置margin偏移.这样就给
+    左右两栏留下了空间
+     */
 .outer{
     height: 500px;
     background-color: black;
