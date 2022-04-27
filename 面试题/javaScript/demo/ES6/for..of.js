@@ -1,4 +1,8 @@
 
+//for...of可以自动遍历数据结构生成的遍历器Iterator,
+//并且不需要手动的使用next()方法促使遍历器执行
+
+
 //遍历map 每次会返回一个键值对数组[key,value],可以使用解构赋值来获取
 const map = new Map([['a',1],['b',2],['c',3]]);
 
@@ -48,3 +52,28 @@ let arrayLike = { length: 2, 0: 'a', 1: 'b' };
 for (let x of Array.from(arrayLike)) {
   console.log(x);
 }
+
+
+//遍历Generator函数生成的迭代器
+
+function * createGenerator(){
+    
+    yield 1;
+    yield 2;
+    yield 3;
+    yield 4;
+    yield 5;
+    return 6;//如果此时调用next方法,返回的结果是{value:6,done:true}
+
+}
+
+for (const v of createGenerator()) {//当遇到done属性为true时,循环就会终止
+    console.log(v);
+}
+let foo = createGenerator();
+console.log(foo.next()); 
+console.log(foo.next()); 
+console.log(foo.next()); 
+console.log(foo.next()); 
+console.log(foo.next()); 
+console.log(foo.next()); 
