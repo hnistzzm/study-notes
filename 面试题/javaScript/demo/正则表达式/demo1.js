@@ -15,7 +15,7 @@ function toTuo (str) {
 
     return str.replace(_toTuo,function(match,letter){
 
-        console.log("match",match);
+        // console.log("match",match);
         console.log("letter",letter);
         return letter.toUpperCase();
     })
@@ -27,7 +27,7 @@ function to_fun (str){
 
     return str.replace(TuoTo_,function(match,letter){
         console.log("match",match);
-        console.log("letter",letter);
+        // console.log("letter",letter);
         return '_'+ match.toLowerCase()
     })
 }

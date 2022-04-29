@@ -14,6 +14,20 @@ function instance(father,child){
     return false
 }
 
+// function instance1(father,child){
+
+//     let fp = father.prototype;
+//     let cp = child.__proto__;
+
+//     while(cp){
+
+//         if(cp === fp) return true
+//         cp = cp.__proto__;
+//     }
+//     return false;
+
+// }
+
 let obj = {}
 let fun = function(){
 

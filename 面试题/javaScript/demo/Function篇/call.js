@@ -26,3 +26,4 @@ const testobj2 = {
     name: 'zzm'
 }
 fn.cs_call(testobj2,18)
+

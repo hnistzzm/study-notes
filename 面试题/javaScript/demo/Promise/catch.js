@@ -12,6 +12,9 @@ promise
     .then((data) =>{
         console.log(data);
     })
+    .then((data) =>{
+        console.log("1");
+    })
     .catch((err) => {
         console.log(err);
     })
