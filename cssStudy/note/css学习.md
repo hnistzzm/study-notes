@@ -1944,3 +1944,30 @@ label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用�
    2. 如果两个元素不在统一层叠上下文中，请先比较他们所处的层叠上下文的层叠等级
 2. 当两个元素层叠等级相同、层叠顺序相同时，在DOM结构中后面的元素层叠等级在前面元素之上
 
+## 15.让div宽高等比例缩放
+
+方法:设置div宽度未百分比,高度为0,利用padding-bottom将div撑开
+
+```html
+<div class="scale">
+    <div class="banner">
+        元素
+    </div>
+</div>
+```
+
+```css
+.scale {
+    width: 100%; // 宽度100%同步父元素宽度，是为了随外部元素宽度自适应
+    padding-bottom: 20%; // padding-bottom值为半分比时受父元素宽度影响，20%就是相对于父元素宽度的20%，其实自适应等比例的宽高主要是保证宽高比一定，利用padding-bottom百分比的这一特点就能实现宽高的联动
+    height: 0; // 设定为0是为了高度让padding-bottom来撑起
+    position: relative; // 让该元素成为一个能等比缩放的"模具", 让子元素的宽高都跟随这个元素变动，就能实现子元素的等比缩放了。
+    .banner {
+        position: absolute; // 跟随父元素"模具"
+        width: 100%; // 跟随模具的宽
+        height: 100%; // 跟随模具的高
+        background-color: 499e56;
+    }
+}
+```
+

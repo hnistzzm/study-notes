@@ -20,8 +20,8 @@
 
 var items = document.getElementById('item-list');
 //事件捕获实现事件代理
-items.addEventListener('click', (e) => {console.log('捕获：click ',e.target.innerHTML)}, true);
+items.addEventListener('click', (e) => {console.log('捕获：click ',e.target)}, true);
 //事件冒泡实现事件代理
-items.addEventListener('click', (e) => {console.log('冒泡：click ',e.target.innerHTML)}, false);
+items.addEventListener('click', (e) => {console.log('冒泡：click ',e.target)}, false);
 
 </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <div class="box1">
+        元素内容sdasdasdasdasdasdasdasdasdasd
+    </div>
+</body>
+</html>
+<style>
+.box1{
+    border: 1px rgb(5, 248, 114) solid;
+    background: rgb(221, 132, 214);
+    background-clip: content-box;
+    width: 400px;
+    padding: 10px;
+
+}
+.box1::before{
+
+    content: '我是box1前面的before';
+    color: rgb(177, 81, 13);
+
+}
+.box1::after{
+    content: "我是后面的after";
+    color: rgb(243, 29, 72);
+}
+.box1::first-line{
+    color: blue;
+}
+.box1::first-letter{
+    color: yellow;
+}
+</style>
